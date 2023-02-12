@@ -45,12 +45,15 @@
                 #basicNavbar="mdbCollapse"
               >
                 <!-- Left links -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-4">
+                  <li class="nav-item" >
+                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['']" >الرئيسية</a>
+                  </li>
                   <ng-container *ngFor="let cat of allCategories;let i=index">
                   <li class="nav-item" >
-                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['/category/',cat.slug]" *ngIf="i<8">{{cat.name}}</a>
+                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['/category/',cat.slug]" *ngIf="i<7">{{cat.name}}</a>
                   </li>
-                  <li class="nav-item me-3 me-lg-0 dropdown" *ngIf="showMore && i==8" >
+                  <li class="nav-item me-3 me-lg-0 dropdown" *ngIf="showMore && i==7" >
                     <a
                       class="nav-link dropdown-toggle"
                       id="navbarDropdown"
@@ -63,7 +66,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown"   (click)="shDrop()" >
                       <li *ngFor="let cat of allCategories;let i=index" >
-                        <p class="dropdown-item" href="#" *ngIf="i>=8" [routerLink]="['/category/',cat.slug]">{{cat.name}}</p>
+                        <p class="dropdown-item" href="#" *ngIf="i>=7" [routerLink]="['/category/',cat.slug]">{{cat.name}}</p>
                       </li>
                     </ul>
                   </li></ng-container>
@@ -85,3 +88,13 @@
         </div>
     </div> -->
       <!-- Navbar -->
+      <div style="height: 300px;margin-right:7%;margin-left:7%;" >
+        <div style="height: 135px;"></div>
+       <div class="d-flex">
+        <img src="./assets/temp-imgs/abdo.jpeg" height="162" width="162" class="bossImg"/>
+       <div>
+        <h3 class="bossName">رئيس التحرير : عبدالوارث محمد</h3>
+        <small class="bossAbout" >رئيس قلم الجريدة ومدقق أخبار على مستوى الشرق الاوسط</small>
+       </div>
+       </div>
+      </div>

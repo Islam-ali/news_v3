@@ -1,20 +1,19 @@
-
-*
-{margin:0PX;
-padding:0PX;}
-.container-fluid
-{
-    position: relative; 
-     width: 92% !important;
-     overflow-x: hidden;
-     margin-left:4%;
-     margin-right:4%;
-}
-.container
-{
-    text-align: center!important;
-    .row
+*{margin:0PX;
+    padding:0PX;}
+    .container-fluid
+    {
+        position: relative; 
+         width: 92% !important;
+         overflow-x: hidden;
+         margin-left:4%;
+         margin-right:4%;
+    }
+    .container
     {
         text-align: center!important;
+        .row
+        {
+            text-align: center!important;
+        }
     }
-}
+   
