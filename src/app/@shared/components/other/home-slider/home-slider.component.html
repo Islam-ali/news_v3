@@ -1,0 +1,120 @@
+<!-- <div *ngFor="let item of images">
+  <img
+  src={{item}}
+    class="d-block w-100 item"
+    alt="..."
+  /> 
+</div> -->
+<mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" *ngIf="images">
+  <ng-container *ngFor="let item of images"><mdb-carousel-item >
+        <img
+        src={{item}}
+          class="d-block w-100 item"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <!-- <h5>{{item.title}}</h5> -->
+          <!-- <p>البورصة المصرية تواصل التعاملات البورصة المصرية تواصل التعاملات</p> -->
+        </div>
+      </mdb-carousel-item></ng-container>
+    
+      <!-- <mdb-carousel-item>
+        <img
+        src="../../../../../assets/temp-imgs/3.jpg"
+          class="d-block w-100 item"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>حريق هائل بمحلات تجارية</h5>
+          <p>حريق هائل بمحلات تجارية حريق هائل بمحلات تجارية</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+          src="../../../../../assets/temp-imgs/2.jpg"
+          class="d-block w-100 item"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>الرحلات السياحية</h5>
+          <p>السياح يتمتعون بأجواء أحتفالية</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+        src="../../../../../assets/temp-imgs/1.jpg"
+          class="d-block w-100 item"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>البورصة المصرية تواصل التعاملات</h5>
+          <p>البورصة المصرية تواصل التعاملات البورصة المصرية تواصل التعاملات</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+        src="../../../../../assets/temp-imgs/3.jpg"
+          class="d-block w-100 item"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>حريق هائل بمحلات تجارية</h5>
+          <p>حريق هائل بمحلات تجارية حريق هائل بمحلات تجارية</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+        src="../../../../../assets/temp-imgs/1.jpg"
+          class="d-block w-100 item"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>البورصة المصرية تواصل التعاملات</h5>
+          <p>البورصة المصرية تواصل التعاملات البورصة المصرية تواصل التعاملات</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+        src="../../../../../assets/temp-imgs/3.jpg"
+          class="d-block w-100 item"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>حريق هائل بمحلات تجارية</h5>
+          <p>حريق هائل بمحلات تجارية حريق هائل بمحلات تجارية</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+          src="../../../../../assets/temp-imgs/2.jpg"
+          class="d-block w-100 item"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>الرحلات السياحية</h5>
+          <p>السياح يتمتعون بأجواء أحتفالية</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+        src="../../../../../assets/temp-imgs/1.jpg"
+          class="d-block w-100 item"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>البورصة المصرية تواصل التعاملات</h5>
+          <p>البورصة المصرية تواصل التعاملات البورصة المصرية تواصل التعاملات</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img
+        src="../../../../../assets/temp-imgs/3.jpg"
+          class="d-block w-100 item"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>حريق هائل بمحلات تجارية</h5>
+          <p>حريق هائل بمحلات تجارية حريق هائل بمحلات تجارية</p>
+        </div>
+      </mdb-carousel-item> -->
+  </mdb-carousel>

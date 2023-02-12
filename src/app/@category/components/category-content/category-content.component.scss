@@ -1,0 +1,47 @@
+.pw1 {
+    background-color:white;
+  }
+  
+  .card {
+    background-color: #f0f0f0;
+  }
+  
+  
+  
+  .news {
+    width: 160px
+  }
+  
+  .news-scroll a {
+    text-decoration: none;
+    margin-left:10px;
+    font-size: medium;
+  }
+  
+  .dot {
+    height: 6px;
+    width: 6px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 2px !important;
+    background-color: rgb(207, 23, 23);
+    border-radius: 50%;
+    display: inline-block
+  }
+  img{
+    width:300px!important;
+    height:150px!important;
+    border-radius: 3px;
+  }
+ .col-md-4:hover img
+  { transition: transform 2s ease;
+    transform: scale(1.35);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .newsDiv
+  {
+margin-top:0px!important;
+padding-top:0px!important;
+align-items: flex-start;
+height: auto;
+  }

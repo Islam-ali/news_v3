@@ -1,0 +1,87 @@
+<marquee class="news-scroll" behavior="scroll" direction="right" Scrollamount=10 Scrollamount=10
+  onmouseover="this.stop();" onmouseout="this.start();">
+  <ng-container *ngFor="let item of taskBarItems">
+    <a href="#" [routerLink]="['/News/',item?.slug]">
+      {{item?.title}}
+    </a>
+    <span class="dot">
+  
+    </span>
+  </ng-container>
+ 
+</marquee>
+<!-- *ngIf="!miniClass" -->
+<!-- *ngIf="!miniClass" -->
+<header class="auth d-flex" >
+  <!-- <mat-icon class="text-danger">live_tv</mat-icon> -->
+    <button class="liveBtn">
+      <a  href="https://www.youtube.com/watch?v=GyqAZ8CRI5E" target="_blank">
+      <small>مباشر</small>&nbsp;&nbsp;&nbsp;<img src='../../../../../assets/icons/live1.png' width="25" height="25" class="mt-2"></a></button>
+    <b class="text-light" routerLink="register">تريند</b>
+    <!-- <div class="centered" *ngIf="!miniClass">
+      <img src="./assets/icons/logo.png" routerLink="home">
+    </div> -->
+    </header>
+    <!-- Navbar -->
+    <!-- <div class="banner"> -->
+        <nav class="navbar navbar-expand-lg border-bottom ">
+            <!-- Container wrapper -->
+            <div class="container-fluid ">
+              <button
+                class="navbar-toggler"
+                type="button"
+                (click)="basicNavbar.toggle()"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+              <i class="fa fa-sliders text-warning" ></i>
+              </button>
+
+              <!-- Collapsible wrapper -->
+              <div
+                class="collapse navbar-collapse text-center"
+                id="navbarSupportedContent"
+                mdbCollapse
+                #basicNavbar="mdbCollapse"
+              >
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <ng-container *ngFor="let cat of allCategories;let i=index">
+                  <li class="nav-item" >
+                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['/category/',cat.slug]" *ngIf="i<8">{{cat.name}}</a>
+                  </li>
+                  <li class="nav-item me-3 me-lg-0 dropdown" *ngIf="showMore && i==8" >
+                    <a
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdown"
+                      data-mdb-toggle="dropdown"
+                      aria-expanded="false"
+                      (mouseover)="shDrop()"
+                     
+                    >
+                      المزيد
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown"   (click)="shDrop()" >
+                      <li *ngFor="let cat of allCategories;let i=index" >
+                        <p class="dropdown-item" href="#" *ngIf="i>=8" [routerLink]="['/category/',cat.slug]">{{cat.name}}</p>
+                      </li>
+                    </ul>
+                  </li></ng-container>
+                 </ul>
+              </div>
+              <!-- Collapsible wrapper -->
+            </div>
+            <!-- Container wrapper -->
+          </nav>
+          <!-- <div class="centered" *ngIf="miniClass">
+            <img src="./assets/icons/logo.png">
+        </div> -->
+        <!-- <div class="underNav" *ngIf="!miniClass">
+    <div class="bottom-left">
+      <h4 class="text-light">Lorem ipsum, dolor sit amet consectetur.</h4>
+      <h1><span class="text-light">The </span><span class="text-warning">Mountain View Hyde Park</span></h1>
+
+    </div>
+        </div>
+    </div> -->
+      <!-- Navbar -->
