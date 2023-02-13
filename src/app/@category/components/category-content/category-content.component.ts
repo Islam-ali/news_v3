@@ -34,21 +34,21 @@ export class CategoryContentComponent implements OnInit {
     this.getTaskbar()
   }
   getNews() {
-    this.news=[];
+    this.httpService.getCategoryContent(this.slug).subscribe(
+      (data: any) => {
+        this.news=[];
     this.arr1=[];
     this.arr2=[];
     this.count=0;
-    this.httpService.getCategoryContent(this.slug).subscribe(
-      (data: any) => {
         this.news = data.data.news;
-        this.count=Math.round(this.news.length/2)-1;        
+        this.count=Math.round(this.news.length/2);        
        for(let i=0 ;i < this.news.length ; i++)
        {
         if(i < this.count)
         {
           this.arr1.push(this.news[i])
         }
-        else if(i > this.count)
+        else if(i >= this.count)
         {
           this.arr2.push(this.news[i])
        }}       

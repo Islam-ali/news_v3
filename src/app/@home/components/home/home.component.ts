@@ -9,8 +9,10 @@ import { HttpService } from 'src/app/@core/services/http/http.service';
 })
 export class HomeComponent implements OnInit {
   allCategories:any;
-  images = [62, 83, 466, 965, 982, 1043, 738].map((n) => `https://picsum.photos/id/${n}/900/500`);
-
+  taskBarItems:any[]=[];
+  slides:any[]=[];
+  images:any[]=[];
+  titles:any[]=[];
 	paused = false;
 	unpauseOnArrow = false;
 	pauseOnIndicator = false;
@@ -49,6 +51,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCategories();
+	this.getTaskbar(); 
+	this.getSliders();
   }
   getAllCategories() {
   
@@ -59,4 +63,29 @@ export class HomeComponent implements OnInit {
     });
   
   }
+  getSliders() {
+  
+    this.httpService.getSliders().subscribe((data: any) => {
+     this.slides=data.data;
+	 for(let i=0;i<this.slides.length;i++)
+	 {this.images.push(this.slides[i].image);
+		this.titles.push(this.slides[i].title)
+	 }
+	 
+    }, (err: any) => {
+  
+    });
+  
+  }
+  
+  getTaskbar() {
+  
+	this.httpService.getTopTaskbar().subscribe((data: any) => {
+	 this.taskBarItems=data.data;
+	}, (err: any) => {
+  
+	});
+  
+  }
+  
 }

@@ -1,17 +1,47 @@
 <app-navbar></app-navbar>
-<div style="height: 50px; background-color: #3b3b3b;"></div>
+<div style="height: 50px; background-color: #3b3b3b;">
+  <div class="container">
+    <div>
+      <div class="row">
+        <div class="col-lg-8 col-md-6 col-sm-12 col-12">
+
+          <div class="d-flex justify-content-between align-items-center breaking-news bg-white mt-2">
+            <div
+              class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news">
+              <span class="d-flex align-items-center">&nbsp;لحظة بلحظة</span>
+            </div>
+            <marquee class="news-scroll" behavior="scroll" direction="right" Scrollamount=10 onmouseover="this.stop();"
+              onmouseout="this.start();">
+              <ng-container *ngFor="let item of taskBarItems">
+                <a href="#" [routerLink]="['/News/',item?.slug]">
+                  {{item?.title}}
+                </a>
+                <span class="dot">
+              
+                </span>
+                </ng-container>
+            </marquee>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 col-12"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
 <!-- ////////////////////////////////////////// -->
 
 <div class="row  mt-3">
   <div class="col-3">
     <div>
-      <img src="../../../../assets/temp-imgs/1.jpg"  width="300px" class="mb-3"  alt="">
+      <img [src]="images[0]"  width="300px" height="202" class="mb-3"  alt="">
     </div>
     <div>
-      <img src="../../../../assets/temp-imgs/1.jpg"  width="300px"  alt="">
+      <img [src]="images[2]"  width="300px"  height="202" alt="">
     </div>
       </div>
-  <div class="col-6">
+  <div class="col-6" *ngIf="images">
   
     <ngb-carousel
     #carousel
@@ -22,7 +52,7 @@
   >
   <ng-template ngbSlide *ngFor="let img of images; index as i">
     <div class="carousel-caption">
-      <h3>My slide {{i + 1}} title</h3>
+      <h3>{{titles[i]}}</h3>
     </div>
     <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
       <div class="picsum-img-wrapper">
@@ -54,7 +84,9 @@
   {{paused ? 'Cycle' : 'Pause' }}
   </button> -->
   </div>
-  
+  <div class="col-3">
+    <img src="./assets/temp-imgs/advertise.jfif" height="420" width="300" >
+      </div> 
 </div>
 <!-- ///////////////////////////////////////////// -->
 <div class="container-fluid p-4" *ngFor="let item of allCategories">
@@ -68,7 +100,7 @@
       <div class="col-lg-3 col-md-12 mb-4 mb-md-0 " *ngFor="let newsItem of item.news">
           <div class="card mb-3" style="max-width: 540px;">
               <div class="row g-1">
-                <div class="col-md-5">
+                <div class="col-md-12">
                   <img
                     [src]="newsItem.image"
                     alt="Trendy Pants and Shoes"
@@ -76,7 +108,7 @@
                     
                   />
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-12">
                   <div class="card-body">
                     <h5 class="card-title">{{newsItem.title}} </h5>
                     <p class="card-text">

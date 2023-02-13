@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TrandsComponent } from './trands.component';
 
 const routes: Routes = [
-  { path: 'Trands/:slug', component: TrandsComponent },
+  { path: 'Trends/:slug', component: TrandsComponent },
   {
     path: '',
     loadChildren: () =>

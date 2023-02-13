@@ -18,11 +18,11 @@ export class HttpService {
   getCategories(): Observable<IResponse> {
     return this.http.get<IResponse>(environment.baseUrl.concat(`categories`));
   }
-  //   getSliders(): Observable<IResponse> {
+    getSliders(): Observable<IResponse> {
 
-  //     return this.http.get<IResponse>(environment.baseUrl.concat(`sliders`));
+      return this.http.get<IResponse>(environment.baseUrl.concat(`sliders`));
 
-  // }
+  }
   getCategoryContent(slug: any): Observable<IResponse> {
     return this.http.get<IResponse>(
       environment.baseUrl.concat(`news-by-category/${slug}`)
