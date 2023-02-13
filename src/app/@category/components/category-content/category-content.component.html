@@ -1,16 +1,45 @@
 <app-navbar></app-navbar>
-<div style="margin-top: 0px;" class="pw1">
-  <div class="mx-5" style="background-color: white;">
+<div class="container-fluid">
+  <div class="mx-5 " style="background-color: white;">
     <div class="titel mt-2 p-2 " style="background-color: #4d4d4c; color:red;padding-right:20px;font-weight:bold;">اخبار
       عاجلة</div>
 
     <div class="row ">
-      <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+    <div class="col-9">
+      <div class="row">
+        <div class="col-lg-6 col-md-5 col-sm-12 col-12">
 
-        <div class="card mb-3 mt-3" *ngFor="let item of news ; let i=index">
-        
-            <a [routerLink]="['/News/',item.slug]" *ngIf="i<=count-1">
-
+          <div class="card mb-3 mt-3" *ngFor="let item of arr1 ; let i=index">
+          
+              <a [routerLink]="['/News/',item.slug]" >
+  
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{{item.image}}" class="img-fluid m-2" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">
+                        {{item.title}}
+                      </h5>
+                      <p class="card-text">
+                        {{item.slug}}
+                      </p>
+                      <p class="card-text"><small class="text-muted">
+                          {{item.updated_at}}
+                        </small></p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-5 col-sm-12 col-12">
+  
+          <div class="card mb-3 mt-3" *ngFor="let item of arr2 ; let i=index">
+          
+            <a [routerLink]="['/News/',item.slug]" >
+  
               <div class="row g-0">
                 <div class="col-md-4">
                   <img src="{{item.image}}" class="img-fluid m-2" alt="...">
@@ -30,36 +59,11 @@
                 </div>
               </div>
             </a>
+          </div>
         </div>
       </div>
-      <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-
-        <div class="card mb-3 mt-3" *ngFor="let item of news ; let i=index">
-        
-          <a [routerLink]="['/News/',item.slug]" *ngIf="i>count-1">
-
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{item.image}}" class="img-fluid m-2" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">
-                    {{item.title}}
-                  </h5>
-                  <p class="card-text">
-                    {{item.slug}}
-                  </p>
-                  <p class="card-text"><small class="text-muted">
-                      {{item.updated_at}}
-                    </small></p>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-12 col-12">
+    </div>
+      <div class="col-lg-3 col-md-2 col-sm-12 col-12">
         <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">Trending لحظة بلحظة </div>
         <div *ngFor="let item of news">
           <h3 class="p-2 mt-2 " style="background-color: darkgray;">
