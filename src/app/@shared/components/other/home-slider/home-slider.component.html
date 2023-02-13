@@ -5,9 +5,10 @@
     alt="..."
   /> 
 </div> -->
-<mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" *ngIf="images">
-  <ng-container *ngFor="let item of images"><mdb-carousel-item >
-        <img
+<mdb-carousel [controls]="false" [indicators]="true" [animation]="'fade'" *ngIf="images">
+  <ng-container *ngFor="let item of images">
+    <mdb-carousel-item >
+        <img style="height:420px !important"
         src={{item}}
           class="d-block w-100 item"
           alt="..."
@@ -16,7 +17,8 @@
           <!-- <h5>{{item.title}}</h5> -->
           <!-- <p>البورصة المصرية تواصل التعاملات البورصة المصرية تواصل التعاملات</p> -->
         </div>
-      </mdb-carousel-item></ng-container>
+      </mdb-carousel-item>
+    </ng-container>
     
       <!-- <mdb-carousel-item>
         <img
