@@ -16,6 +16,7 @@ export class CategoryContentComponent implements OnInit {
   taskBarItems:any;
   arr1:any[]=[];
   arr2:any[]=[];
+  catName:any;
   constructor(
     private httpService: HttpService,
     public activatedRoute: ActivatedRoute
@@ -32,8 +33,10 @@ export class CategoryContentComponent implements OnInit {
     this.getNews();
     this.getTrands();
     this.getTaskbar()
+
   }
   getNews() {
+    this.catName=localStorage.getItem('categoryNmame');
     this.httpService.getCategoryContent(this.slug).subscribe(
       (data: any) => {
         this.news=[];
