@@ -49,6 +49,9 @@ export class HttpService {
   getCategoryTaskbar(id: any): Observable<IResponse> {
     return this.http.get<IResponse>(environment.baseUrl.concat(`taskbar-at-category/${id}`));
   }
+  getTrends(): Observable<IResponse> {
+    return this.http.get<IResponse>(environment.baseUrl.concat(`trends`));
+  }
   
   /////////////////////////////////////////////////////////////////////////////
   // getAllReports(): Observable<IResponse> {
