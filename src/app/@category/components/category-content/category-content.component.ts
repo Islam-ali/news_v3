@@ -10,10 +10,12 @@ import { HttpService } from 'src/app/@core/services/http/http.service';
 export class CategoryContentComponent implements OnInit {
   news: any[] = [];
   slug: any;
-  count!:number;
+  count:number=0;
   Trends: any;
   MoreRead:any;
   taskBarItems:any;
+  arr1:any[]=[];
+  arr2:any[]=[];
   constructor(
     private httpService: HttpService,
     public activatedRoute: ActivatedRoute
@@ -34,9 +36,22 @@ export class CategoryContentComponent implements OnInit {
   getNews() {
     this.httpService.getCategoryContent(this.slug).subscribe(
       (data: any) => {
+        this.news=[];
+    this.arr1=[];
+    this.arr2=[];
+    this.count=0;
         this.news = data.data.news;
-        this.count=Math.round(this.news.length/2);
-        
+        this.count=Math.round(this.news.length/2);        
+       for(let i=0 ;i < this.news.length ; i++)
+       {
+        if(i < this.count)
+        {
+          this.arr1.push(this.news[i])
+        }
+        else if(i >= this.count)
+        {
+          this.arr2.push(this.news[i])
+       }}       
       },
       (err: any) => {}
     );
