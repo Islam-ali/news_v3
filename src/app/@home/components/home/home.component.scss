@@ -3,10 +3,10 @@
     .container-fluid
     {
         position: relative; 
-         width: 92% !important;
+         width: 98% !important;
          overflow-x: hidden;
-         margin-left:4%;
-         margin-right:4%;
+         margin-left:1%;
+         margin-right:1%;
     }
     .container
     {
@@ -18,21 +18,31 @@
     }
     .dTitle
 {
-    margin-top:50px;
+   
     margin-bottom:30px;
     color: rgba(204, 7, 7);
+    font-weight: bolder!important;
 }
 .cardImg
 {
     height: 190px;
 }
 .news {
-    width: 160px
+    width: 160px;
   }
   
   .news-scroll a {
     text-decoration: none;
     margin-left:10px;
     font-size: medium;
+  }
+  .itemCategory
+  {
+    padding-left:10px;
+    padding-right:10px;
+  }
+  .taskBar
+  {
+    padding-right:70px;
   }
   

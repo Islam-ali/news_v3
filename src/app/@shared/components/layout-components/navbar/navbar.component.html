@@ -51,7 +51,7 @@
                   </li>
                   <ng-container *ngFor="let cat of allCategories;let i=index">
                   <li class="nav-item" >
-                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['/category/',cat.slug]" *ngIf="i<7">{{cat.name}}</a>
+                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['/category/',cat.slug]" *ngIf="i<7" (click)="setName(cat.name)">{{cat.name}}</a>
                   </li>
                   <li class="nav-item me-3 me-lg-0 dropdown" *ngIf="showMore && i==7" >
                     <a
@@ -65,8 +65,8 @@
                       المزيد
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown"   (click)="shDrop()" >
-                      <li *ngFor="let cat of allCategories;let i=index" >
-                        <p class="dropdown-item" href="#" *ngIf="i>=7" [routerLink]="['/category/',cat.slug]">{{cat.name}}</p>
+                      <li *ngFor="let cat of allCategories;let i=index">
+                        <p class="dropdown-item" href="#" *ngIf="i>=7" [routerLink]="['/category/',cat.slug]" (click)="setName(cat.name)">{{cat.name}}</p>
                       </li>
                     </ul>
                   </li></ng-container>

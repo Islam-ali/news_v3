@@ -41,5 +41,8 @@ getTaskbar() {
   });
 
 }
-
+setName(name:string)
+{
+  localStorage.setItem('categoryNmame',name)
+}
 }
