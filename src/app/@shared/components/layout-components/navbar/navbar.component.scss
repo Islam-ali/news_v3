@@ -152,8 +152,10 @@ a{
       color: red;
       margin-right:10px;
       // font-weight: bold;
-      margin-bottom:-2px;
+      // margin-bottom:px;
   }
   .bossAbout
   { margin-right:12px;
+    color:$p1Color!important ;
+    font-style: italic;
   }

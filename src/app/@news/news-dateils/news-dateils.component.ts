@@ -30,7 +30,7 @@ export class NewsDateilsComponent implements OnInit {
   ngOnInit(): void {
     this.getSelected();
     this.getTrands();
-    
+    scrollTo(0,0);
   }
   getSelected() {
     this.httpService.getNewsContent(this.slug).subscribe(
