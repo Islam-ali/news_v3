@@ -1,7 +1,6 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { NgbCarousel, NgbCarouselConfig, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { HttpService } from 'src/app/@core/services/http/http.service';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -43,10 +42,10 @@ export class HomeComponent implements OnInit {
 		}
 	}
 
-  constructor(config: NgbCarouselConfig,private httpService:HttpService) {
-		// customize default values of carousels used by this component tree
-		config.showNavigationArrows = false;
-    config.showNavigationIndicators = true;
+	
+
+  constructor(private httpService:HttpService) {
+
 	}
 
   ngOnInit(): void {

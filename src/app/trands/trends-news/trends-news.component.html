@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+
+<div style="margin-top: 0px;" class="pw1">
+    <div class="mx-5" style="background-color: white;">
+      <div class="titel mt-2 p-2 " style="background-color: #4d4d4c; color:red;padding-right:20px;font-weight:bold;">
+        تريندات</div>
+        <div class="row ">
+            
+            <div class="col-lg-3 col-md-5 col-sm-12 col-12 mt-2">
+                <div style="height: 400px;border: crimson 2px solid;" class="text-center p-2">
+                    <h2>تواصل معنا لوضع اعلانك هنا</h2>
+
+                    <img src="../../../assets/temp-imgs/images.jpeg" width="255px" alt="" srcset="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-5 col-sm-12 col-12">
+                
+                    <div class="card-sl mt-3" *ngFor="let trend of trends">
+                        <div class="card-image">
+                            <img height="200px" width="750px"
+                                [src]="trend?.images[0]?.image"/>
+                        </div>
+    
+                        <a class="card-action" href="#">{{trend.created_at | date}}</a>
+                        <div class="card-heading me-4">
+                            {{trend.title}}
+                        </div>
+                        <div class="card-text ms-3">
+                            Audi Q8 is a full-size luxury crossover SUV coupé made by Audi that was launched in 2018.
+                        </div>
+                      
+                       
+                    </div>
+                
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-12 col-12">
+            <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">Trending لحظة بلحظة </div>
+            <div>
+                <h3 class="p-2 mt-2 " style="background-color: darkgray;">
+                    news titlte
+              </h3>
+            </div>
+            
+            <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">الاكثر قراءة</div>
+            
+            <div>
+                <h3 class="p-2 mt-2 " style="background-color: darkgray;">
+                    news titlte
+                </h3>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+<app-footer></app-footer>
+

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TrandsComponent } from './trands.component';
+import { TrendsNewsComponent } from './trends-news/trends-news.component';
 
 const routes: Routes = [
-  { path: 'Trends/:slug', component: TrandsComponent },
+  { path: '', component: TrendsNewsComponent },
+  { path: 'Trands/:slug', component: TrandsComponent },
   {
     path: '',
     loadChildren: () =>

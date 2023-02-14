@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/@core/services/http/http.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { HttpService } from 'src/app/@core/services/http/http.service';
 })
 export class HomeSliderComponent implements OnInit {
   slides:any[]=[];
-  images:any[]=[];
+@Input()  images:any[]=[];
   constructor(private httpService:HttpService) { }
 
   ngOnInit(): void {
