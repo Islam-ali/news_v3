@@ -17,9 +17,9 @@
                   {{item?.title}}
                 </a>
                 <span class="dot">
-              
+
                 </span>
-                </ng-container>
+              </ng-container>
             </marquee>
           </div>
 
@@ -36,14 +36,14 @@
       {{catName}}</div>
 
     <div class="row ">
-    <div class="col-9">
-      <div class="row">
-        <div class="col-lg-6 col-md-5 col-sm-12 col-12">
+      <div class="col-9">
+        <div class="row">
+          <div class="col-lg-6 col-md-5 col-sm-12 col-12">
 
-          <div class="card mb-3 mt-3" *ngFor="let item of arr1 ; let i=index">
-          
-              <a [routerLink]="['/News/',item.slug]" >
-  
+            <div class="card mb-3 mt-3" *ngFor="let item of arr1 ; let i=index" style="height: 170px; ">
+
+              <a [routerLink]="['/News/',item.slug]">
+
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img src="{{item.image}}" class="img-fluid m-2" alt="...">
@@ -63,53 +63,55 @@
                   </div>
                 </div>
               </a>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6 col-md-5 col-sm-12 col-12">
-  
-          <div class="card mb-3 mt-3" *ngFor="let item of arr2 ; let i=index">
-          
-            <a [routerLink]="['/News/',item.slug]" >
-  
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="{{item.image}}" class="img-fluid m-2" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">
-                      {{item.title}}
-                    </h5>
-                    <p class="card-text">
-                      {{item.subtitle|slice:0:65}}...
-                    </p>
-                    <p class="card-text"><small class="text-muted">
-                        {{item.updated_at}}
-                      </small></p>
+          <div class="col-lg-6 col-md-5 col-sm-12 col-12">
+
+            <div class="card mb-3 mt-3" *ngFor="let item of arr2 ; let i=index" style="height: 170px; ">
+
+              <a [routerLink]="['/News/',item.slug]">
+
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{{item.image}}" class="img-fluid m-2" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">
+                        {{item.title}}
+                      </h5>
+                      <p class="card-text">
+                        {{item.subtitle|slice:0:65}}...
+                      </p>
+                      <p class="card-text"><small class="text-muted">
+                          {{item.updated_at}}
+                        </small></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
       <div class="col-lg-3 col-md-2 col-sm-12 col-12">
         <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">Trending لحظة بلحظة </div>
-        <div *ngFor="let item of news" >
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;" [routerLink]="['/Trends/',item.slug]">
+        <div *ngFor="let item of news">
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
+            [routerLink]="['/Trends/',item.slug]">
             {{item.title|slice:0:55}} ...
           </h3>
         </div>
-        
+
         <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">الاكثر قراءة</div>
 
         <div *ngFor="let item of news">
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;" [routerLink]="['/News/',item.slug]">
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
+            [routerLink]="['/News/',item.slug]">
             {{item.title|slice:0:55}} ...
           </h3>
         </div>
-        
+
       </div>
     </div>
   </div>
