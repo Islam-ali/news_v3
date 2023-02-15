@@ -15,17 +15,17 @@
             </div>
             <div class="col-lg-6 col-md-5 col-sm-12 col-12">
                 
-                    <div class="card-sl mt-3" *ngFor="let trend of trends">
+                    <div class="card-sl mt-3" *ngFor="let trend of trends" >
                         <div class="card-image">
                             <img height="200px" width="750px"
                                 [src]="trend?.images[0]?.image"/>
                         </div>
     
-                        <a class="card-action" href="#">{{trend.created_at | date}}</a>
-                        <div class="card-heading me-4">
+                        <a class="card-action">{{trend.created_at | date}}</a>
+                        <div class="card-heading me-4" routerLink="/trends/{{trend.slug}}" style="cursor: pointer;">
                             {{trend.title}}
                         </div>
-                        <div class="card-text ms-3">
+                        <div class="card-text ms-3"  routerLink="/trends/{{trend.slug}}" style="cursor: pointer;">
                             Audi Q8 is a full-size luxury crossover SUV coupé made by Audi that was launched in 2018.
                         </div>
                       

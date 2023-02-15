@@ -27,6 +27,8 @@ export class TrandsComponent implements OnInit {
   getTrandscontent() {
     this.httpService.getTrendsContent(this.slug).subscribe(
       (data: any) => {
+        console.log(data);
+        
         this.trandcontent = data.data;
       },
       (err: any) => {}
