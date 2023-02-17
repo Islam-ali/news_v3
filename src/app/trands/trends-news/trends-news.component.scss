@@ -93,3 +93,28 @@
             box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
         }
     }
+
+
+    .marquee {
+        height: 290px;
+        overflow: hidden;
+      }
+      
+      .scrolling {
+        animation: marquee 1s linear infinite;
+      }
+      .marquee:hover {
+        .scrolling{
+
+            animation: marquee 0s linear infinite;
+        }
+      }
+      
+      @keyframes marquee {
+        from {
+          transform: translateY(0);
+        }
+        to { 
+          transform: translateY(-100%);
+        }
+      }

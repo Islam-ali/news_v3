@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../@shared/shared.module';
 import { TrandsComponent } from './trands.component';
 import { TrendsNewsComponent } from './trends-news/trends-news.component';
+import { NgMarqueeModule } from 'ng-marquee';
 
 
 
@@ -15,7 +16,8 @@ import { TrendsNewsComponent } from './trends-news/trends-news.component';
   imports: [
     CommonModule,
     TrandsRoutingModule,
-    SharedModule
+    SharedModule,
+    NgMarqueeModule
   ]
 })
 export class TrandsModule { }

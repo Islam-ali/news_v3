@@ -23,6 +23,7 @@ import { HomeModule } from './@home/home.module';
 import { SharedModule } from './@shared/shared.module';
 import { CategoryModule } from './@category/category.module';
 import { TrandsModule } from './trands/trands.module';
+import { NgMarqueeModule } from 'ng-marquee';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -34,6 +35,7 @@ import { TrandsModule } from './trands/trands.module';
     SharedModule,
     CategoryModule,
     TrandsModule,
+    NgMarqueeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
