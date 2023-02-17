@@ -104,9 +104,9 @@
         animation: marquee 1s linear infinite;
       }
       .marquee:hover {
-        .scrolling{
+          .scrolling{
+            animation-play-state: paused;
 
-            animation: marquee 0s linear infinite;
         }
       }
       
