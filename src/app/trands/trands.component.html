@@ -50,126 +50,29 @@
             <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
               الموضوعات المتعلقة
             </div>
-            <div class="card mb-3 mt-3">
+            <div class="card mb-3 mt-3" *ngFor="let trend of relateTrends">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="../../../../../assets/temp-imgs/important/3.jpg" class="img-fluid m-2" alt="..." />
+                  <img [src]="trend.images[0].image" style="height: 160px;" class="img-fluid m-2" alt="..." />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
                     <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
-                      وفاة عاصم حماد مدرب يد الأهلى السابق
+                       {{trend.title}}
                     </h5>
                     <p class="card-text">
-                      الاهلى يستعد لمحطة جديدة في الدوري بمواجهة المصرى
-                      البورسعيدى بالجولة الثالثة عشرة لمسابقة الدوري المصرى
-                      والمقرر لها الخميس المقبل على ستاد برج العرب بالاسكندرية
+                      {{trend.subtitle}}
                     </p>
                     <p class="card-text">
                       <small class="text-muted">
-                        الجمعة، 06 يناير 2023 01:20 م
+                        {{trend.updated_at}}
                       </small>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card mb-3 mt-3">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="../../../../../assets/temp-imgs/important/3.jpg" class="img-fluid m-2" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
-                      وفاة عاصم حماد مدرب يد الأهلى السابق
-                    </h5>
-                    <p class="card-text">
-                      الاهلى يستعد لمحطة جديدة في الدوري بمواجهة المصرى
-                      البورسعيدى بالجولة الثالثة عشرة لمسابقة الدوري المصرى
-                      والمقرر لها الخميس المقبل على ستاد برج العرب بالاسكندرية
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">
-                        الجمعة، 06 يناير 2023 01:20 م
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 mt-3">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="../../../../../assets/temp-imgs/important/3.jpg" class="img-fluid m-2" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
-                      وفاة عاصم حماد مدرب يد الأهلى السابق
-                    </h5>
-                    <p class="card-text">
-                      الاهلى يستعد لمحطة جديدة في الدوري بمواجهة المصرى
-                      البورسعيدى بالجولة الثالثة عشرة لمسابقة الدوري المصرى
-                      والمقرر لها الخميس المقبل على ستاد برج العرب بالاسكندرية
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">
-                        الجمعة، 06 يناير 2023 01:20 م
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 mt-3">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="../../../../../assets/temp-imgs/important/3.jpg" class="img-fluid m-2" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
-                      وفاة عاصم حماد مدرب يد الأهلى السابق
-                    </h5>
-                    <p class="card-text">
-                      الاهلى يستعد لمحطة جديدة في الدوري بمواجهة المصرى
-                      البورسعيدى بالجولة الثالثة عشرة لمسابقة الدوري المصرى
-                      والمقرر لها الخميس المقبل على ستاد برج العرب بالاسكندرية
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">
-                        الجمعة، 06 يناير 2023 01:20 م
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 mt-3">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="../../../../../assets/temp-imgs/important/3.jpg" class="img-fluid m-2" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
-                      وفاة عاصم حماد مدرب يد الأهلى السابق
-                    </h5>
-                    <p class="card-text">
-                      الاهلى يستعد لمحطة جديدة في الدوري بمواجهة المصرى
-                      البورسعيدى بالجولة الثالثة عشرة لمسابقة الدوري المصرى
-                      والمقرر لها الخميس المقبل على ستاد برج العرب بالاسكندرية
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">
-                        الجمعة، 06 يناير 2023 01:20 م
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

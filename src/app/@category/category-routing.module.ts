@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'category/:slug', component: CategoryContentComponent },
   { path: 'trends', component: TrendsNewsComponent },
 
-  { path: 'trends/:slug', component: TrandsComponent },
+  { path: 'trends/:slug/:id', component: TrandsComponent },
   { path: 'articles', component:ArticlesComponent },
   {
     path: '',

@@ -17,16 +17,16 @@
                 
                     <div class="card-sl mt-3" *ngFor="let trend of trends" >
                         <div class="card-image">
-                            <img height="200px" width="750px"
+                            <img height="250px" width="750px"
                                 [src]="trend?.images[0]?.image"/>
                         </div>
     
                         <a class="card-action">{{trend.created_at | date}}</a>
-                        <div class="card-heading me-4" routerLink="/trends/{{trend.slug}}" style="cursor: pointer;">
+                        <div class="card-heading me-4" routerLink="/trends/{{trend.slug}}/{{trend.id}}" style="cursor: pointer;">
                             {{trend.title}}
                         </div>
-                        <div class="card-text ms-3"  routerLink="/trends/{{trend.slug}}" style="cursor: pointer;">
-                            Audi Q8 is a full-size luxury crossover SUV coupé made by Audi that was launched in 2018.
+                        <div class="card-text ms-3"  routerLink="/trends/{{trend.slug}}/{{trend.id}}" style="cursor: pointer;">
+                            {{trend.subtitle}}
                         </div>
                       
                        
@@ -35,67 +35,46 @@
         </div>
         <div class="col-lg-3 col-md-2 col-sm-12 col-12">
             <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">
-                Trending لحظة بلحظة </div>
-                <!-- <marquee class="news-scroll" behavior="scroll" direction="up"
-                Scrollamount=3 onbounce="4" loop="-1" vspace="0"
+                أخبار لحظة بلحظة </div>
+                <marquee class="news-scroll marquee" behavior="scroll" direction="up"
+                Scrollamount=3 onbounce="4" 
                 onmouseover="this.stop();" onmouseout="this.start();">
-                <div *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]" >
-                  <a href="#" >
-                    asadafsf
+                <div *ngFor="let item of last_news" style="margin-bottom: 50px;">
+                  <a href="" routerLink="/News/{{item.slug}}" >
+                    <p>
+                      {{item.title}}
+                    </p>
+                    <!-- <small class="text-muted">date </small> -->
                   </a>
+
                  
                 </div>
                
-              </marquee> -->
-              <div class="marquee">
-                <div class="scrolling">
-                  Marquee rocks!
-                </div><div class="scrolling" aria-hidden="true">
-                  Marquee rocks!
-                </div><div class="scrolling" aria-hidden="true">
-                  Marquee rocks!
-                </div><div class="scrolling" aria-hidden="true">
-                  Marquee rocks!
-                </div>
-                <div class="scrolling">
-                    Marquee rocks!
-                  </div><div class="scrolling" aria-hidden="true">
-                    Marquee rocks!
-                  </div><div class="scrolling" aria-hidden="true">
-                    Marquee rocks!
-                  </div><div class="scrolling" aria-hidden="true">
-                    Marquee rocks!
-                  </div>  <div class="scrolling">
-                    Marquee rocks!
-                  </div><div class="scrolling" aria-hidden="true">
-                    Marquee rocks!
+              </marquee>
+              <!-- <div class="marquee">
+                <div class="scrolling" *ngFor="let item of last_news;let i=index">
+                    <p>{{i}}</p>
+                      <small class="text-muted">date </small>
                   </div>
-                  <div class="scrolling" aria-hidden="true">
-                    Marquee rocks!
-                  </div><div class="scrolling" aria-hidden="true">
-                    Marquee rocks!
-                  </div>
-                  <div class="scrolling" aria-hidden="true">
-                    Marquee rocks!
-                  </div><div class="scrolling" aria-hidden="true">
-                    Marquee rocks!
-                  </div>
-                  <div class="scrolling" aria-hidden="true">
-                    Marquee rocks!
-                  </div><div class="scrolling" aria-hidden="true">
-                    Marquee rocks!
-                  </div>
-                <!-- … -->
-              </div>
+                 
+              </div> -->
+              <!-- <p class="marquee">
+                <span>this is a</span>
+                <span>simple marquee</span>
+                <span>using css</span>
+                <span>only tech</span>
+                <span>with a delay</span>
+              </p> -->
               <!-- <ng-marquee direction="left" >
                 <div>Hello, World.... Find Me @ <a href="https://www.linkedin.com/in/shivarajnaidu/" target="__blank"> https://www.linkedin.com/in/shivarajnaidu/ (Yuvaraj)</a></div>
             </ng-marquee> -->
             
             <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">الاكثر قراءة</div>
             
-            <div>
-                <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-                    news titlte
+            <div *ngFor="let article of more_articles_Read">
+                <h3 class="p-2 mt-2 " style="background-color: darkgray;cursor: pointer;"
+                 routerLink="/News/{{article.slug}}">
+                   {{article.title}}
                 </h3>
             </div>
             

@@ -52,7 +52,12 @@ export class HttpService {
   getTrends(): Observable<IResponse> {
     return this.http.get<IResponse>(environment.baseUrl.concat(`trends`));
   }
-  
+  relatedTrends(id: number) {
+    return this.http.get<IResponse>(environment.baseUrl.concat(`related-trends/${id}`));
+  }
+  lastNews() {
+    return this.http.get<IResponse>(environment.baseUrl.concat(`last-news-more-articles-read`));
+  }
   /////////////////////////////////////////////////////////////////////////////
   // getAllReports(): Observable<IResponse> {
   // this.token = localStorage.getItem('token');

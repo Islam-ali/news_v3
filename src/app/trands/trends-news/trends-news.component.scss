@@ -96,25 +96,28 @@
 
 
     .marquee {
-        height: 290px;
+        height: 390px;
         overflow: hidden;
       }
       
-      .scrolling {
-        animation: marquee 1s linear infinite;
-      }
-      .marquee:hover {
-          .scrolling{
-            animation-play-state: paused;
+    //   .scrolling {
+    //     animation: marquee 1s linear infinite;
+    //   }
+    //   .marquee:hover {
+    //       .scrolling{
+    //         animation-play-state: paused;
 
-        }
-      }
+    //     }
+    //   }
       
-      @keyframes marquee {
-        from {
-          transform: translateY(0);
-        }
-        to { 
-          transform: translateY(-100%);
-        }
-      }
+    //   @keyframes marquee {
+    //     from {
+    //       transform: translateY(0);
+    //     }
+    //     to { 
+    //       transform: translateY(-100%);
+    //     }
+    //   }
+
+
+    
