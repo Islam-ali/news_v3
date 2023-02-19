@@ -5,7 +5,7 @@
 </div>
 <div style="margin-top: 0px" class="pw1">
   <div class="container" style="background-color: white">
-    <div class="row">
+    <div class="row" *ngIf="!loading">
       <div class="col-9">
         <div class=" py-3 mt-2 text-center">
           <img [src]="trandcontent?.images[0]?.image" class="mainImg" height="350px" width="800px" />
@@ -18,7 +18,7 @@
             {{trandcontent?.title}}</div>
           <small class="my-3"> {{trandcontent?.updated_at}}</small>
         </div>
-        
+
         <div class="bg-light p-3 mt-2">
           <!-- <div class="title">احمد طارق</div> -->
           <div class="h4" style="height: 60px;color:red">
@@ -58,7 +58,7 @@
                 <div class="col-md-8">
                   <div class="card-body">
                     <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
-                       {{trend.title}}
+                      {{trend.title}}
                     </h5>
                     <p class="card-text">
                       {{trend.subtitle}}
@@ -72,22 +72,120 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
-      <div class="col-3">
-        <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue">
-          Trending لحظة بلحظه
+
+      <div class="col-lg-3 col-md-2 col-sm-12 col-12">
+        <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">
+          أخبار لحظة بلحظة </div>
+       
+        <div *ngFor="let item of last_news">
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;cursor: pointer;" routerLink="/News/{{item.slug}}">
+            {{item.title |slice:0:55}}...
+          </h3>
         </div>
-        <div>
-          <h3 class="p-2 mt-2" style="background-color: darkgray" *ngFor="let item of Trands">
-            {{item.title}}
+        
+       
+
+        <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">الاكثر قراءة</div>
+
+        <div *ngFor="let article of more_articles_Read">
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;cursor: pointer;" routerLink="/News/{{article.slug}}">
+            {{article.title}}
           </h3>
         </div>
 
       </div>
+
+
+    </div>
+    <div class="row placeholder-glow" *ngIf="loading">
+      <div class="col-9">
+        <div class=" py-3 mt-2 text-center">
+          <img [src]="" class="mainImg placeholder" height="350px" width="800px"/>
+          <div>
+          </div>
+        </div>
+        <div class="bg-white py-3">
+          <div class="bg-light p-3 mb-3" >
+            <h2 class="placeholder w-75 h-25"></h2>
+            <small class="my-3 placeholder w-50"> </small>
+        </div>
+
+        <div class="bg-light p-3 mt-2">
+          <div class="h4 " style="height: 60px;" >
+            <h2 class="placeholder w-75 h-25"></h2>
+
+          </div>
+          <div class="" style="height: 500px;">
+            <h2 class="placeholder w-100 p-2 mb-4" *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13]"></h2>
+
+          </div>
+          <div class="mt-5">
+            <a class="btn btn-dark btn-sm m-2 placeholder px-4"  href="#" role="button"
+             *ngFor="let item of [1,2,3,4,5]"> 
+            </a>
+           
+          </div>
+
+          <div class="mt-5">
+            <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
+              الموضوعات المتعلقة
+            </div>
+            <div class="card mb-3 mt-3" *ngFor="let trend of relateTrends">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img [src]="trend.images[0].image" style="height: 160px;" class="img-fluid m-2" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
+                      {{trend.title}}
+                    </h5>
+                    <p class="card-text">
+                      {{trend.subtitle}}
+                    </p>
+                    <p class="card-text">
+                      <small class="text-muted">
+                        {{trend.updated_at}}
+                      </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      
+
+
+    </div>
+    <div class="col-lg-3 col-md-2 col-sm-12 col-12">
+      <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">
+        أخبار لحظة بلحظة </div>
+     
+      <div *ngFor="let item of last_news">
+        <h3 class="p-2 mt-2 " style="background-color: darkgray;cursor: pointer;" routerLink="/News/{{item.slug}}">
+          {{item.title |slice:0:55}}...
+        </h3>
+      </div>
+      
+     
+
+      <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">الاكثر قراءة</div>
+
+      <div *ngFor="let article of more_articles_Read">
+        <h3 class="p-2 mt-2 " style="background-color: darkgray;cursor: pointer;" routerLink="/News/{{article.slug}}">
+          {{article.title}}
+        </h3>
+      </div>
+
+    </div>
+  </div>
 </div>
-</div>
-</div>
-      <app-footer></app-footer>
+<app-footer></app-footer>

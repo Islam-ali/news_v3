@@ -10,7 +10,9 @@ export class TrendsNewsComponent implements OnInit {
 
   trends!: any[];
   last_news!: any[];
-  more_articles_Read!:any[]
+  more_articles_Read!: any[];
+  loading = true;
+  newsLoading = true;
   constructor(
     private httpService: HttpService,) { }
 
@@ -21,10 +23,10 @@ export class TrendsNewsComponent implements OnInit {
   getTrends() {
     this.httpService.getTrends().subscribe({
       next: (res: any) => {
-        console.log(res);
-        
-        this.trends=res.data.trends
-        console.log(this.trends);
+        if (res.success) {
+          this.loading=false
+          this.trends=res.data.trends
+        }
         
       }, error: (err: any) => {
         console.log(err);
@@ -35,9 +37,11 @@ export class TrendsNewsComponent implements OnInit {
   lastNews() {
     this.httpService.lastNews().subscribe({
       next: (res: any) => {
-        console.log(res);
-        this.last_news = res.data.last_news;
-        this.more_articles_Read=res.data.more_articles_Read
+        if (res.success) {
+          this.newsLoading=false
+          this.last_news = res.data.last_news;
+          this.more_articles_Read=res.data.more_articles_Read
+        }
       }, error: (err: any) => {
         console.log(err);
         

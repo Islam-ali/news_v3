@@ -13,6 +13,10 @@ export class TrandsComponent implements OnInit {
   trandcontent: any;
   Trands: any;
   relateTrends:any[]=[]
+  last_news!: any[];
+  more_articles_Read!: any[];
+  loading = true;
+  relatedLoading = true;
   constructor(
     private httpService: HttpService,
     public activatedRoute: ActivatedRoute
@@ -26,12 +30,13 @@ export class TrandsComponent implements OnInit {
   ngOnInit(): void {
     this.getTrandscontent();
     this.getTrands();
+    this.lastNews();
   }
   getTrandscontent() {
     this.httpService.getTrendsContent(this.slug).subscribe(
       (data: any) => {
         console.log(data);
-        
+        this.loading = false;
         this.trandcontent = data.data;
       },
       (err: any) => {}
@@ -51,6 +56,19 @@ export class TrandsComponent implements OnInit {
         console.log(res);
         this.relateTrends=res.data
         
+      }, error: (err: any) => {
+        console.log(err);
+        
+      }
+    })
+  }
+
+  lastNews() {
+    this.httpService.lastNews().subscribe({
+      next: (res: any) => {
+        console.log(res);
+        this.last_news = res.data.last_news;
+        this.more_articles_Read=res.data.more_articles_Read
       }, error: (err: any) => {
         console.log(err);
         
