@@ -32,33 +32,9 @@
                        
                     </div>
                     <div class="mt-3" style="direction: ltr;">
+                      <app-pagination [page]="page" [total]="11" (onChange)="changePage($event)"></app-pagination>
 
-                      <ngb-pagination (pageChange)="changePage($event)" 
-                      [collectionSize]="11"
-                       [(page)]="page" [boundaryLinks]="true">
-                        <ng-template ngbPaginationPages let-page let-pages="pages">
-                          <li class="ngb-custom-pages-item" *ngIf="pages.length > 0">
-                            <div class="mb-3 d-flex flex-nowrap px-2">
-                              <label id="paginationInputLabel" for="paginationInput" class="col-form-label me-2 ms-1">Page</label>
-                              <input
-                                #i
-                                type="text"
-                                inputmode="numeric"
-                                pattern="[0-9]*"
-                                class="form-control custom-pages-input"
-                                id="paginationInput"
-                                [value]="page"
-                                (keyup.enter)="selectPage(i.value)"
-                                (blur)="selectPage(i.value)"
-                                (input)="formatInput($any($event).target)"
-                                aria-labelledby="paginationInputLabel paginationDescription"
-                                style="width: 2.5rem"
-                              />
-                              <span id="paginationDescription" class="col-form-label text-nowrap px-2"> of {{pages.length}}</span>
-                            </div>
-                          </li>
-                        </ng-template>
-                      </ngb-pagination>
+                      
                     </div>
                 
         </div>

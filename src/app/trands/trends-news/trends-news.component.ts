@@ -22,6 +22,7 @@ export class TrendsNewsComponent implements OnInit {
   ngOnInit(): void {
     this.getTrends(1);
     this.lastNews();
+    
   }
   getTrends(page:number) {
     this.httpService.getTrends(page).subscribe({
@@ -31,9 +32,7 @@ export class TrendsNewsComponent implements OnInit {
           
           this.loading=false
           this.trends = res.data.trends
-          this.number_of_pages = res.data.paginator.number_of_pages;
-          this.number_of_items_per_page = res.data.paginator.number_of_items_per_page;
-          this.page=res.data.paginator.current_page
+          
         }
         
       }, error: (err: any) => {
@@ -57,23 +56,9 @@ export class TrendsNewsComponent implements OnInit {
     })
   }
   changePage(event:any) {
-    console.log(event);
     this.page = event;
     this.getTrends(this.page)
     
   }
-  getPageSymbol(current: number) {
-		return ['A', 'B', 'C', 'D', 'E', 'F', 'G'][current - 1];
-	}
 
-  selectPage(page: string) {
-    console.log(page);
-    
-		this.page = parseInt(page, 10) || 1;
-	}
-
-  formatInput(input: HTMLInputElement) {
-    const FILTER_PAG_REGEX = /[^0-9]/g;
-		input.value = input.value.replace(FILTER_PAG_REGEX, '');
-	}
 }

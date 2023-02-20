@@ -8,19 +8,28 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeSliderComponent } from './components/other/home-slider/home-slider.component';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { PaginationComponent } from './components/other/pagination/pagination.component';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     FooterComponent,
     NavbarComponent,
-    HomeSliderComponent
+    HomeSliderComponent,
+    PaginationComponent
   ],
-  imports: [MdbCollapseModule,MdbCarouselModule,
+  imports: [
+    MdbCollapseModule,
+    MdbCarouselModule,
     CommonModule,
-    SharedRoutingModule,MatIconModule
+    SharedRoutingModule,
+    MatIconModule,
+    NgbPaginationModule
   ],
   exports:[
     FooterComponent,
-    NavbarComponent,HomeSliderComponent
+    NavbarComponent,
+    HomeSliderComponent,
+    PaginationComponent
   ]
 })
 export class SharedModule { }
