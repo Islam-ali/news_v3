@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -49,8 +49,9 @@ export class HttpService {
   getCategoryTaskbar(id: any): Observable<IResponse> {
     return this.http.get<IResponse>(environment.baseUrl.concat(`taskbar-at-category/${id}`));
   }
-  getTrends(): Observable<IResponse> {
-    return this.http.get<IResponse>(environment.baseUrl.concat(`trends`));
+  getTrends(page:number): Observable<IResponse> {
+    let params = new HttpParams().set("page", page);
+    return this.http.get<IResponse>(environment.baseUrl.concat(`trends`),{params});
   }
   relatedTrends(id: number) {
     return this.http.get<IResponse>(environment.baseUrl.concat(`related-trends/${id}`));

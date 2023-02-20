@@ -5,7 +5,7 @@ import { SharedModule } from '../@shared/shared.module';
 import { TrandsComponent } from './trands.component';
 import { TrendsNewsComponent } from './trends-news/trends-news.component';
 import { NgMarqueeModule } from 'ng-marquee';
-
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { NgMarqueeModule } from 'ng-marquee';
     CommonModule,
     TrandsRoutingModule,
     SharedModule,
-    NgMarqueeModule
+    NgMarqueeModule,
+    NgbPaginationModule
   ]
 })
 export class TrandsModule { }
