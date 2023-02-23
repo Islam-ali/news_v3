@@ -20,15 +20,8 @@
           <small class="my-3"> {{trandcontent?.updated_at}}</small>
         </div>
 
-        <div class="bg-light p-3 mt-2">
-          <!-- <div class="title">احمد طارق</div> -->
-          <div class="h4" style="height: 60px;color:red">
-            <!-- {{trandcontent.slug}} -->
-          </div>
-          <!-- <p class="h5">
-
-            {{news.content}}
-          </p> -->
+        <div class="bg-light p-3 mt-2">          
+          
           <div [innerHTML]="trandcontent?.content">
 
           </div>
@@ -59,10 +52,10 @@
                 <div class="col-md-8">
                   <div class="card-body">
                     <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
-                      {{trend.title}}
+                      {{trend.title |maxLenght:120}}
                     </h5>
                     <p class="card-text">
-                      {{trend.subtitle}}
+                      {{trend.subtitle |maxLenght:200}}
                     </p>
                     <p class="card-text">
                       <small class="text-muted">
@@ -84,7 +77,7 @@
        
         <div *ngFor="let item of last_news">
           <h3 class="p-2 mt-2 " style="background-color: darkgray;cursor: pointer;" routerLink="/News/{{item.slug}}">
-            {{item.title |slice:0:55}}...
+            {{item.title |maxLenght:55}}
           </h3>
         </div>
         
@@ -94,7 +87,7 @@
 
         <div *ngFor="let article of more_articles_Read">
           <h3 class="p-2 mt-2 " style="background-color: darkgray;cursor: pointer;" routerLink="/News/{{article.slug}}">
-            {{article.title}}
+            {{article.title |maxLenght:55}}
           </h3>
         </div>
 
