@@ -17,22 +17,23 @@
                 
                     <div class="card-sl mt-3" *ngFor="let trend of trends" >
                         <div class="card-image">
-                            <img height="250px" width="750px"
+                            <img height="300px" width="750px"
                                 [src]="trend?.images[0]?.image"/>
                         </div>
     
                         <a class="card-action">{{trend.created_at }}</a>
-                        <div class="card-heading me-4" routerLink="/trends/{{trend.slug}}/{{trend.id}}" style="cursor: pointer;">
-                            {{trend.title}}
+                        <div class="card-heading me-4 mt-4" routerLink="/trends/{{trend.slug}}/{{trend.id}}" 
+                        style="cursor: pointer;">
+                            {{trend.title | maxLenght:150}}
                         </div>
                         <div class="card-text ms-3"  routerLink="/trends/{{trend.slug}}/{{trend.id}}" style="cursor: pointer;">
-                            {{trend.subtitle}}
+                            {{trend.subtitle |maxLenght:250}}
                         </div>
                       
                        
                     </div>
                     <div class="mt-3" style="direction: ltr;">
-                      <app-pagination [page]="page" [total]="11" (onChange)="changePage($event)"></app-pagination>
+                      <app-pagination [page]="page" [total]="total" (onChange)="changePage($event)"></app-pagination>
 
                       
                     </div>

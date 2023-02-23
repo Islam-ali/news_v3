@@ -10,12 +10,14 @@ import { HomeSliderComponent } from './components/other/home-slider/home-slider.
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { PaginationComponent } from './components/other/pagination/pagination.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { MaxLenghtPipe } from './pipes/max-lenght.pipe';
 @NgModule({
   declarations: [
     FooterComponent,
     NavbarComponent,
     HomeSliderComponent,
-    PaginationComponent
+    PaginationComponent,
+    MaxLenghtPipe
   ],
   imports: [
     MdbCollapseModule,
@@ -29,7 +31,9 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     NavbarComponent,
     HomeSliderComponent,
-    PaginationComponent
+    PaginationComponent,
+    MaxLenghtPipe
+
   ]
 })
 export class SharedModule { }

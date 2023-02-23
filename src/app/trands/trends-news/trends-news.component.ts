@@ -16,6 +16,7 @@ export class TrendsNewsComponent implements OnInit {
   page: number = 1;
   number_of_pages = 1;
   number_of_items_per_page = 10;
+  total = 10;
   constructor(
     private httpService: HttpService,) { }
 
@@ -32,6 +33,7 @@ export class TrendsNewsComponent implements OnInit {
           
           this.loading=false
           this.trends = res.data.trends
+          this.total = res.data.paginator.count;
           
         }
         
