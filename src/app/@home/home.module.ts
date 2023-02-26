@@ -5,12 +5,14 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from '../@shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    SearchComponent
   ],
   imports: [BrowserModule,
     CommonModule,
@@ -18,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     SharedModule, HttpClientModule,
     NgbCarouselModule,
     FormsModule,
-    NgFor
+    NgFor,
+    NgbAccordionModule
   ]
 })
 export class HomeModule { }

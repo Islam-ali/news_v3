@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row mt-2 p-3" style="background-color: #4d4d4c;font-weight:bold;">
+    </div>
+    <div class="row bg-light pt-4" >
+        <div class="col-9 m-auto">
+
+            <input type="text" class="form-control" #inputSearch>
+            <div class="d-flex justify-content-between mt-2">
+              <a href="" class="btn btn-danger px-5" routerLink="/search/{{inputSearch.value}}">بحث</a>
+              <a class="btn btn-dark" (click)="acc.toggle('toggle-1')"> بحث مفصل</a>
+      
+            </div>
+            <div class="my-2">
+
+                <ngb-accordion #acc="ngbAccordion" >
+                    <ngb-panel id="toggle-1">
+                        <ng-template ngbPanelContent>
+                            <div class="d-flex">
+
+                                <p>البحث عن النتائج التى فيها:</p>
+                                <input type="text" class="form-control w-50 me-4" >
+                            </div>
+
+                        </ng-template>
+                    </ngb-panel>
+                  
+                </ngb-accordion>
+            </div>
+            <div>
+                <p>عدد نتائج البحث (9970)</p>
+                <div>
+                    <div class="card bg-light shadow-0"  style="height: 165px; ">
+    
+                        <a>
+                          <div class="row g-0">
+                            <div class="col-md-3">
+                              <img src="../../../../assets/temp-imgs/1.jpg" class="img-fluid" width="400" alt="...">
+                            </div>
+                            <div class="col-md-6">
+                              <div class="card-body float-end" style="direction: rtl;" >
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                    كاتيجوري
+                                  </small>
+                                </p>
+                                <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">
+                                    titletitletitletitletitletitletitletitletitletitletitle
+                                </h5>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                    date
+                                  </small>
+                                </p>
+                                <p class="card-text">
+                                    subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle
+                                </p>
+                                
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                    </div>
+                    <hr>
+                </div>
+
+               
+            </div>
+            
+            
+        </div>
+  </div>
+
+</div>
+<app-footer></app-footer>

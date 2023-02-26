@@ -75,11 +75,21 @@
         <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">
           أخبار لحظة بلحظة </div>
        
-        <div *ngFor="let item of last_news">
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;cursor: pointer;" routerLink="/News/{{item.slug}}">
-            {{item.title |maxLenght:55}}
-          </h3>
-        </div>
+          <marquee class="news-scroll marquee" behavior="scroll" direction="up"
+          Scrollamount=3 onbounce="4" 
+          onmouseover="this.stop();" onmouseout="this.start();">
+          <div *ngFor="let item of last_news" style="margin-bottom: 50px;">
+            <a href="" routerLink="/News/{{item.slug}}" >
+              <p>
+                {{item.title}}
+              </p>
+              <!-- <small class="text-muted">date </small> -->
+            </a>
+  
+           
+          </div>
+         
+        </marquee>
         
        
 
