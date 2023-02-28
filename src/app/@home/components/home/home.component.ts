@@ -1,4 +1,5 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbCarousel, NgbCarouselConfig, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { HttpService } from 'src/app/@core/services/http/http.service';
 @Component({
@@ -44,7 +45,9 @@ export class HomeComponent implements OnInit {
 
 	
 
-  constructor(private httpService:HttpService) {
+	constructor(private httpService: HttpService,
+	private router:Router,
+	) {
 
 	}
 
@@ -86,5 +89,7 @@ export class HomeComponent implements OnInit {
 	});
   
   }
-  
+	search(key: any) {
+	  this.router.navigateByUrl(`/search/${key}`)
+  }
 }

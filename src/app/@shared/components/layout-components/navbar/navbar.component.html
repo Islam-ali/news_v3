@@ -64,9 +64,11 @@
                     >
                       المزيد
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown"   (click)="shDrop()" >
-                      <li *ngFor="let cat of allCategories;let i=index">
-                        <p class="dropdown-item" href="#" *ngIf="i>=7" [routerLink]="['/category/',cat.slug]" (click)="setName(cat.name)">{{cat.name}}</p>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown"
+                     (click)="shDrop()" (mouseleave)="shDrop()">
+                      <li *ngFor="let cat of allCategories;let i=index" style="cursor: pointer;">
+                        <p class="dropdown-item" *ngIf="i>=7" [routerLink]="['/category/',cat.slug]"
+                           (click)="setName(cat.name)">{{cat.name}}</p>
                       </li>
                     </ul>
                   </li></ng-container>

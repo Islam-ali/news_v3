@@ -5,9 +5,11 @@
     <div class="row bg-light pt-4" >
         <div class="col-9 m-auto">
 
-            <input type="text" class="form-control" #inputSearch>
+            <input type="text" (keyup.enter)="searchType(searchObj.type,inputSearch.value)" class="form-control" #inputSearch [value]="key"
+            
+           >
             <div class="d-flex justify-content-between mt-2">
-              <a href="" class="btn btn-danger px-5" routerLink="/search/{{inputSearch.value}}">بحث</a>
+              <a class="btn btn-danger px-5" (click)="searchType(searchObj.type,inputSearch.value)">بحث</a>
               <a class="btn btn-dark" (click)="acc.toggle('toggle-1')"> بحث مفصل</a>
       
             </div>
@@ -16,10 +18,20 @@
                 <ngb-accordion #acc="ngbAccordion" >
                     <ngb-panel id="toggle-1">
                         <ng-template ngbPanelContent>
-                            <div class="d-flex">
+                          <p>البحث عن النتائج التى فيها:</p>
+                            <div class="row">
+                              <div class="col-2">
 
-                                <p>البحث عن النتائج التى فيها:</p>
-                                <input type="text" class="form-control w-50 me-4" >
+                                <p> النوع:</p>
+                              </div>
+                                   <div class="col-8">
+
+                                     <select #type (change)="searchType(type.value,inputSearch.value)" class="form-select" aria-label="Default select example">
+                                       <option selected disabled>افتح القائمة</option>
+                                       <option [value]="type.value" *ngFor="let type of types">{{type.type}}</option>
+                                       
+                                     </select>
+                                   </div>
                             </div>
 
                         </ng-template>
@@ -28,33 +40,34 @@
                 </ngb-accordion>
             </div>
             <div>
-                <p>عدد نتائج البحث (9970)</p>
-                <div>
-                    <div class="card bg-light shadow-0"  style="height: 165px; ">
+                <p>عدد نتائج البحث ({{items.length}})</p>
+                <div  *ngFor="let item of items">
+                    <div class="card bg-light shadow-0" 
+                   >
     
                         <a>
                           <div class="row g-0">
-                            <div class="col-md-3">
-                              <img src="../../../../assets/temp-imgs/1.jpg" class="img-fluid" width="400" alt="...">
+                            <div class="col-md-3 d-grid justify-content-center" *ngIf="item?.image || item?.images">
+                              <img [src]="item.image || item.images[0].image" class="img-fluid align-self-center" alt="...">
                             </div>
-                            <div class="col-md-6">
-                              <div class="card-body float-end" style="direction: rtl;" >
+                            <div class="col-md-9">
+                              <div class="card-body float-end" >
                                 <p class="card-text">
                                     <small class="text-muted">
-                                    كاتيجوري
+                                      {{item.category?.name}}
                                   </small>
                                 </p>
-                                <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">
-                                    titletitletitletitletitletitletitletitletitletitletitle
-                                </h5>
+                                <p class="card-text" style="color: rgb(255, 0, 0);font-size: large;">
+                                    {{item.title|maxLenght:90}}
+                                </p>
                                 <p class="card-text">
                                     <small class="text-muted">
-                                    date
+                                    {{item.created_at}}
                                   </small>
                                 </p>
-                                <p class="card-text">
-                                    subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle
-                                </p>
+                                <small class="card-text">
+                                    {{item.subtitle |maxLenght:100}}
+                                </small>
                                 
                               </div>
                             </div>
@@ -63,7 +76,11 @@
                     </div>
                     <hr>
                 </div>
-
+                <div class="mt-3" style="direction: ltr;">
+                  <app-pagination [page]="page" [pageSize]="pageSize" [total]="total" (onChange)="changePage($event)"></app-pagination>
+        
+        
+                </div>
                
             </div>
             
