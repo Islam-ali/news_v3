@@ -1,4 +1,4 @@
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from 'src/app/@core/services/search.service';
 
@@ -25,7 +25,8 @@ export class SearchComponent implements OnInit {
   ]
   constructor(
     private searchService: SearchService,
-    private route:ActivatedRoute
+    private route: ActivatedRoute,
+    private router:Router
     
   ) { 
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -63,4 +64,17 @@ export class SearchComponent implements OnInit {
     this.search(this.searchObj, 1);
     
   }
+  viewNew(item: any) {
+    let type = item.type[0].toUpperCase() + item.type.slice(1)
+    console.log(type);
+    if (type=='Trends') {
+    this.router.navigate([type, item.slug,item.id])
+      
+    } else {
+      
+      this.router.navigate([type, item.slug])
+    }
+
+  }
+
 }
