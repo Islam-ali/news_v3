@@ -29,7 +29,9 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-sharebuttons/themes/modern.scss",
+              "node_modules/ngx-sharebuttons/themes/material.scss"
             ],
             "scripts": [
               "node_modules/chart.js/dist/chart.js"
@@ -111,5 +113,4 @@
   "cli": {
     "analytics": "54e8130d-bbf2-4f50-b602-f86da6db63ec"
   }
-  
 }

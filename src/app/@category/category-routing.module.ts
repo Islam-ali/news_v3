@@ -4,13 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoryContentComponent } from './components/category-content/category-content.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { TrendsNewsComponent } from '../trands/trends-news/trends-news.component';
+import { AdsComponent } from '../ads/ads.component';
 
 const routes: Routes = [
   { path: 'category/:slug', component: CategoryContentComponent },
   { path: 'trends', component: TrendsNewsComponent },
 
   { path: 'trends/:slug/:id', component: TrandsComponent },
-  { path: 'articles', component:ArticlesComponent },
+  { path: 'articles', component: ArticlesComponent },
+  { path: 'ads', component: AdsComponent },
   {
     path: '',
     loadChildren: () =>

@@ -24,8 +24,9 @@ import { SharedModule } from './@shared/shared.module';
 import { CategoryModule } from './@category/category.module';
 import { TrandsModule } from './trands/trands.module';
 import { NgMarqueeModule } from 'ng-marquee';
+import { AdsComponent } from './ads/ads.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AdsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

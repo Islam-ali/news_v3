@@ -29,11 +29,14 @@
           <div [innerHTML]="selected?.content">
 
           </div>
+          <div>
+            <share-buttons theme="material-dark" [show]="11" [image]="selected?.image"></share-buttons>
+          </div>
           <div class="mt-5">
             <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
               الموضوعات المتعلقة
             </div>
-            <div class="card mb-3 mt-3" >
+            <div class="card mb-3 mt-3">
               <div class="row g-0" *ngFor="let item of news">
                 <div class="col-md-4">
                   <img [src]="item.image" class="img-fluid m-2" alt="..." />
@@ -41,17 +44,18 @@
                 <div class="col-md-8">
                   <div class="card-body">
                     <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
-                     {{item.title}}
+                      {{item.title}}
                     </h5>
                     <p class="card-text">
                       {{item.subtitle}}
                     </p>
                     <p class="card-text">
                       <small class="text-muted">
-                     {{item.created_at}}                      </small>
+                        {{item.created_at}} </small>
                     </p>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -60,12 +64,13 @@
       <div class="col-lg-3 col-md-3 col-sm-12 col-12">
         <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">Trending لحظة بلحظة </div>
         <div *ngFor="let item of Trends">
-          
+
           <p class="p-2 mt-2 " style="background-color: darkgray;">
             {{item?.title}}
           </p>
+
         </div>
-        
+
         <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">الاكثر قراءة</div>
 
         <div *ngFor="let item of MoreRead">
@@ -73,7 +78,9 @@
             {{item?.title}}
           </p>
         </div>
-        
+
       </div>
-</div></div></div>
-      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
