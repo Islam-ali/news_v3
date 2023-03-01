@@ -5,6 +5,7 @@ import { CategoryContentComponent } from './components/category-content/category
 import { ArticlesComponent } from './components/articles/articles.component';
 import { TrendsNewsComponent } from '../trands/trends-news/trends-news.component';
 import { AdsComponent } from '../ads/ads.component';
+import { SearchComponent } from '../@home/components/search/search.component';
 
 const routes: Routes = [
   { path: 'category/:slug', component: CategoryContentComponent },
@@ -13,6 +14,8 @@ const routes: Routes = [
   { path: 'trends/:slug/:id', component: TrandsComponent },
   { path: 'articles', component: ArticlesComponent },
   { path: 'ads', component: AdsComponent },
+  { path: 'articles', component:ArticlesComponent },
+  { path: 'search/:key', component:SearchComponent },
   {
     path: '',
     loadChildren: () =>
