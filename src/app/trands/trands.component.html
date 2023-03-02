@@ -7,13 +7,18 @@
   <div class="container" style="background-color: white">
     <div class="row" *ngIf="!loading">
       <div class="col-9">
-        <div class=" py-3 mt-2 text-center">
+        <div class="py-3 mt-2 text-center" *ngIf="trandcontent?.videos[0];else img">
+          <video controls>
+            <source [src]="trandcontent?.videos[0]?.video">
+          </video>
+        </div>
+        <ng-template class="py-3 mt-2 text-center w-100" #img>
           
-          <img [src]="trandcontent?.images[0]?.image" class="mainImg" height="400px" width="800px" />
+          <img [src]="trandcontent?.images[0]?.image" class="mainImg img-fluid w-100" />
           <div>
             <!-- <small class="my-3"> احمد فتوح</small> -->
           </div>
-        </div>
+        </ng-template>
         <div class="bg-light py-3">
           <div class="h2 mt-2 p-2" style="color: red">
             {{trandcontent?.title}}</div>
@@ -22,7 +27,7 @@
 
         <div class="bg-light p-3 mt-2">          
           
-          <div [innerHTML]="trandcontent?.content">
+          <div [innerHTML]="trandcontent?.content" style="overflow-wrap: break-word;">
 
           </div>
           <div class="mt-5">
@@ -46,11 +51,12 @@
             </div>
             <div class="card mb-3 mt-3" *ngFor="let trend of relateTrends">
               <div class="row g-0">
-                <div class="col-md-4">
-                  <img [src]="trend.images[0].image" style="height: 160px;" class="img-fluid m-2" alt="..." />
+                <div class="col-md-4 d-flex">
+                  <img [src]="trend?.images[0]?.image" class="img-fluid m-auto" alt="..." />
                 </div>
+
                 <div class="col-md-8">
-                  <div class="card-body">
+                  <div class="card-body" routerLink="/Trends/{{trend.slug}}/{{trend.id}}" style="cursor: pointer;">
                     <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
                       {{trend.title |maxLenght:120}}
                     </h5>
@@ -141,7 +147,7 @@
             <div class="card mb-3 mt-3" *ngFor="let trend of relateTrends">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img [src]="trend.images[0].image" style="height: 160px;" class="img-fluid m-2" alt="..." />
+                  <img [src]="trend.images[0].image" class="img-fluid m-2" alt="..." />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">

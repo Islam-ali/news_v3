@@ -21,16 +21,18 @@ export class TrandsComponent implements OnInit {
     private httpService: HttpService,
     public activatedRoute: ActivatedRoute
   ) {
-    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
-      this.slug = String(params.get('slug'));
-      this.relatedTrends(params.get('id'))
-    });
+    
   }
 
   ngOnInit(): void {
-    this.getTrandscontent();
-    this.getTrands();
-    this.lastNews();
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      this.slug = String(params.get('slug'));
+      this.relatedTrends(params.get('id'))
+      this.getTrandscontent();
+      this.getTrands();
+      this.lastNews();
+      scroll(0,0)
+    });
   }
   getTrandscontent() {
     this.httpService.getTrendsContent(this.slug).subscribe(
