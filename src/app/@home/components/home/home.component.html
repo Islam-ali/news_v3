@@ -92,7 +92,7 @@
 <!-- ///////////////////////////////////////////// -->
 <div class="container-fluid pt-4 pb-4" *ngFor="let item of allCategories">
   <div class="text-center dTitle">
-    <h1 class="titel  p-2" style="background-color: #4d4d4c; color:red;padding-right:30px;font-weight:bold;">
+    <h1 class="titel  p-2" style="background-color: #4d4d4c; color:red;padding-right:30px;font-weight:bold;cursor:pointer" [routerLink]="['/category/',item.slug]">
       {{item.name}}</h1>
   </div>
   <!-- Section: Images -->
@@ -100,7 +100,7 @@
     <div class="row">
 
       <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory" *ngFor="let newsItem of item.news">
-        <div class="card mb-3" style="max-width: 540px; height: 400px;">
+        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer" [routerLink]="['/News/',newsItem.slug]">
           <div class="row">
             <div class="col-md-12">
               <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg" />

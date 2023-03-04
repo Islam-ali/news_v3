@@ -5,26 +5,19 @@
   <div class="container" style="background-color: white">
     <div class="row">
       <div class="col-9">
-        <div class="bg-light py-3">
+        <div class="bg-light py-3" >
           <div class="h2 mt-2 p-2" style="color: red">
             {{selected?.title}}</div>
           <small class="my-3"> {{selected?.updated_at}}</small>
         </div>
-        <div class="bg-light py-3 mt-2 text-center">
-          <img src="{{selected?.image}}" class="img-thumbnail mainImg" height="200px" width="200px" />
-          <div>
-            <small class="my-3"> احمد فتوح</small>
-          </div>
+        <div class="bg-light py-3 mt-2 text-center" >
+          <img src="{{selected?.image}}" class="img-thumbnail mainImg" height="600px" width="800px" />
         </div>
         <div class="bg-light p-3 mt-2">
-          <div class="title">احمد طارق</div>
-          <div class="h4" style="height: 60px;color:red">تغيب ثنائى فريق الكرة الأول بنادى الزمالك أحمد فتوح وعبد الله
-            جمعة
+          
+          <div class="h4" style="height: 60px;color:red">
+            {{selected?.title}}
           </div>
-          <!-- <p class="h5">
-
-            {{news.content}}
-          </p> -->
           <div [innerHTML]="selected?.content">
 
           </div>
@@ -35,8 +28,8 @@
             <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
               الموضوعات المتعلقة
             </div>
-            <div class="card mb-3 mt-3">
-              <div class="row g-0" *ngFor="let item of news">
+            <div class="card mb-3 mt-3" >
+              <div class="row g-0" *ngFor="let item of news" [routerLink]="['/News/',item.slug]">
                 <div class="col-md-4">
                   <img [src]="item.image" class="img-fluid m-2" alt="..." />
                 </div>
@@ -60,22 +53,22 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+      <div class="col-lg-3 col-md-2 col-sm-12 col-12">
         <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">Trending لحظة بلحظة </div>
-        <div *ngFor="let item of Trends">
-
-          <p class="p-2 mt-2 " style="background-color: darkgray;">
-            {{item?.title}}
-          </p>
-
+        <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
+            >
+            {{item.title|slice:0:55}} ...
+          </h3>
         </div>
 
         <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">الاكثر قراءة</div>
 
         <div *ngFor="let item of MoreRead">
-          <p class="p-2 mt-2 " style="background-color: darkgray;">
-            {{item?.title}}
-          </p>
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
+            >
+            {{item.title|slice:0:55}} ...
+          </h3>
         </div>
 
       </div>
