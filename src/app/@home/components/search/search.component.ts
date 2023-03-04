@@ -23,6 +23,7 @@ export class SearchComponent implements OnInit {
     { type: 'مقالات', value: 'articles' },
   
   ]
+  public isCollapsed = true;
   constructor(
     private searchService: SearchService,
     private route: ActivatedRoute,

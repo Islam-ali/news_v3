@@ -10,14 +10,18 @@
            >
             <div class="d-flex justify-content-between mt-2">
               <a class="btn btn-danger px-md-5" (click)="searchType(searchObj.type,inputSearch.value)">بحث</a>
-              <a class="btn btn-dark" (click)="acc.toggle('toggle-1')"> بحث مفصل</a>
+              <a class="btn btn-dark" 
+              (click)="collapse.toggle()"
+                [attr.aria-expanded]="!isCollapsed"
+                aria-controls="collapseExample"
+              > بحث مفصل</a>
       
             </div>
             <div class="my-2">
 
-                <ngb-accordion #acc="ngbAccordion" >
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" >
                     <ngb-panel id="toggle-1">
-                        <ng-template ngbPanelContent>
+                        <div class="bg-white border rounded-5 p-4">
                           <p>البحث عن النتائج التى فيها:</p>
                             <div class="row">
                               <div class="col-12 col-md-2">
@@ -34,11 +38,12 @@
                                    </div>
                             </div>
 
-                        </ng-template>
+                        </div>
                     </ngb-panel>
                   
-                </ngb-accordion>
+                </div>
             </div>
+           <hr>
             <div>
                 <p>عدد نتائج البحث ({{total}})</p>
                 <div  *ngFor="let item of items">

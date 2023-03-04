@@ -25,6 +25,9 @@ import { CategoryModule } from './@category/category.module';
 import { TrandsModule } from './trands/trands.module';
 import { NgMarqueeModule } from 'ng-marquee';
 import { AdsComponent } from './ads/ads.component';
+import { LoaderInterceptor } from './@core/helpers/Loader.Interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderService } from './@core/services/loader.service';
 @NgModule({
   declarations: [AppComponent, AdsComponent],
   imports: [
@@ -36,9 +39,15 @@ import { AdsComponent } from './ads/ads.component';
     SharedModule,
     CategoryModule,
     TrandsModule,
+   
+    
     
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
