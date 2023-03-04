@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'category/:slug', component: CategoryContentComponent },
   { path: 'trends', component: TrendsNewsComponent },
 
-  { path: 'trends/:slug/:id', component: TrandsComponent },
+  { path: 'Trends/:slug/:id', component: TrandsComponent },
   { path: 'articles', component: ArticlesComponent },
   { path: 'ads', component: AdsComponent },
   { path: 'articles', component:ArticlesComponent },

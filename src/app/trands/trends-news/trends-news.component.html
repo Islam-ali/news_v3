@@ -4,7 +4,7 @@
   <div class="mx-5" style="background-color: white;">
     <div class="titel mt-2 p-2 " style="background-color: #4d4d4c; color:red;padding-right:20px;font-weight:bold;">
       تريندات</div>
-    <div class="row " *ngIf="!loading">
+    <div class="row ">
 
       <div class="col-lg-3 col-md-5 col-sm-12 col-12 mt-2">
         <div style="height: 400px;border: crimson 2px solid;" class="text-center p-2">
@@ -90,48 +90,7 @@
 
       </div>
     </div>
-    <div class="row placeholder-glow" *ngIf="loading">
-
-      <div class="col-lg-3 col-md-5 col-sm-12 col-12 mt-2">
-        <div style="height: 400px;border: crimson 2px solid;" class="text-center p-2 pt-3">
-          <h2 class="placeholder w-100"></h2>
-
-          <img src="" class="placeholder" width="255px" alt="" srcset="">
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-5 col-sm-12 col-12">
-
-        <div class="card-sl mt-3" *ngFor="let trend of [1,2,3,4,5]">
-          <div class="card-image">
-            <img height="250px" width="750px" [src]="" class="placeholder" />
-          </div>
-
-          <a class="card-action placeholder px-4"></a>
-          <div class="card-heading" style="cursor: pointer;">
-            <h2 class="placeholder w-100"></h2>
-
-          </div>
-          <div class="card-text ms-3" style="cursor: pointer;">
-            <h2 class="placeholder w-100"></h2>
-
-          </div>
-
-
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-2 col-sm-12 col-12" *ngIf="newsLoading">
-        <div class="titel mt-2 placeholder w-100 p-3 mb-4" style="background-color: crimson; color: aliceblue;">
-        </div>
-        <h2 class="placeholder w-100 p-3" *ngFor="let item of [1,2,3,4,5]"></h2>
-
-
-        <div class="titel mt-2 placeholder w-100 p-3 mb-4" style="background-color: crimson; color: aliceblue;">
-        </div>
-        <h2 class="placeholder w-100 p-3" *ngFor="let item of [1,2,3,4,5]"></h2>
-
-      </div>
-    </div>
+  
   </div>
 
 </div>
