@@ -1,6 +1,4 @@
-
-<div style="height: 250px;"></div>
-<div style="height: 50px; background-color: #3b3b3b;">
+<!-- <div style="height: 50px; background-color: #3b3b3b;">
   <div class="container">
     <div>
       <div class="row">
@@ -34,127 +32,59 @@
   </div>
 
 
-</div>
+</div> -->
 <div style="margin-top: 0px;" class="pw1">
   <div class="mx-5" style="background-color: white;">
-    <div class="titel mt-2 p-2 " style="background-color: #4d4d4c; color:red;padding-right:20px;font-weight:bold;">اخبار
-      عاجلة</div>
+    <div class="titel mt-2 p-2 text-center" 
+    style="background-color: #4d4d4c; color:red;padding-right:20px;font-weight:bold;">
+      مقالات</div>
 
     <div class="row ">
       <div class="col-lg-8 col-md-8 col-sm-12 col-12">
         <div class="card mb-3 mt-3">
-            <div class="row g-0"*ngFor="let item of news">
-                <div class="col-md-4">
-<p>{{item.user.name}}</p>      
-<img [src]="item.user.image" class="userImage">         </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">{{item.title}}
-                    </h5>
-                    <div [innerHTML]="item.subtitle">
-    
-                    </div>
-                    <p class="card-text"><small class="text-muted">
-{{item.created_at}}                      </small></p>
-                  </div>
+          <div class="row g-0" *ngFor="let item of news">
+            <div class="col-md-2 text-center mt-2">
+              <img [src]="item.user.image" class="userImage img-fluid">
+            </div>
+            <div class="col-md-10">
+              <div class="card-body">
+              <small class="text-muted">{{item.user.name}}</small>
+
+                <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">{{item.title}}
+                </h5>
+                <div [innerHTML]="item.subtitle">
+
                 </div>
+                <p class="card-text"><small class="text-muted">
+                    {{item.created_at}} </small></p>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3" style="direction: ltr;" *ngIf="total>10">
+          <app-pagination [page]="page" [pageSize]="pageSize" [total]="total" (onChange)="changePage($event)"></app-pagination>
+
+
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 col-12">
         <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">Trending لحظة بلحظة </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
+        <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;cursor: pointer;"
+            >
+            {{item.title|maxLenght:50}}
           </h3>
         </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
+
         <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">الاكثر قراءة</div>
 
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
+        <div *ngFor="let item of MoreRead">
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
+            >
+            {{item.title|maxLenght:55}} 
           </h3>
         </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            صراع إنجليزى بين تشيلسى ونيوكاسل على ضم نيمار
-          </h3>
-        </div>
-        <div>
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;">
-            الأرصاد: طقس اليوم بارد ليلا وشبورة على الطرق.. والصغرى بالقاهرة 11 درجة
-          </h3>
-        </div>
+
       </div>
     </div>
   </div>

@@ -37,8 +37,10 @@ export class HttpService {
   getTrendsContent(slug: any): Observable<IResponse> {
     return this.http.get<IResponse>(environment.baseUrl.concat(`trends/${slug}`));
   }
-  getArticles(): Observable<IResponse> {
-    return this.http.get<IResponse>(environment.baseUrl.concat(`articles`));
+  getArticles(page:number): Observable<IResponse> {
+    let params = new HttpParams().set("page", page);
+
+    return this.http.get<IResponse>(environment.baseUrl.concat(`articles`),{params});
   }
   getTopTaskbar(): Observable<IResponse> {
     return this.http.get<IResponse>(environment.baseUrl.concat(`taskbar-top`));
@@ -58,6 +60,10 @@ export class HttpService {
   }
   lastNews() {
     return this.http.get<IResponse>(environment.baseUrl.concat(`last-news-more-articles-read`));
+  }
+
+  articleDetails(slug:any) {
+    return this.http.get<IResponse>(environment.baseUrl.concat(`articles/${slug}`));
   }
   /////////////////////////////////////////////////////////////////////////////
   // getAllReports(): Observable<IResponse> {
