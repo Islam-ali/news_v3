@@ -47,7 +47,7 @@
               <img [src]="item.user.image" class="userImage img-fluid">
             </div>
             <div class="col-md-10">
-              <div class="card-body">
+              <div class="card-body" routerLink="/articles/{{item.slug}}" style="cursor: pointer;">
               <small class="text-muted">{{item.user.name}}</small>
 
                 <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">{{item.title}}
