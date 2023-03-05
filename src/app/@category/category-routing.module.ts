@@ -1,3 +1,4 @@
+import { ArticleDetailsComponent } from './components/article-details/article-details.component';
 import { TrandsComponent } from './../trands/trands.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,6 +14,7 @@ const routes: Routes = [
 
   { path: 'Trends/:slug/:id', component: TrandsComponent },
   { path: 'articles', component: ArticlesComponent },
+  { path: 'articles/:slug', component: ArticleDetailsComponent },
   { path: 'ads', component: AdsComponent },
   { path: 'articles', component:ArticlesComponent },
   { path: 'search/:key', component:SearchComponent },

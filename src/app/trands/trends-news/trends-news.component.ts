@@ -11,7 +11,7 @@ export class TrendsNewsComponent implements OnInit {
   trends!: any[];
   last_news!: any[];
   more_articles_Read!: any[];
-  loading = true;
+  loaded = false;
   newsLoading = true;
   page: number = 1;
   number_of_pages = 1;
@@ -32,7 +32,7 @@ export class TrendsNewsComponent implements OnInit {
         if (res.success) {
           console.log(res);
           
-          this.loading=false
+          this.loaded = true;
           this.trends = res.data.trends
           this.total = res.data.paginator.count;
           // this.pageSize = res.data.paginator.number_of_items_per_page;

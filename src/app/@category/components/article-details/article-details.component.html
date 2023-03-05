@@ -1,0 +1,85 @@
+<div style="height: 50px; background-color: #3b3b3b">
+  <div class="container"></div>
+</div>
+<div style="margin-top: 0px" class="pw1">
+  <div class="container" style="background-color: white">
+    <div class="row">
+      <div class="col-9">
+        <div class="bg-light py-3 d-flex justify-content-start">
+           
+                <img src="{{selected?.user.image}}" class="img-thumbnail article-img img-fluid" />
+             
+          <div class="">
+            <p class="text-muted mt-2">{{selected.user.name}}</p>
+
+            <p class="h5" style="color: red">
+              {{selected?.title}}
+            </p>
+            <small class=""> {{selected?.updated_at}}</small>
+        </div>
+        
+
+        </div>
+        <!-- <div class="bg-light py-3 mt-2 text-center" >
+            <img src="{{selected?.image}}" class="img-thumbnail mainImg" height="600px" width="800px" />
+          </div> -->
+        <div class="bg-light p-3 mt-2">
+
+          <div class="h4" style="height: 60px;color:red">
+            {{selected?.title}}
+          </div>
+          <div [innerHTML]="selected?.content">
+
+          </div>
+          <div>
+            <!-- <share-buttons theme="material-dark" [show]="11" [image]="selected?.image"></share-buttons> -->
+          </div>
+          <div class="mt-5">
+            <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
+              الموضوعات المتعلقة
+            </div>
+            <div class="card mb-3 mt-3">
+              <div class="row g-0" *ngFor="let item of news" [routerLink]="['/News/',item.slug]">
+                <div class="col-md-4">
+                  <img [src]="item.image" class="img-fluid m-2" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
+                      {{item.title}}
+                    </h5>
+                    <p class="card-text">
+                      {{item.subtitle}}
+                    </p>
+                    <p class="card-text">
+                      <small class="text-muted">
+                        {{item.created_at}} </small>
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-2 col-sm-12 col-12">
+        <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">Trending لحظة بلحظة </div>
+        <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;">
+            {{item.title|slice:0:55}} ...
+          </h3>
+        </div>
+
+        <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">الاكثر قراءة</div>
+
+        <div *ngFor="let item of MoreRead">
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;">
+            {{item.title|slice:0:55}} ...
+          </h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
