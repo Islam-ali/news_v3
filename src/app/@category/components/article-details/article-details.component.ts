@@ -38,7 +38,7 @@ export class ArticleDetailsComponent implements OnInit {
           
           this.selected = res.data;
           this.catId = this.selected.id;  
-          this.getRelated(this.catId);
+          this.getRelated(this.selected.user.id);
           this.loaded = true;
         }
         
