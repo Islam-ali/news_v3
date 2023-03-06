@@ -65,6 +65,9 @@ export class HttpService {
   articleDetails(slug:any) {
     return this.http.get<IResponse>(environment.baseUrl.concat(`articles/${slug}`));
   }
+  relatedArticles(id:any) {
+    return this.http.get<IResponse>(environment.baseUrl.concat(`/related-articles/${id}`));
+  }
   /////////////////////////////////////////////////////////////////////////////
   // getAllReports(): Observable<IResponse> {
   // this.token = localStorage.getItem('token');
