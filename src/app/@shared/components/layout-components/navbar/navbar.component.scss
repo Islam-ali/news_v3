@@ -1,14 +1,15 @@
 @import '../../../../../styles.scss';
 .auth
 {
-    position:fixed;
- width:100%!important;
+position:fixed;
+width:100%;
+ max-width:100%!important;
  z-index:1000;
  height:80px!important ;
  text-align: end;
  background-color: $p2Color;
  justify-content: left;
-
+ 
 a.b
 {color:$p1Color!important ;
     margin:15px 25px 0px 25px;
@@ -36,16 +37,15 @@ a.b
 //     }
 //     @media (max-width:576px){
 //     background-color: black;
-
+    
 //     }}
-
+    
     ul{
         margin-left:auto;
 
     }
     li{margin:0px 12px 0px 10px;
-      cursor: pointer;
-
+    
 }
 // .underLogo
 // {
@@ -64,7 +64,7 @@ a.b
 //   }
   .navbar
 {
- background-color:$p1Color;
+ background-color:$p1Color; 
  justify-content:space-between;
  position:fixed;
  width:100%!important;
@@ -79,14 +79,14 @@ header{
 {
    text-align: right ;
    background-color:$p1Color!important;
-
+   width:200px;
 .dropdown-item
 {color:whitesmoke!important;
     height:40px;
     border-radius:8px;
     padding-top:12px;
 }
-padding:15px 0px 15px 0px;
+padding:15px 0px 15px 0px; 
 
 }
 a{
@@ -106,24 +106,7 @@ a{
     margin-top:7px;
     justify-content: space-between;
     padding:0px 1.75rem 0px 1.75rem;
-
-    font-family: 'Courier New', Courier, monospace;
-  }
-  .liveBtnAds
-  {display: flex;
-    background-color: #f7eded;
-    align-items: center;
-    justify-content: center;
-    width: 8rem;
-    height: 2.2rem;
-    cursor: pointer;
-    color: whitesmoke;
-    border: none;
-    border-radius:5px;
-    margin-top:7px;
-    justify-content: space-between;
-    padding:0px 1.75rem 0px 1.75rem;
-
+    
     font-family: 'Courier New', Courier, monospace;
   }
   .dropdown-item:hover
@@ -177,3 +160,45 @@ a{
     color:$p1Color!important ;
     font-style: italic;
   }
+  .boss
+  {
+    height:172px;
+    width:60%;
+    padding-right:20px;
+  }
+  .advertise
+  {
+    height:172px;
+    width:40%;
+  }
+  .bossDiv
+  {
+    padding-top:150px;
+    height:322px;
+  }
+  @media(max-width:990px) {
+    .navbar {
+      text-align:right!important;
+    }
+    .advertise 
+    {
+display:none;
+    }
+ .bossImg
+    {
+width:30vw!important;
+height:30vw!important;
+    }
+    .bossName
+    {
+      font-size:4vw;
+    }
+    .bossAbout
+    {
+      font-size:2vw;
+    }
+    .boss
+  {
+    width:100%!important;;
+  }}
+  
