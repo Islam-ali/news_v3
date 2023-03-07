@@ -14,6 +14,7 @@ export class ArticleDetailsComponent implements OnInit {
   news: any;
   Trends: any;
   MoreRead: any;
+  loaded!: boolean;
 
   constructor(
     private httpService: HttpService,
@@ -26,7 +27,6 @@ export class ArticleDetailsComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.slug = String(params.get('slug'));
       this.articleDetail(this.slug);
-      this.getRelated();
       this.getTrands();
     });
   }
@@ -34,9 +34,14 @@ export class ArticleDetailsComponent implements OnInit {
     this.httpService.articleDetails(slug).subscribe({
       next: (res: any) => {
         console.log(res);
-        this.selected = res.data;
-
-        this.catId=this.selected.id;  
+        if (res.success) {
+          
+          this.selected = res.data;
+          this.catId = this.selected.id;  
+          this.getRelated(this.selected.user.id);
+          this.loaded = true;
+        }
+        
 
         
       }, error: (err: any) => {
@@ -45,9 +50,11 @@ export class ArticleDetailsComponent implements OnInit {
     }
   })
   }
-  getRelated() {
-    this.httpService.getRelatedNews(this.catId).subscribe(
+  getRelated(id:any) {
+    this.httpService.relatedArticles(id).subscribe(
       (data: any) => {
+        console.log(data);
+        
         this.news = data.data;
       },
       (err: any) => {}

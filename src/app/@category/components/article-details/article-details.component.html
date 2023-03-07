@@ -1,21 +1,28 @@
 <div style="height: 50px; background-color: #3b3b3b">
   <div class="container"></div>
 </div>
-<div style="margin-top: 0px" class="pw1">
+<div style="margin-top: 0px" class="pw1" *ngIf="loaded">
   <div class="container" style="background-color: white">
     <div class="row">
       <div class="col-9">
-        <div class="bg-light py-3 d-flex justify-content-start">
+        <div class="bg-light py-3 row">
            
-                <img src="{{selected?.user.image}}" class="img-thumbnail article-img img-fluid" />
+                <!-- <img src="{{selected?.user.image}}" class="img-thumbnail article-img img-fluid" /> -->
+                <div class="col-md-2 text-center mt-2">
+                  <img [src]="selected?.user?.image" class="userImage img-fluid article-img">
+                  <div class="text-muted">{{selected?.user?.name}}</div>
+    
+                </div>
              
-          <div class="">
-            <p class="text-muted mt-2">{{selected.user.name}}</p>
+          <div class="col-md-9 d-flex">
+            <div class="my-auto">
 
-            <p class="h5" style="color: red">
-              {{selected?.title}}
-            </p>
-            <small class=""> {{selected?.updated_at}}</small>
+              <p class="h5" style="color: red">
+                {{selected?.title}}
+              </p>
+              <small class=""> {{selected?.updated_at}}</small>
+            </div>
+            
         </div>
         
 
@@ -25,8 +32,8 @@
           </div> -->
         <div class="bg-light p-3 mt-2">
 
-          <div class="h4" style="height: 60px;color:red">
-            {{selected?.title}}
+          <div class="h4" style="color:red">
+            {{selected?.subtitle}}
           </div>
           <div [innerHTML]="selected?.content">
 
@@ -38,10 +45,12 @@
             <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
               الموضوعات المتعلقة
             </div>
-            <div class="card mb-3 mt-3">
-              <div class="row g-0" *ngFor="let item of news" [routerLink]="['/News/',item.slug]">
-                <div class="col-md-4">
-                  <img [src]="item.image" class="img-fluid m-2" alt="..." />
+            <div class="card mb-3 mt-3"  *ngFor="let item of news" [routerLink]="['/articles/',item.slug]">
+              <div class="row g-0">
+                <div class="col-md-2 me-3 text-center">
+                  <img [src]="item?.user?.image" class="img-fluid m-2 article-img w-75" alt="..." />
+                  <div class="text-muted">{{item?.user?.name}}</div>
+
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -49,7 +58,7 @@
                       {{item.title}}
                     </h5>
                     <p class="card-text">
-                      {{item.subtitle}}
+                      {{item.subtitle |maxLenght:130}}
                     </p>
                     <p class="card-text">
                       <small class="text-muted">
