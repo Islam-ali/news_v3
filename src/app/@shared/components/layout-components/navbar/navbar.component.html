@@ -81,6 +81,9 @@
                       المزيد
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown"   (click)="shDrop()" (mouseleave)="shDrop()">
+                      <li>
+                        <a class="dropdown-item" [routerLink]="['/articles']">مقالات</a>
+                      </li>
                       <li *ngFor="let cat of allCategories;let i=index">
                         <p class="dropdown-item" href="#" *ngIf="i>=7" [routerLink]="['/category/',cat.slug]" (click)="setName(cat.name)">{{cat.name}}</p>
                       </li>
