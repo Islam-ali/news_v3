@@ -28,10 +28,10 @@
 
           <a class="card-action">{{trend.created_at }}</a>
           <div class="card-heading me-4 mt-4" routerLink="/Trends/{{trend.slug}}/{{trend.id}}" style="cursor: pointer;">
-            {{trend.title | maxLenght:150}}
+            {{trend.title | maxLenght:140}}
           </div>
           <div class="card-text ms-3" routerLink="/Trends/{{trend.slug}}/{{trend.id}}" style="cursor: pointer;">
-            {{trend.subtitle |maxLenght:250}}
+            {{trend.subtitle |maxLenght:170}}
           </div>
 
 
@@ -50,7 +50,7 @@
           onmouseover="this.stop();" onmouseout="this.start();">
           <div *ngFor="let item of last_news" style="margin-bottom: 50px;">
             <a href="" routerLink="/News/{{item.slug}}">
-              <p>
+              <p style="color: black;">
                 {{item.title}}
               </p>
               <!-- <small class="text-muted">date </small> -->
