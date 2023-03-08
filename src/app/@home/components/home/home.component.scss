@@ -46,4 +46,30 @@
   {
     padding-right:70px;
   }
-  
+  .searchDiv
+  {
+    height:50px; 
+    background-color:#3b3b3b;
+  }
+  .search{
+padding-right:30px;
+  }
+  @media(max-width:990px) {
+    .searchDiv
+    {
+      height:100px; }
+      .taskBar
+  {
+    padding:0px;
+    width:100%!important;
+  }
+  .title
+  {
+    width:20vw;
+    font-size:3vw;
+  }
+  .search{
+    padding-right:0px;
+      }
+  }
+
