@@ -62,3 +62,69 @@ h1
     font-weight: 600;
     color: #947005;
 }
+
+    
+    .container
+    {
+        text-align: center!important;
+        .row
+        {
+            text-align: center!important;
+        }
+    }
+    .dTitle
+{
+   
+    margin-bottom:30px;
+    color: rgba(204, 7, 7);
+    font-weight: bolder!important;
+}
+.cardImg
+{
+    height: 190px;
+}
+.news {
+    width: 160px;
+  }
+  
+  .news-scroll a {
+    text-decoration: none;
+    margin-left:10px;
+    font-size: medium;
+  }
+  .itemCategory
+  {
+    padding-left:10px;
+    padding-right:10px;
+  }
+  .taskBar
+  {
+    padding-right:70px;
+  }
+  .searchDiv
+  {
+    height:50px; 
+    background-color:#3b3b3b;
+  }
+  .search{
+padding-right:30px;
+  }
+  @media(max-width:990px) {
+    .searchDiv
+    {
+      height:100px; }
+      .taskBar
+  {
+    padding:0px;
+    width:100%!important;
+  }
+  .title
+  {
+    width:20vw;
+    font-size:3vw;
+  }
+  .search{
+    padding-right:0px;
+      }
+  }
+

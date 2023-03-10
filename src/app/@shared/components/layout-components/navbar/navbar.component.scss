@@ -46,6 +46,7 @@ a.b
     }
     li{margin:0px 12px 0px 10px;
       cursor: pointer;
+      font-weight:600!important;
     
 }
 // .underLogo
@@ -72,6 +73,7 @@ a.b
  z-index:1000;
  margin-top:80px;
  text-align: center;
+ min-height:55px!important;
 }
 header{
   margin-top: 30px;
@@ -118,6 +120,7 @@ a{
     border-radius:8px;
     padding-top:12px;
     background-color: $p1Color;
+    font-weight: 600!important;
   }
   *
   {
@@ -222,5 +225,3 @@ height:30vw!important;
 {
   margin-top:10px!important;
 }
-
-  
