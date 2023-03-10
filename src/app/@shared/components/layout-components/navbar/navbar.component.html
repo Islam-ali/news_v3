@@ -15,9 +15,11 @@
 
 <!-- -----------------------------Part top of Nav------------------------------------- -->
 <header class="auth d-flex">
- 
+   <div class="dateDiv text-center mt-2 mx-3 ">
+    <div class="dateFont"> {{ rxTime | date: 'EEEE, MMMM d, y, h:mm:ss a ':'+1':'ar-EG' }} </div>
+  </div>
   <!-- <mat-icon class="text-danger">live_tv</mat-icon> -->
-  <div style="flex-grow: 1" class="mt-1">
+  <div style="flex-grow: 1" class="mt-2">
 
 
     <a routerLink="/ads">
@@ -27,9 +29,7 @@
     </a>
 
   </div> 
-  <div class="dateDiv text-center mt-2 mx-3 ">
-    <div class="dateFont"> {{ rxTime | date: 'EEEE, MMMM d, y, h:mm:ss a ':'+1':'ar-EG' }} </div>
-  </div>
+
   <div style="flex-grow: 8">
     <!-- <img src="../../../../../assets/icons/baner.png" height="80" width="300"> -->
 
