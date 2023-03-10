@@ -7,9 +7,10 @@ import { CategoryContentComponent } from './components/category-content/category
 import { TrandsModule } from '../trands/trands.module';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleDetailsComponent } from './components/article-details/article-details.component';
+import { TourismComponent } from './components/tourism/tourism.component';
 
 @NgModule({
-  declarations: [CategoryContentComponent, ArticlesComponent, ArticleDetailsComponent],
+  declarations: [CategoryContentComponent, ArticlesComponent, ArticleDetailsComponent, TourismComponent],
   imports: [CommonModule, CategoryRoutingModule, SharedModule, TrandsModule],
 })
 export class CategoryModule {}

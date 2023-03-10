@@ -37,8 +37,12 @@
 
   <button class="liveBtn">
     <a href="https://www.youtube.com/watch?v=GyqAZ8CRI5E" target="_blank">
-      <small>مباشر</small>&nbsp;&nbsp;&nbsp;<img src='../../../../../assets/icons/live1.png' width="25" height="25"
+      <small>مباشر</small>&nbsp;<i class="fab fa-youtube youtubeIcon fs-6"></i>&nbsp;&nbsp;<img src='../../../../../assets/icons/live1.png' width="25" height="25"
         class="mt-2"></a></button>
+        <button class="liveBtn">
+          <a href="https://www.youtube.com/watch?v=GyqAZ8CRI5E" target="_blank">
+            <small>  مباشر</small>&nbsp;<i class="fab fa-facebook-f  fs-6"></i>&nbsp;&nbsp;<img src='../../../../../assets/icons/live1.png' width="25" height="25"
+              class="mt-2"></a></button>
   <a class="text-light b" routerLink="/trends">تريند</a>
 </header>
 
@@ -87,6 +91,9 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown"   (click)="shDrop()" (mouseleave)="shDrop()">
                       <li (click)="basicNavbar.toggle()" aria-expanded="false">
                         <a class="dropdown-item" [routerLink]="['/articles']">مقالات</a>
+                      </li>
+                      <li (click)="basicNavbar.toggle()" aria-expanded="false">
+                        <a class="dropdown-item" [routerLink]="['/tourism']">سياحة وترفيه</a>
                       </li>
                       <li *ngFor="let cat of allCategories;let i=index" (click)="basicNavbar.toggle()" aria-expanded="false">
                         <p class="dropdown-item" href="#" *ngIf="i>=7" [routerLink]="['/category/',cat.slug]" (click)="setName(cat.name)">{{cat.name}}</p>

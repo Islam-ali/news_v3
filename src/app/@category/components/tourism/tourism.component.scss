@@ -1,0 +1,64 @@
+img{
+    width:450px!important;
+    height:300px!important;
+
+}
+h1
+{
+    color:#b38706;
+   font-size:32px;
+}
+
+
+
+//images start//
+.cont {
+  position: relative;
+
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.cont:hover .image {
+  opacity: 0.3;
+}
+
+.cont:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.subBtn
+{
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.subTxt
+{
+    font-weight: 600;
+    color: #947005;
+}

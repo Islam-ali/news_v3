@@ -45,6 +45,7 @@ a.b
 
     }
     li{margin:0px 12px 0px 10px;
+      cursor: pointer;
     
 }
 // .underLogo
@@ -105,9 +106,10 @@ a{
     border-radius:5px;
     margin-top:7px;
     justify-content: space-between;
-    padding:0px 1.75rem 0px 1.75rem;
-    
+    padding:0px .75rem 0px .25rem;
+    margin-right:5px;
     font-family: 'Courier New', Courier, monospace;
+   
   }
   .dropdown-item:hover
   {
@@ -215,6 +217,10 @@ height:30vw!important;
 {
   font-size:1.5vw!important;
   padding-top:5px!important;
+}
+.youtubeIcon
+{
+  margin-top:10px!important;
 }
 
   

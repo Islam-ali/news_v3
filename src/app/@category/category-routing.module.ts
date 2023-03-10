@@ -7,6 +7,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { TrendsNewsComponent } from '../trands/trends-news/trends-news.component';
 import { AdsComponent } from '../ads/ads.component';
 import { SearchComponent } from '../@home/components/search/search.component';
+import { TourismComponent } from './components/tourism/tourism.component';
 
 const routes: Routes = [
   { path: 'category/:slug', component: CategoryContentComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
 
   { path: 'Trends/:slug/:id', component: TrandsComponent },
   { path: 'articles', component: ArticlesComponent },
+  { path: 'tourism', component:TourismComponent },
   { path: 'articles/:slug', component: ArticleDetailsComponent },
   { path: 'ads', component: AdsComponent },
   { path: 'articles', component:ArticlesComponent },
