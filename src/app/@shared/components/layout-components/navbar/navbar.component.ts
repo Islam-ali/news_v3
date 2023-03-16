@@ -13,6 +13,8 @@ registerLocaleData(localeAr);
 export class NavbarComponent implements OnInit,OnDestroy {
 isShown:boolean=false;
 allCategories:any;
+youtubeLive:any;
+faceLive:any;
 showMore:boolean=false;
 taskBarItems:any[]=[];
 time = new Date();
@@ -24,6 +26,8 @@ constructor(private httpService:HttpService){ }
   ngOnInit(): void {
     this.getAllCategories();
     this.getTaskbar();
+    this.faceLive();
+    this.youtubeLive();
     this.intervalId = setInterval(() => {
       this.time = new Date();
     }, 1000);
@@ -62,6 +66,24 @@ getTaskbar() {
   
   this.httpService.getTopTaskbar().subscribe((data: any) => {
    this.taskBarItems=data.data;
+  }, (err: any) => {
+
+  });
+
+}
+getYoutubeLive() {
+  
+  this.httpService.getTopTaskbar().subscribe((data: any) => {
+   this.youtubeLive=data.data;
+  }, (err: any) => {
+
+  });
+
+}
+getFaceLive() {
+  
+  this.httpService.getTopTaskbar().subscribe((data: any) => {
+   this.faceLive=data.data;
   }, (err: any) => {
 
   });
