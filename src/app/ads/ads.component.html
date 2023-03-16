@@ -65,27 +65,27 @@
                 <div id="form-message-success" class="mb-4">
                   Your message was sent, thank you!
                 </div>
-                <form method="POST" id="contactForm" name="contactForm">
+                <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" name="name" id="name" placeholder="الاسم">
+                        <input type="text" class="form-control" name="fullname" id="fullname" placeholder="الاسم" formControlName="fullname">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="الايميل">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="الايميل" formControlName="email">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="الموضوع">
+                        <input type="number" class="form-control" name="phone" id="phone" placeholder="رقم الهاتف" formControlName="phone">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
                         <textarea name="message" class="form-control" id="message" cols="30" rows="7"
-                          placeholder="الرسالة"></textarea>
+                          placeholder="الرسالة" formControlName="message"></textarea>
                       </div>
                     </div>
                     <div class="col-md-12">

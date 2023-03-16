@@ -28,6 +28,7 @@ import { AdsComponent } from './ads/ads.component';
 import { LoaderInterceptor } from './@core/helpers/Loader.Interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderService } from './@core/services/loader.service';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [AppComponent, AdsComponent],
   imports: [
@@ -39,7 +40,7 @@ import { LoaderService } from './@core/services/loader.service';
     SharedModule,
     CategoryModule,
     TrandsModule,
-   
+    ReactiveFormsModule
     
     
   ],
