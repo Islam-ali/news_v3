@@ -17,6 +17,15 @@ export class CategoryContentComponent implements OnInit {
   arr1:any[]=[];
   arr2:any[]=[];
   catName:any;
+
+  page: number = 1;
+  number_of_pages = 1;
+  number_of_items_per_page = 10;
+  total = 10;
+  pageSize = 10;
+
+
+
   constructor(
     private httpService: HttpService,
     public activatedRoute: ActivatedRoute
@@ -55,6 +64,10 @@ export class CategoryContentComponent implements OnInit {
         {
           this.arr2.push(this.news[i])
        }}       
+      
+      
+       this.total = data.data.paginator.count;
+      
       },
       (err: any) => {}
     );

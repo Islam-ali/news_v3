@@ -29,6 +29,7 @@ import { LoaderInterceptor } from './@core/helpers/Loader.Interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderService } from './@core/services/loader.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [AppComponent, AdsComponent],
   imports: [
@@ -41,7 +42,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     CategoryModule,
     TrandsModule,
     ReactiveFormsModule
-    
+    ,ToastrModule.forRoot({
+      timeOut: 15000, // 15 seconds
+      closeButton: true,
+      progressBar: true,
+    }),
     
   ],
   providers: [

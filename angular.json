@@ -31,7 +31,9 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "node_modules/ngx-sharebuttons/themes/modern.scss",
-              "node_modules/ngx-sharebuttons/themes/material.scss"
+              "node_modules/ngx-sharebuttons/themes/material.scss",
+             
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "node_modules/chart.js/dist/chart.js"

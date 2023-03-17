@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { ApiService } from '../@core/services/api.service';
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-ads',
   templateUrl: './ads.component.html',
@@ -16,7 +17,7 @@ export class AdsComponent implements OnInit {
     phone: new FormControl(),
     message: new FormControl(),
   })
-  constructor( private api:ApiService) {
+  constructor( private api:ApiService,private toastrService: ToastrService) {
 
 
    }
@@ -28,6 +29,7 @@ export class AdsComponent implements OnInit {
     this.api.postJson(environment.baseUrl.concat('contact-us'), this.contactForm.value).subscribe((data)=>{
       this.contactForm.reset();
       console.log(data.massage)
+      this.toastrService.success('Message Success!', 'تم ارسال الرسالة بنجاح');
     }) ;
   }
 }

@@ -33,8 +33,10 @@
     "mdb-angular-ui-kit": "^3.0.0",
     "ng-marquee": "^9.5.0",
     "ngx-sharebuttons": "^11.0.0",
+    "bootstrap-icons": "^1.9.1",
+    "ngx-toastr": "^15.0.0",
     "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
+    "tslib": "^2.4.0",
     "y18n": "^5.0.8",
     "zone.js": "~0.11.4"
   },
