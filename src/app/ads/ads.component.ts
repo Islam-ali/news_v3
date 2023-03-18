@@ -29,7 +29,7 @@ export class AdsComponent implements OnInit {
     this.api.postJson(environment.baseUrl.concat('contact-us'), this.contactForm.value).subscribe((data)=>{
       this.contactForm.reset();
       console.log(data.massage)
-      this.toastrService.success('Message Success!', 'تم ارسال الرسالة بنجاح');
+      this.toastrService.success('تم ارسال الرسالة بنجاح');
     }) ;
   }
 }
