@@ -113,6 +113,24 @@ a{
     font-family: 'Courier New', Courier, monospace;
    
   }
+  .trendBtn
+  {display: flex;
+    background-color:$p1Color;
+    align-items: center;
+    justify-content: center;
+    height: 2.2rem;
+    cursor: pointer;
+    color: whitesmoke;
+    border: none;
+    border-radius:5px;
+    margin-top:7px;
+    justify-content: space-between;
+    padding:0px .75rem 0px .25rem;
+    margin-right:5px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left:10px;
+   
+  }
   .dropdown-item:hover
   {
     color:$p1Color!important;

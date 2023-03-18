@@ -50,7 +50,10 @@
           <a href="https://www.facebook.com/alsehkmohmedatefabohatab/videos/465993902108138" target="_blank">
             <small>  مباشر</small>&nbsp;<i class="fab fa-facebook-f  fs-6"></i>&nbsp;&nbsp;<img src='../../../../../assets/icons/live1.png' width="25" height="25"
               class="mt-2"></a></button>
-  <a class="text-light b" routerLink="/trends">تريند</a>
+              <button class="trendBtn">
+                <a routerLink="/trends">
+                  <small>  تريندات لحظة</small>&nbsp;&nbsp;<i class="fa-solid fa-money-bill-trend-up"></i></a></button>
+  <!-- <a class="text-light b" routerLink="/trends">تريند</a> -->
 </header>
 
 <!-- -----------------------------/Part top of Nav------------------------------------- -->
@@ -82,9 +85,9 @@
                   </li>
                   <ng-container *ngFor="let cat of allCategories;let i=index">
                   <li class="nav-item"  >
-                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['/category/',cat.slug]" *ngIf="i<7" (click)="setName(cat.name)">{{cat.name}}</a>
+                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['/category/',cat.slug]" *ngIf="i<5" (click)="setName(cat.name)">{{cat.name}}</a>
                   </li>
-                  <li class="nav-item me-3 me-lg-0 dropdown" *ngIf="showMore && i==7" >
+                  <li class="nav-item me-3 me-lg-0 dropdown" *ngIf="showMore && i==5" >
                     <a
                       class="nav-link dropdown-toggle"
                       id="navbarDropdown"
