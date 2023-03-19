@@ -85,9 +85,9 @@
                   </li>
                   <ng-container *ngFor="let cat of allCategories;let i=index">
                   <li class="nav-item"  >
-                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['/category/',cat.slug]" *ngIf="i<5" (click)="setName(cat.name)">{{cat.name}}</a>
+                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['/category/',cat.slug]" *ngIf="i<7" (click)="setName(cat.name)">{{cat.name}}</a>
                   </li>
-                  <li class="nav-item me-3 me-lg-0 dropdown" *ngIf="showMore && i==5" >
+                  <li class="nav-item me-3 me-lg-0 dropdown" *ngIf="showMore && i==7" >
                     <a
                       class="nav-link dropdown-toggle"
                       id="navbarDropdown"
@@ -110,6 +110,20 @@
                       </li>
                     </ul>
                   </li></ng-container>
+                  <li class="nav-item" >
+                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['']" ><a href="https://www.facebook.com/index.php" class="text-reset">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                      <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                      <i class="fab fa-instagram"></i>
+                    </a></a>
+                  </li>
                  </ul>
               </div>
               <!-- Collapsible wrapper -->
