@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="card" *ngIf="!userAnswer">
+      <div class="card-header">
+
+        <h1 class="fw-bold py-2">إستطلاع لحظة بلحظة</h1>
+      </div>
+      <div class="card-body text-end">
+        <div class="car-title bg-light p-3 mb-4 mt-1" >
+             {{pollQuestion?.question}}
+            </div>
+        <div class="form-check my-4" *ngFor="let answer of answers">
+            <label class="form-check-label" [for]="answer.id">
+             {{answer.answer}}
+            </label>
+            <input (change)="getAnswer(answer.id)" class="form-check-input" type="radio" name="flexRadioDefault" [id]="answer.id">
+          </div>
+          
+      </div>
+      <div class="card-footer mt-5">
+        <a class="btn btn-light float-start" (click)="submitPoll()">تصويت</a>
+      </div>
+    </div>
+    <div class="card" *ngIf="userAnswer">
+        <div class="card-header">
+  
+          <h1 class="fw-bold py-2">استطلاع لحظة بلحظة</h1>
+        </div>
+        <div class="card-body text-end">
+          <div class="car-title bg-light p-3 mb-4 mt-1" >
+               {{pollQuestion?.question}}
+              </div>
+          <div class="form-check my-4" *ngFor="let answer of answers">
+              <label class="form-check-label" [for]="answer.id">
+               {{answer.answer}}
+              </label>
+              <small *ngIf="answerCount">
+                ({{answer.count}}%)
+              </small>
+              <p><ngb-progressbar [showValue]="false" type="danger" [value]="answer.count"></ngb-progressbar></p>
+            </div>
+            
+        </div>
+        <div class="card-footer mt-5">
+        </div>
+      </div>
+  </div>
+</div>

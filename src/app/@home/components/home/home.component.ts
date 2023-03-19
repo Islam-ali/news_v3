@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   pauseOnFocus = true;
   next = 0;
   perv = 1;
+  loaded = false;
 
   @ViewChild('carousel', { static: true }) carousel!: NgbCarousel;
 
@@ -66,6 +67,7 @@ export class HomeComponent implements OnInit {
     this.httpService.getCategories().subscribe(
       (data: any) => {
         this.allCategories = data.data;
+        this.loaded = true;
       },
       (err: any) => {}
     );
