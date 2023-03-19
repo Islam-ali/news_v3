@@ -9,7 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { HomeSliderComponent } from './components/other/home-slider/home-slider.component';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { PaginationComponent } from './components/other/pagination/pagination.component';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaxLenghtPipe } from './pipes/max-lenght.pipe';
 import { LoaderComponent } from './components/other/loader/loader.component';
 import { PollComponent } from './components/other/poll/poll.component';
@@ -29,7 +29,8 @@ import { PollComponent } from './components/other/poll/poll.component';
     CommonModule,
     SharedRoutingModule,
     MatIconModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    NgbProgressbarModule
   ],
   exports:[
     FooterComponent,
