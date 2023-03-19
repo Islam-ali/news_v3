@@ -1,350 +1,355 @@
-<div class="searchDiv">
-   <div class="container-fluid">
-    <div class="row">
-      <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12 taskBar">
+<div *ngIf="loaded">
 
-        <div class="d-flex justify-content-between align-items-center breaking-news bg-white mt-2 rounded-5">
-          <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger
-               py-2 text-white px-1 news rounded-5">
-            <span class="d-flex align-items-center title">&nbsp;لحظة بلحظة</span>
-          </div>
-          <marquee class="news-scroll" behavior="scroll" direction="up" style="height: 38px;" Scrollamount=1
-            onmouseover="this.stop();" onmouseout="this.start();">
-            <div *ngFor="let item of taskBarItems" class="mb-2 me-2">
-              <a href="#" [routerLink]="['/News/',item?.slug]">
-                {{item?.title}}
-              </a>
-
+  <div class="searchDiv">
+     <div class="container-fluid">
+      <div class="row">
+        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12 taskBar">
+  
+          <div class="d-flex justify-content-between align-items-center breaking-news bg-white mt-2 rounded-5">
+            <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger
+                 py-2 text-white px-1 news rounded-5">
+              <span class="d-flex align-items-center title">&nbsp;لحظة بلحظة</span>
             </div>
-          </marquee>
+            <marquee class="news-scroll" behavior="scroll" direction="up" style="height: 38px;" Scrollamount=1
+              onmouseover="this.stop();" onmouseout="this.start();">
+              <div *ngFor="let item of taskBarItems" class="mb-2 me-2">
+                <a href="#" [routerLink]="['/News/',item?.slug]">
+                  {{item?.title}}
+                </a>
+  
+              </div>
+            </marquee>
+          </div>
+  
         </div>
-
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12 col-12 ">
-
-        <div class="mt-3 d-flex justify-content-lg-start w-100 float-start search">
-          <input type="text" (keyup.enter)="search(inputSearch.value)" class="form-control" #inputSearch>
-          <a class="btn btn-sm btn-danger px-2 me-2" (click)="search(inputSearch.value)">بحث</a>
+        <div class="col-lg-4 col-md-6 col-sm-12 col-12 ">
+  
+          <div class="mt-3 d-flex justify-content-lg-start w-100 float-start search">
+            <input type="text" (keyup.enter)="search(inputSearch.value)" class="form-control" #inputSearch>
+            <a class="btn btn-sm btn-danger px-2 me-2" (click)="search(inputSearch.value)">بحث</a>
+          </div>
         </div>
       </div>
+    </div> 
+  
+  </div>
+  <!-- ////////////////////////////////////////// -->
+  <div class="row  mt-3">
+    <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center">
+      <div>
+        <button class="btn btn-danger p-1 px-3 my-2" (click)="Next()">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div>
+        <img [src]="images[next]" width="280px" height="150" class="mb-3" alt="">
+      </div>
+      <div>
+        <img [src]="images[perv]" width="280px" height="150" alt="">
+      </div>
+      <div>
+        <button class="btn btn-danger p-1  px-3 my-2" (click)="Prov()">
+          <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        </button>
+      </div>
+  
+  
+  
+    </div> -->
+    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center mb-4">
+      <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280">
+    </div>
+    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12" *ngIf="images">
+  
+      <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+        (slide)="onSlide($event)">
+        <ng-template ngbSlide *ngFor="let img of images; index as i">
+          <div class="carousel-caption">
+            <h2 style="background-color: whitesmoke; color:red;border-radius:5px;padding-top:5px;padding-bottom:5px;">
+              {{titles[i]}}</h2>
+          </div>
+          <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+            <div class="picsum-img-wrapper">
+              <img [src]="img" alt="My image {{i + 1}} description" height="420px" />
+            </div>
+          </a>
+        </ng-template>
+      </ngb-carousel>
+  </div>
+      <!-- <hr />
+  
+    <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="pauseOnHover" [(ngModel)]="pauseOnHover" />
+    <label class="form-check-label" for="pauseOnHover">Pause on hover</label>
+    </div>
+    <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="pauseOnFocus" [(ngModel)]="pauseOnFocus" />
+    <label class="form-check-label" for="pauseOnFocus">Pause on focus</label>
+    </div>
+    <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="unpauseOnArrow" [(ngModel)]="unpauseOnArrow" />
+    <label class="form-check-label" for="unpauseOnArrow">Unpause when clicking on arrows</label>
+    </div>
+    <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="pauseOnIndicator" [(ngModel)]="pauseOnIndicator" />
+    <label class="form-check-label" for="pauseOnIndicator">Pause when clicking on navigation indicator</label>
+    </div>
+    <button type="button" (click)="togglePaused()" class="btn btn-outline-dark btn-sm">
+    {{paused ? 'Cycle' : 'Pause' }}
+    </button> 
+    </div>-->
+    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center mb-4">
+      <!-- <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280"> -->
+      <app-poll></app-poll>
+  
     </div>
   </div> 
-
+  <!-- ///////////////////////////////////////////// -->
+  <div class="container-fluid pt-4 pb-4" *ngFor="let item of allCategories;let i=index">
+    <div class="text-center dTitle">
+      <h1 class="titel  p-2"
+        style="background-color: #4d4d4c; color:red;padding-right:30px;font-weight:bold;cursor:pointer"
+        [routerLink]="['/category/',item.slug]">
+        {{item.name}}</h1>
+    </div>
+    <!-- Section: Images -->
+    <section class="" *ngIf="i===0">
+      <div class="row">
+  
+        <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory" *ngFor="let newsItem of item.news">
+          <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
+            [routerLink]="['/News/',newsItem.slug]" >
+            <div class="row">
+              <div class="col-md-12">
+                <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg" />
+              </div>
+              <div class="col-md-12">
+                <div class="card-body ">
+                  <div class="">
+  
+                    <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
+                    <hr class="my-1 ">
+                    <p class="card-text">
+                      {{newsItem.subtitle|slice:0:85}} ... </p>
+                    <p class="card-text">
+                      <small class="text-muted">{{newsItem.updated_at}} </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+  
+  
+      </div>
+    </section>
+    <!-- Section: Images -->
+     <!-- Section: Images -->
+     <section class="" *ngIf="i===1">
+      <div class="row">
+  
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0 itemCategory" *ngFor="let newsItem of item.news">
+          <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
+            [routerLink]="['/News/',newsItem.slug]" >
+            <div class="row">
+              <div class="col-md-12">
+                <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg" />
+              </div>
+              <div class="col-md-12">
+                <div class="card-body ">
+                  <div class="">
+  
+                    <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
+                    <hr class="my-1 ">
+                    <p class="card-text">
+                      {{newsItem.subtitle|slice:0:85}} ... </p>
+                    <p class="card-text">
+                      <small class="text-muted">{{newsItem.updated_at}} </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+  
+  
+      </div>
+    </section>
+    <!-- Section: Images -->
+    <!-- Section: Images -->
+    <section class="" *ngIf="i===2">
+      <div class="row">
+  
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
+          <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
+            [routerLink]="['/News/',newsItem.slug]" >
+            <div class="row">
+              <div class="col-md-12">
+                <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
+              </div>
+              <div class="col-md-12">
+                <div class="card-body ">
+                  <div class="">
+  
+                    <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
+                    <hr class="my-1 ">
+                    <p class="card-text">
+                      {{newsItem.subtitle|slice:0:85}} ... </p>
+                    <p class="card-text">
+                      <small class="text-muted">{{newsItem.updated_at}} </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+  
+  
+      </div>
+    </section>
+    <!-- Section: Images -->
+     <!-- Section: Images -->
+     <section class="" *ngIf="i===3">
+      <div class="row">
+  
+        <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
+          <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
+            [routerLink]="['/News/',newsItem.slug]" >
+            <div class="row">
+              <div class="col-md-12">
+                <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
+              </div>
+              <div class="col-md-12">
+                <div class="card-body ">
+                  <div class="">
+  
+                    <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
+                    <hr class="my-1 ">
+                    <p class="card-text">
+                      {{newsItem.subtitle|slice:0:85}} ... </p>
+                    <p class="card-text">
+                      <small class="text-muted">{{newsItem.updated_at}} </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+  
+  
+      </div>
+    </section>
+    <!-- Section: Images -->
+     <!-- Section: Images -->
+     <section class="" *ngIf="i===4">
+      <div class="row">
+  
+        <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
+          <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
+            [routerLink]="['/News/',newsItem.slug]" >
+            <div class="row">
+              <div class="col-md-12">
+                <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
+              </div>
+              <div class="col-md-12">
+                <div class="card-body ">
+                  <div class="">
+  
+                    <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
+                    <hr class="my-1 ">
+                    <p class="card-text">
+                      {{newsItem.subtitle|slice:0:85}} ... </p>
+                    <p class="card-text">
+                      <small class="text-muted">{{newsItem.updated_at}} </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+  
+  
+      </div>
+    </section>
+    <!-- Section: Images -->
+     <!-- Section: Images -->
+     <section class="" *ngIf="i===5">
+      <div class="row">
+  
+        <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
+          <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
+            [routerLink]="['/News/',newsItem.slug]" >
+            <div class="row">
+              <div class="col-md-12">
+                <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
+              </div>
+              <div class="col-md-12">
+                <div class="card-body ">
+                  <div class="">
+  
+                    <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
+                    <hr class="my-1 ">
+                    <p class="card-text">
+                      {{newsItem.subtitle|slice:0:85}} ... </p>
+                    <p class="card-text">
+                      <small class="text-muted">{{newsItem.updated_at}} </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+  
+  
+      </div>
+    </section>
+    <!-- Section: Images -->
+    <!-- Section: Images -->
+    <section class="" *ngIf="i===6">
+      <div class="row">
+  
+        <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
+          <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
+            [routerLink]="['/News/',newsItem.slug]" >
+            <div class="row">
+              <div class="col-md-12">
+                <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
+              </div>
+              <div class="col-md-12">
+                <div class="card-body ">
+                  <div class="">
+  
+                    <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
+                    <hr class="my-1 ">
+                    <p class="card-text">
+                      {{newsItem.subtitle|slice:0:85}} ... </p>
+                    <p class="card-text">
+                      <small class="text-muted">{{newsItem.updated_at}} </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+  
+  
+      </div>
+    </section>
+    <!-- Section: Images -->
+  </div>
+  <!-- ///////////////////////////////////////// -->
 </div>
-<!-- ////////////////////////////////////////// -->
-<div class="row  mt-3">
-  <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center">
-    <div>
-      <button class="btn btn-danger p-1 px-3 my-2" (click)="Next()">
-        <i class="fa fa-arrow-up" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div>
-      <img [src]="images[next]" width="280px" height="150" class="mb-3" alt="">
-    </div>
-    <div>
-      <img [src]="images[perv]" width="280px" height="150" alt="">
-    </div>
-    <div>
-      <button class="btn btn-danger p-1  px-3 my-2" (click)="Prov()">
-        <i class="fa fa-arrow-down" aria-hidden="true"></i>
-      </button>
-    </div>
-
-
-
-  </div> -->
-  <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center mb-4">
-    <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280">
-  </div>
-  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12" *ngIf="images">
-
-    <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
-      (slide)="onSlide($event)">
-      <ng-template ngbSlide *ngFor="let img of images; index as i">
-        <div class="carousel-caption">
-          <h2 style="background-color: whitesmoke; color:red;border-radius:5px;padding-top:5px;padding-bottom:5px;">
-            {{titles[i]}}</h2>
-        </div>
-        <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
-          <div class="picsum-img-wrapper">
-            <img [src]="img" alt="My image {{i + 1}} description" height="420px" />
-          </div>
-        </a>
-      </ng-template>
-    </ngb-carousel>
-</div>
-    <!-- <hr />
-
-  <div class="form-check">
-  <input type="checkbox" class="form-check-input" id="pauseOnHover" [(ngModel)]="pauseOnHover" />
-  <label class="form-check-label" for="pauseOnHover">Pause on hover</label>
-  </div>
-  <div class="form-check">
-  <input type="checkbox" class="form-check-input" id="pauseOnFocus" [(ngModel)]="pauseOnFocus" />
-  <label class="form-check-label" for="pauseOnFocus">Pause on focus</label>
-  </div>
-  <div class="form-check">
-  <input type="checkbox" class="form-check-input" id="unpauseOnArrow" [(ngModel)]="unpauseOnArrow" />
-  <label class="form-check-label" for="unpauseOnArrow">Unpause when clicking on arrows</label>
-  </div>
-  <div class="form-check">
-  <input type="checkbox" class="form-check-input" id="pauseOnIndicator" [(ngModel)]="pauseOnIndicator" />
-  <label class="form-check-label" for="pauseOnIndicator">Pause when clicking on navigation indicator</label>
-  </div>
-  <button type="button" (click)="togglePaused()" class="btn btn-outline-dark btn-sm">
-  {{paused ? 'Cycle' : 'Pause' }}
-  </button> 
-  </div>-->
-  <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center mb-4">
-    <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280">
-  </div>
-</div> 
-<!-- ///////////////////////////////////////////// -->
-<div class="container-fluid pt-4 pb-4" *ngFor="let item of allCategories;let i=index">
-  <div class="text-center dTitle">
-    <h1 class="titel  p-2"
-      style="background-color: #4d4d4c; color:red;padding-right:30px;font-weight:bold;cursor:pointer"
-      [routerLink]="['/category/',item.slug]">
-      {{item.name}}</h1>
-  </div>
-  <!-- Section: Images -->
-  <section class="" *ngIf="i===0">
-    <div class="row">
-
-      <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory" *ngFor="let newsItem of item.news">
-        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-          [routerLink]="['/News/',newsItem.slug]" >
-          <div class="row">
-            <div class="col-md-12">
-              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg" />
-            </div>
-            <div class="col-md-12">
-              <div class="card-body ">
-                <div class="">
-
-                  <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
-                  <hr class="my-1 ">
-                  <p class="card-text">
-                    {{newsItem.subtitle|slice:0:85}} ... </p>
-                  <p class="card-text">
-                    <small class="text-muted">{{newsItem.updated_at}} </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-
-
-    </div>
-  </section>
-  <!-- Section: Images -->
-   <!-- Section: Images -->
-   <section class="" *ngIf="i===1">
-    <div class="row">
-
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0 itemCategory" *ngFor="let newsItem of item.news">
-        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-          [routerLink]="['/News/',newsItem.slug]" >
-          <div class="row">
-            <div class="col-md-12">
-              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg" />
-            </div>
-            <div class="col-md-12">
-              <div class="card-body ">
-                <div class="">
-
-                  <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
-                  <hr class="my-1 ">
-                  <p class="card-text">
-                    {{newsItem.subtitle|slice:0:85}} ... </p>
-                  <p class="card-text">
-                    <small class="text-muted">{{newsItem.updated_at}} </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-
-
-    </div>
-  </section>
-  <!-- Section: Images -->
-  <!-- Section: Images -->
-  <section class="" *ngIf="i===2">
-    <div class="row">
-
-      <div class="col-lg-4 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
-        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-          [routerLink]="['/News/',newsItem.slug]" >
-          <div class="row">
-            <div class="col-md-12">
-              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
-            </div>
-            <div class="col-md-12">
-              <div class="card-body ">
-                <div class="">
-
-                  <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
-                  <hr class="my-1 ">
-                  <p class="card-text">
-                    {{newsItem.subtitle|slice:0:85}} ... </p>
-                  <p class="card-text">
-                    <small class="text-muted">{{newsItem.updated_at}} </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-
-
-    </div>
-  </section>
-  <!-- Section: Images -->
-   <!-- Section: Images -->
-   <section class="" *ngIf="i===3">
-    <div class="row">
-
-      <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
-        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-          [routerLink]="['/News/',newsItem.slug]" >
-          <div class="row">
-            <div class="col-md-12">
-              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
-            </div>
-            <div class="col-md-12">
-              <div class="card-body ">
-                <div class="">
-
-                  <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
-                  <hr class="my-1 ">
-                  <p class="card-text">
-                    {{newsItem.subtitle|slice:0:85}} ... </p>
-                  <p class="card-text">
-                    <small class="text-muted">{{newsItem.updated_at}} </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-
-
-    </div>
-  </section>
-  <!-- Section: Images -->
-   <!-- Section: Images -->
-   <section class="" *ngIf="i===4">
-    <div class="row">
-
-      <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
-        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-          [routerLink]="['/News/',newsItem.slug]" >
-          <div class="row">
-            <div class="col-md-12">
-              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
-            </div>
-            <div class="col-md-12">
-              <div class="card-body ">
-                <div class="">
-
-                  <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
-                  <hr class="my-1 ">
-                  <p class="card-text">
-                    {{newsItem.subtitle|slice:0:85}} ... </p>
-                  <p class="card-text">
-                    <small class="text-muted">{{newsItem.updated_at}} </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-
-
-    </div>
-  </section>
-  <!-- Section: Images -->
-   <!-- Section: Images -->
-   <section class="" *ngIf="i===5">
-    <div class="row">
-
-      <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
-        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-          [routerLink]="['/News/',newsItem.slug]" >
-          <div class="row">
-            <div class="col-md-12">
-              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
-            </div>
-            <div class="col-md-12">
-              <div class="card-body ">
-                <div class="">
-
-                  <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
-                  <hr class="my-1 ">
-                  <p class="card-text">
-                    {{newsItem.subtitle|slice:0:85}} ... </p>
-                  <p class="card-text">
-                    <small class="text-muted">{{newsItem.updated_at}} </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-
-
-    </div>
-  </section>
-  <!-- Section: Images -->
-  <!-- Section: Images -->
-  <section class="" *ngIf="i===6">
-    <div class="row">
-
-      <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
-        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-          [routerLink]="['/News/',newsItem.slug]" >
-          <div class="row">
-            <div class="col-md-12">
-              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
-            </div>
-            <div class="col-md-12">
-              <div class="card-body ">
-                <div class="">
-
-                  <h3 class="card-title text-danger " style="font-weight: bold;">{{newsItem.title}} </h3>
-                  <hr class="my-1 ">
-                  <p class="card-text">
-                    {{newsItem.subtitle|slice:0:85}} ... </p>
-                  <p class="card-text">
-                    <small class="text-muted">{{newsItem.updated_at}} </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-
-
-    </div>
-  </section>
-  <!-- Section: Images -->
-</div>
-<!-- ///////////////////////////////////////// -->

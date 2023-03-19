@@ -12,6 +12,7 @@ import { PaginationComponent } from './components/other/pagination/pagination.co
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaxLenghtPipe } from './pipes/max-lenght.pipe';
 import { LoaderComponent } from './components/other/loader/loader.component';
+import { PollComponent } from './components/other/poll/poll.component';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -19,7 +20,8 @@ import { LoaderComponent } from './components/other/loader/loader.component';
     HomeSliderComponent,
     PaginationComponent,
     MaxLenghtPipe,
-    LoaderComponent
+    LoaderComponent,
+    PollComponent
   ],
   imports: [
     MdbCollapseModule,
@@ -35,7 +37,8 @@ import { LoaderComponent } from './components/other/loader/loader.component';
     HomeSliderComponent,
     PaginationComponent,
     MaxLenghtPipe,
-    LoaderComponent
+    LoaderComponent,
+    PollComponent
 
   ]
 })
