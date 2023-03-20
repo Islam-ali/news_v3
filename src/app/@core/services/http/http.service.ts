@@ -23,9 +23,11 @@ export class HttpService {
       return this.http.get<IResponse>(environment.baseUrl.concat(`sliders`));
 
   }
-  getCategoryContent(slug: any): Observable<IResponse> {
+  getCategoryContent(slug: any,page:number): Observable<IResponse> {
+    let params = new HttpParams().set("page", page);
+
     return this.http.get<IResponse>(
-      environment.baseUrl.concat(`news-by-category/${slug}`)
+      environment.baseUrl.concat(`news-by-category/${slug}`),{params}
     );
   }
   getNewsContent(slug: any): Observable<IResponse> {
