@@ -39,15 +39,15 @@
         <div class="row">
           <div class="col-lg-6 col-md-5 col-sm-12 col-12">
 
-            <div class="card mb-3 mt-3" *ngFor="let item of arr1 ; let i=index" style="height: 170px; ">
+            <div class="card mb-3 mt-3" *ngFor="let item of arr1 ; let i=index" style="height: 300px; ">
 
               <a [routerLink]="['/News/',item.slug]">
 
                 <div class="row g-0">
-                  <div class="col-md-4">
+                  <div class="col-12">
                     <img src="{{item.image}}" class="img-fluid m-2" alt="...">
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-12">
                     <div class="card-body">
                       <h5 class="card-title" style="color:#000000;font-size: large;">
                         {{item.title}}
@@ -66,15 +66,15 @@
           </div>
           <div class="col-lg-6 col-md-5 col-sm-12 col-12">
 
-            <div class="card mb-3 mt-3" *ngFor="let item of arr2 ; let i=index" style="height: 170px; ">
+            <div class="card mb-3 mt-3" *ngFor="let item of arr2 ; let i=index" style="height: 300px; ">
 
               <a [routerLink]="['/News/',item.slug]">
 
                 <div class="row g-0">
-                  <div class="col-md-4">
+                  <div class="col-12">
                     <img src="{{item.image}}" class="img-fluid m-2" alt="...">
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-12">
                     <div class="card-body">
                       <h5 class="card-title" style="color:#000000;font-size: large;">
                         {{item.title}}

@@ -3,7 +3,7 @@
     <div class="card" *ngIf="!userAnswer">
       <div class="card-header">
 
-        <h1 class="fw-bold py-2">إستطلاع لحظة بلحظة</h1>
+        <h1 class="fw-bold py-2 inv">إستطلاع لحظة بلحظة</h1>
       </div>
       <div class="card-body text-end">
         <div class="car-title bg-light p-3 mb-4 mt-1" >
@@ -18,7 +18,7 @@
           
       </div>
       <div class="card-footer mt-5">
-        <a class="btn btn-light float-start" (click)="submitPoll()">تصويت</a>
+        <a class="btn text-light float-start invBtn" (click)="submitPoll()">تصويت</a>
       </div>
     </div>
     <div class="card" *ngIf="userAnswer">

@@ -7,9 +7,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   <router-outlet></router-outlet>
   <app-footer></app-footer>
   <app-loader></app-loader>
-  <div style="position: fixed; bottom:0px; left:  10px;">
+  <div style="position: fixed; bottom:0px; left:8px;">
 
-  <iframe [src]='safeURL' frameborder="0" width="250" height="280" ></iframe>
+  <iframe [src]='safeURL' frameborder="0" width="200" height="140" ></iframe>
 </div>
   `,
 })
