@@ -95,9 +95,28 @@ padding:15px 0px 15px 0px;
 a{
     color:whitesmoke!important;
 }
-  .liveBtn
+
+  .liveBtn1
   {display: flex;
     background-color: #e91818;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    height: 2.2rem;
+    cursor: pointer;
+    color: whitesmoke;
+    border: none;
+    border-radius:5px;
+    margin-top:7px;
+    justify-content: space-between;
+    padding:0px .75rem 0px .25rem;
+    margin-right:5px;
+    font-family: 'Courier New', Courier, monospace;
+   
+  }
+  .liveBtn2
+  {display: flex;
+    background-color: rgb(9, 102, 216);
     align-items: center;
     justify-content: center;
     width: 8rem;
@@ -227,6 +246,28 @@ height:30vw!important;
   .dateDiv
   {
     display: none;
+  }
+  .liveBtn2,.liveBtn1
+  {
+    width:7rem;
+    font-size: smaller!important;
+    padding-left:0px;
+    padding-right:2px;
+    i{
+      font-size: smaller!important;
+    }
+   // height:3rem
+  }
+  .trendBtn
+  {
+    width:7rem;
+    font-size: smaller!important;
+    padding-left:0px;
+    padding-right:0px;
+    i{
+      font-size: smaller!important;
+    }
+   // height:3rem
   }
 }
   .dateDiv
