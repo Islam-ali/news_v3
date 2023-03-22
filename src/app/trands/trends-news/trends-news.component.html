@@ -5,7 +5,7 @@
     <div class="row ">
 
       <div class="col-lg-3 col-md-5 col-sm-12 col-12 mt-2">
-        <div style="height: 400px;border: crimson 2px solid;" class="text-center p-2">
+        <div style="height: 400px;border: #800040 2px solid;" class="text-center p-2">
           <h2>تواصل معنا لوضع اعلانك هنا</h2>
 
           <img src="../../../assets/temp-imgs/images.jpeg" width="255px" alt="" srcset="">
@@ -44,7 +44,7 @@
 
       </div>
       <div class="col-lg-3 col-md-2 col-sm-12 col-12" *ngIf="!newsLoading">
-        <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">
+        <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">
           أخبار لحظة بلحظة </div>
         <marquee class="news-scroll marquee" behavior="scroll" direction="up" Scrollamount=3 onbounce="4"
           onmouseover="this.stop();" onmouseout="this.start();">
@@ -78,7 +78,7 @@
                 <div>Hello, World.... Find Me @ <a href="https://www.linkedin.com/in/shivarajnaidu/" target="__blank"> https://www.linkedin.com/in/shivarajnaidu/ (Yuvaraj)</a></div>
             </ng-marquee> -->
 
-        <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">الاكثر قراءة</div>
+        <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">الاكثر قراءة</div>
 
         <div *ngFor="let article of more_articles_Read">
           <h3 class="p-2 mt-2 " style="background-color: darkgray;cursor: pointer;" routerLink="/News/{{article.slug}}">
