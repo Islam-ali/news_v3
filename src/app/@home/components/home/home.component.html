@@ -113,12 +113,12 @@
      {{item.name}}</h1>
  </div>
  <!-- Section: Images -->
- <section class="" *ngIf="i===0 || i===7 ||i===14">
+ <section class="" *ngIf="i % 7===0">
    <div class="row">
 
-     <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory" *ngFor="let newsItem of item.news">
+     <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory" *ngFor="let newsItem of item.news;let j=index">
        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-         [routerLink]="['/News/',newsItem.slug]" >
+          [routerLink]="['/News/',newsItem.slug]" *ngIf="j < 4" >
          <div class="row">
            <div class="col-md-12">
              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg" />
@@ -150,9 +150,9 @@
   <section class="" *ngIf="i===1 || i===8 ||i===15">
    <div class="row">
 
-     <div class="col-lg-6 col-md-12 mb-4 mb-md-0 itemCategory" *ngFor="let newsItem of item.news">
+     <div class="col-lg-6 col-md-12 mb-4 mb-md-0 itemCategory" *ngFor="let newsItem of item.news;let j=index">
        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-         [routerLink]="['/News/',newsItem.slug]" >
+          [routerLink]="['/News/',newsItem.slug]" *ngIf="j < 4" >
          <div class="row">
            <div class="col-md-12">
              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg" />
@@ -184,9 +184,9 @@
  <section class="" *ngIf="i===2|| i===9 ||i===16">
    <div class="row">
 
-     <div class="col-lg-4 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
+     <div class="col-lg-4 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news;let j=index">
        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-         [routerLink]="['/News/',newsItem.slug]" >
+          [routerLink]="['/News/',newsItem.slug]" *ngIf="j < 6" >
          <div class="row">
            <div class="col-md-12">
              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
@@ -218,9 +218,9 @@
   <section class="" *ngIf="i===3|| i===10 ||i===17">
    <div class="row">
 
-     <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
+     <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news;let j=index">
        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-         [routerLink]="['/News/',newsItem.slug]" >
+          [routerLink]="['/News/',newsItem.slug]" *ngIf="j < 4" >
          <div class="row">
            <div class="col-md-12">
              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
@@ -252,9 +252,9 @@
   <section class="" *ngIf="i===4|| i===11 ||i===18">
    <div class="row">
 
-     <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
+     <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news;let j=index">
        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-         [routerLink]="['/News/',newsItem.slug]" >
+          [routerLink]="['/News/',newsItem.slug]" *ngIf="j < 4" >
          <div class="row">
            <div class="col-md-12">
              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
@@ -286,9 +286,9 @@
   <section class="" *ngIf="i===5|| i===12 ||i===19">
    <div class="row">
 
-     <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
+     <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news;let j=index">
        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-         [routerLink]="['/News/',newsItem.slug]" >
+          [routerLink]="['/News/',newsItem.slug]" *ngIf="j < 4" >
          <div class="row">
            <div class="col-md-12">
              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
@@ -320,9 +320,9 @@
  <section class="" *ngIf="i===6|| i===13 ||i===20">
    <div class="row">
 
-     <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news">
+     <div class="col-lg-3 col-md-12 mb-4 mb-md-0 itemCategory text-center" *ngFor="let newsItem of item.news;let j=index">
        <div class="card mb-3" style="max-width: 540px; height: 400px;cursor:pointer"
-         [routerLink]="['/News/',newsItem.slug]" >
+          [routerLink]="['/News/',newsItem.slug]" *ngIf="j < 4" >
          <div class="row">
            <div class="col-md-12">
              <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid rounded-start cardImg2" />
