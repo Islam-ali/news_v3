@@ -73,7 +73,7 @@
         </div>
       </div>
       <div class="col-lg-3 col-md-2 col-sm-12 col-12">
-        <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">Trending لحظة بلحظة </div>
+        <div class="titel mt-2 p-2" style="background-color: crimson; color: aliceblue;">تريندات لحظة بلحظة </div>
         <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
           <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;">
             {{item.title|slice:0:55}} ...
