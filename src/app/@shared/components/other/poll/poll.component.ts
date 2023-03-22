@@ -70,6 +70,7 @@ export class PollComponent implements OnInit {
           console.log(res);
           if (res.success) {
             answer.count = res.data.count;
+            answer.percentage = res.data.percentage;
 
             console.log(this.answers);
             this.answerCount = true;

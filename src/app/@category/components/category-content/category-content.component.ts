@@ -21,7 +21,7 @@ export class CategoryContentComponent implements OnInit {
   page: number = 1;
   number_of_pages = 1;
   number_of_items_per_page = 10;
-  total = 10;
+  total !:number;
   pageSize = 10;
 
 
@@ -30,29 +30,31 @@ export class CategoryContentComponent implements OnInit {
     private httpService: HttpService,
     public activatedRoute: ActivatedRoute
   ) {
+   
+  }
+
+  ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.slug = String(params.get('slug'));
       this.getNews();
       this.getTrands();
-      this.getTaskbar()
+      this.getTaskbar();
     });
-  }
-
-  ngOnInit(): void {
-    this.getNews();
-    this.getTrands();
-    this.getTaskbar()
 
   }
   getNews() {
     this.catName=localStorage.getItem('categoryNmame');
-    this.httpService.getCategoryContent(this.slug).subscribe(
+    this.httpService.getCategoryContent(this.slug,this.page).subscribe(
       (data: any) => {
         this.news=[];
     this.arr1=[];
     this.arr2=[];
     this.count=0;
         this.news = data.data.news;
+        this.total = data.data.paginator.number_of_pages * this.pageSize;
+        console.log(this.total);
+        
+
         this.count=Math.round(this.news.length/2);        
        for(let i=0 ;i < this.news.length ; i++)
        {
@@ -66,7 +68,7 @@ export class CategoryContentComponent implements OnInit {
        }}       
       
       
-       this.total = data.data.paginator.count;
+      //  this.total = data.data.paginator.count;
       
       },
       (err: any) => {}
@@ -89,5 +91,10 @@ export class CategoryContentComponent implements OnInit {
       },
       (err: any) => {}
     );
+  }
+  changePage(event:any) {
+    this.page = event;
+    this.getNews();
+    
   }
 }
