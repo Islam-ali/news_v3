@@ -48,6 +48,8 @@ import { ToastrModule } from 'ngx-toastr';
       progressBar: true,
     }),
     
+    
+    
   ],
   providers: [
     LoaderService,
