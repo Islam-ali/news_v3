@@ -90,4 +90,9 @@ export class CategoryContentComponent implements OnInit {
       (err: any) => {}
     );
   }
+  // changePage(event:any) {
+  //   this.page = event;
+  //   this.getNews(this.page)
+    
+  // }
 }
