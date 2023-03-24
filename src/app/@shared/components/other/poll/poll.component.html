@@ -38,10 +38,10 @@
                 
               </small>
               <p class="d-flex justify-content-between">
-                <small class="text-muted">عدد الاصوات - {{answer.count}} </small>
-                <small class="fw-bold">{{answer.percentage}}%</small>
+                <small class="text-muted">عدد الاصوات - {{answer.count ||0}} </small>
+                <small class="fw-bold">{{answer.percentage?.toFixed(2) ||0}}%</small>
               </p>
-              <p><ngb-progressbar [showValue]="false" type="danger" [value]="answer.percentage.toFixed(2)"></ngb-progressbar></p>
+              <p><ngb-progressbar [showValue]="false" type="danger" [value]="answer.percentage?.toFixed(2)||0"></ngb-progressbar></p>
             </div>
             
         </div>

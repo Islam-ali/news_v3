@@ -66,8 +66,11 @@ export class HomeComponent implements OnInit {
   getAllCategories() {
     this.httpService.getCategories().subscribe(
       (data: any) => {
-        this.allCategories = data.data;
-        this.loaded = true;
+        if (data.success) {
+          
+          this.allCategories = data.data;
+          this.loaded = true;
+        }
       },
       (err: any) => {}
     );
