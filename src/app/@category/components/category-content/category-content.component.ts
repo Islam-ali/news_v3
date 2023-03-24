@@ -40,7 +40,7 @@ export class CategoryContentComponent implements OnInit {
       this.getTrands();
       this.getTaskbar();
     });
-
+window.scrollTo(0,0);
   }
   getNews() {
     this.catName=localStorage.getItem('categoryNmame');
