@@ -160,10 +160,10 @@
         <div class="card mb-5 w-100"  [routerLink]="['/News/',item.news[0].slug]" >
           <div class="card-body mb-3">
             <img [src]="item.news[0].image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" />
-            <h2 class="card-title px-2" style="font-weight: bold;">{{item.news[0].title}} </h2>
+            <h2 class="card-title px-2" style="font-weight: bold;">{{item.news[0].title|maxLenght:70}} </h2>
               
                    <p class="card-text px-2">
-                     {{item.news[0].subtitle|maxLenght:290}} </p>
+                     {{item.news[0].subtitle|maxLenght:210}} </p>
                    <p class="card-text px-2">
                      <small class="text-muted py-3 my-5">{{item.news[0].updated_at}} </small>
                    </p>
@@ -179,7 +179,7 @@
                    <div class="card mb-5 w-100"  [routerLink]="['/News/',newsItem.slug]">
                      <div class="card-body">
                        <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" />
-                       <h4 class="card-title p-2" style="font-weight: bold;">{{newsItem.title}} </h4>
+                       <h4 class="card-title p-2" style="font-weight: bold;">{{newsItem.title|maxLenght:60}} </h4>
                          
                      </div>
                    </div>
