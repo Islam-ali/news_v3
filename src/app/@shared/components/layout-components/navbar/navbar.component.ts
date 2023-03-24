@@ -26,8 +26,8 @@ constructor(private httpService:HttpService){ }
   ngOnInit(): void {
     this.getAllCategories();
     this.getTaskbar();
-    this.faceLive();
-    this.youtubeLive();
+    this.getFaceLive();
+    this.getYoutubeLive();
     this.intervalId = setInterval(() => {
       this.time = new Date();
     }, 1000);
@@ -72,9 +72,9 @@ getTaskbar() {
 
 }
 getYoutubeLive() {
-  
-  this.httpService.getTopTaskbar().subscribe((data: any) => {
-   this.youtubeLive=data.data;
+    
+  this.httpService.getYoutubeLive().subscribe((data: any) => {
+   this.youtubeLive=data.data.link;
   }, (err: any) => {
 
   });
@@ -82,8 +82,9 @@ getYoutubeLive() {
 }
 getFaceLive() {
   
-  this.httpService.getTopTaskbar().subscribe((data: any) => {
-   this.faceLive=data.data;
+  this.httpService.getFaceLive().subscribe((data: any) => {
+   this.faceLive=data.data.link;
+  
   }, (err: any) => {
 
   });

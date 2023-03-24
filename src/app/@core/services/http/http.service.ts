@@ -70,6 +70,16 @@ export class HttpService {
   relatedArticles(id:any) {
     return this.http.get<IResponse>(environment.baseUrl.concat(`/related-articles/${id}`));
   }
+  getFaceLive(): Observable<IResponse> {
+
+    return this.http.get<IResponse>(environment.baseUrl.concat(`/facebook-broadcast`));
+
+}
+getYoutubeLive(): Observable<IResponse> {
+
+  return this.http.get<IResponse>(environment.baseUrl.concat(`/youtube-broadcast`));
+
+}
   /////////////////////////////////////////////////////////////////////////////
   // getAllReports(): Observable<IResponse> {
   // this.token = localStorage.getItem('token');
