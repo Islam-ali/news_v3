@@ -74,7 +74,7 @@
       <div class="col-lg-4 col-md-4 col-sm-12 col-12">
         <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">تريندات لحظة بلحظة </div>
         <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: black;cursor: pointer;"
             >
             {{item.title|maxLenght:50}}
           </h3>
@@ -83,7 +83,7 @@
         <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">الاكثر قراءة</div>
 
         <div *ngFor="let item of MoreRead">
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
+          <h3 class="p-2 mt-2 " style="background-color: darkgray;color:black;cursor: pointer;"
             >
             {{item.title|maxLenght:55}} 
           </h3>
