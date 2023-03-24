@@ -102,9 +102,9 @@
                       <li >
                         <a class="dropdown-item" [routerLink]="['/articles']">مقالات</a>
                       </li>
-                      <li >
+                      <!-- <li >
                         <a class="dropdown-item" [routerLink]="['/tourism']">سياحة وترفيه</a>
-                      </li>
+                      </li> -->
                       <li *ngFor="let cat of allCategories;let i=index" >
                         <p class="dropdown-item" href="#" *ngIf="i>=7" [routerLink]="['/category/',cat.slug]" (click)="setName(cat.name)">{{cat.name}}</p>
                       </li>
