@@ -24,6 +24,7 @@ export class SearchComponent implements OnInit {
   
   ]
   public isCollapsed = true;
+  loaded=false;
   constructor(
     private searchService: SearchService,
     private route: ActivatedRoute,
@@ -40,13 +41,17 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  search(key:any,page:any) {
+  search(key: any, page: any) {
+    this.loaded = false;
     this.searchService.search(key,page).subscribe({
     next:(res)=>{
         console.log(res);
-        this.items = res.data.items;
-       
-        this.total = res.data.paginator.count;
+        if (res.success) {
+          this.loaded = true;
+          this.items = res.data.items;
+         
+          this.total = res.data.paginator.count;
+        }
       
     },error(err) {
       console.log(err);

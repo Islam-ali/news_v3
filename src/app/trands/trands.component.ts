@@ -17,6 +17,7 @@ export class TrandsComponent implements OnInit {
   more_articles_Read!: any[];
   loading = true;
   relatedLoading = true;
+  loaded=false;
   constructor(
     private httpService: HttpService,
     public activatedRoute: ActivatedRoute
@@ -48,6 +49,9 @@ export class TrandsComponent implements OnInit {
     this.httpService.getTrandsSide().subscribe(
       (data: any) => {
         this.Trands = data.data.trends;
+        if (data.success) {
+          this.loaded = true;
+        }
       },
       (err: any) => {}
     );

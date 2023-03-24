@@ -23,6 +23,7 @@ export class CategoryContentComponent implements OnInit {
   number_of_items_per_page = 10;
   total !:number;
   pageSize = 10;
+  loaded=false;
 
 
 
@@ -53,6 +54,9 @@ export class CategoryContentComponent implements OnInit {
         this.news = data.data.news;
         this.total = data.data.paginator.number_of_pages * this.pageSize;
         console.log(this.total);
+        if (data.success) {
+          this.loaded = true;
+        }
         
 
         this.count=Math.round(this.news.length/2);        

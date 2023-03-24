@@ -33,62 +33,67 @@
 
 
 </div> -->
-<div style="margin-top: 0px;" class="pw1">
-  <div class="mx-5" style="background-color: white;">
-    <div class="titel mt-2 p-2 text-center" 
-    style="background-color: #4d4d4c; color:red;padding-right:20px;font-weight:bold;">
-      مقالات</div>
-
-    <div class="row ">
-      <div class="col-lg-8 col-md-8 col-sm-12 col-12">
-        <div class="card mb-3 mt-3" *ngFor="let item of news">
-          <div class="row g-0" >
-            <div class="col-md-2 text-center mt-2">
-              <div class="m-auto">
-
-                <img [src]="item.user.image" class="userImage img-fluid">
-                <div class="text-muted">{{item.user.name}}</div>
-              </div>
-
-            </div>
-            <div class="col-md-10">
-              <div class="card-body mt-3" routerLink="/articles/{{item.slug}}" style="cursor: pointer;">
-
-                <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">{{item.title}}
-                </h5>
-                <div [innerHTML]="item.subtitle|maxLenght:180">
-
+<div *ngIf="!loaded">
+  <app-loader></app-loader>
+</div>
+<div *ngIf="loaded">
+  <div style="margin-top: 0px;" class="pw1">
+    <div class="mx-5" style="background-color: white;">
+      <div class="titel mt-2 p-2 text-center" 
+      style="background-color: #4d4d4c; color:red;padding-right:20px;font-weight:bold;">
+        مقالات</div>
+  
+      <div class="row ">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+          <div class="card mb-3 mt-3" *ngFor="let item of news">
+            <div class="row g-0" >
+              <div class="col-md-2 text-center mt-2">
+                <div class="m-auto">
+  
+                  <img [src]="item.user.image" class="userImage img-fluid">
+                  <div class="text-muted">{{item.user.name}}</div>
                 </div>
-                <p class="card-text"><small class="text-muted">
-                    {{item.created_at}} </small></p>
+  
+              </div>
+              <div class="col-md-10">
+                <div class="card-body mt-3" routerLink="/articles/{{item.slug}}" style="cursor: pointer;">
+  
+                  <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">{{item.title}}
+                  </h5>
+                  <div [innerHTML]="item.subtitle|maxLenght:180">
+  
+                  </div>
+                  <p class="card-text"><small class="text-muted">
+                      {{item.created_at}} </small></p>
+                </div>
               </div>
             </div>
           </div>
+          <div class="mt-3" style="direction: ltr;" *ngIf="total>10">
+            <app-pagination [page]="page" [pageSize]="pageSize" [total]="total" (onChange)="changePage($event)"></app-pagination>
+  
+  
+          </div>
         </div>
-        <div class="mt-3" style="direction: ltr;" *ngIf="total>10">
-          <app-pagination [page]="page" [pageSize]="pageSize" [total]="total" (onChange)="changePage($event)"></app-pagination>
-
-
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+          <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">تريندات لحظة بلحظة </div>
+          <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
+            <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
+              >
+              {{item.title|maxLenght:50}}
+            </h3>
+          </div>
+  
+          <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">الاكثر قراءة</div>
+  
+          <div *ngFor="let item of MoreRead">
+            <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
+              >
+              {{item.title|maxLenght:55}} 
+            </h3>
+          </div>
+  
         </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-        <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">تريندات لحظة بلحظة </div>
-        <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
-            >
-            {{item.title|maxLenght:50}}
-          </h3>
-        </div>
-
-        <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">الاكثر قراءة</div>
-
-        <div *ngFor="let item of MoreRead">
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;"
-            >
-            {{item.title|maxLenght:55}} 
-          </h3>
-        </div>
-
       </div>
     </div>
   </div>

@@ -17,6 +17,7 @@ export class ArticlesComponent implements OnInit {
   number_of_items_per_page = 10;
   total = 10;
   pageSize = 10;
+  loaded=false;
 
   constructor(
     private httpService: HttpService,
@@ -32,9 +33,11 @@ export class ArticlesComponent implements OnInit {
     this.httpService.getArticles(page).subscribe(
       (data: any) => {
         console.log(data);
-        
-        this.news = data.data.articles;
-        this.total = data.data.paginator.count;
+        if (data.success) {
+          this.loaded = true;
+          this.news = data.data.articles;
+          this.total = data.data.paginator.count;
+        }
 
       },
       (err: any) => {}
