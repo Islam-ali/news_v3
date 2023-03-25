@@ -111,7 +111,7 @@
   </div> 
   <!-- ///////////////////////////////////////////// -->
   <div class="container-fluid pt-4 pb-4" *ngFor="let item of allCategories;let i=index">
-   <div class=" dTitle d-flex justify-content-between bg-light">
+   <div class=" dTitle d-flex justify-content-between" style="background-color:#cbcbb3;">
      <h1 class="titel pt-1"
        style="padding-right:30px;font-weight:bold;cursor:pointer"
        [routerLink]="['/category/',item.slug]">
@@ -127,10 +127,10 @@
      <div class="row">
       
   
-      <div class="col-lg-12 col-md-12 mb-4 mb-md-0 itemCategory">
+      <div class="col-lg-12 col-md-12 col-sm-12 mb-4 mb-md-0 itemCategory">
         <div class="row d-flex justify-content-around">
 
-          <div  *ngFor="let newsItem of item.news ; let j=index;" class="col-5 col-lg-2 col-md-2 mx-2">
+          <div  *ngFor="let newsItem of item.news ; let j=index;" class="col-lg-2 col-md-4 col-sm-12 mx-2">
                  <div *ngIf="j<5">
 
                    <div class="card mb-5 w-100"  [routerLink]="['/News/',newsItem.slug]">
@@ -138,7 +138,7 @@
                        <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" />
                        <div class="me-2">
 
-                         <small class="card-title">{{newsItem.title|maxLenght:60}} </small>
+                         <small class="card-title">{{newsItem.title|maxLenght:55}} </small>
                        </div>
                          
                      </div>
@@ -170,10 +170,10 @@
           </div>
         </div> 
        </div>
-       <div class="col-lg-6 col-md-3 mb-4 mb-md-0 itemCategory ">
+       <div class="col-lg-6 col-md-12 col-sm-12 mb-4 mb-md-0 itemCategory ">
         <div class="row">
 
-          <div  *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-5 mx-2">
+          <div  *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-lg-5 col-md-5 col-sm-12 mx-2">
                  <div *ngIf="j<6">
 
                    <div class="card mb-5 w-100"  [routerLink]="['/News/',newsItem.slug]">
@@ -199,7 +199,7 @@
         <div class="row d-flex justify-content-end">
           
 
-          <div  *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-5 mx-2" >
+          <div  *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-lg-5 col-md-5 col-sm-12 mx-2" >
                  <div *ngIf="j<6">
 
                    <div class="card mb-5 w-100"  [routerLink]="['/News/',newsItem.slug]">

@@ -88,6 +88,18 @@
             </div>
           </div>
         </div>
+        <!-- </marquee> -->
+        
+       
+
+        <!-- <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">الاكثر قراءة</div>
+
+        <div *ngFor="let article of more_articles_Read">
+          <h3 class="p-2 mt-2 "  routerLink="/News/{{article.slug}}"
+          style="background-color: darkgray;color: black;cursor: pointer;">
+            {{article.title |maxLenght:55}}
+          </h3>
+        </div> -->
   
         <div class="col-lg-3 col-md-2 col-sm-12 col-12">
           <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">
@@ -112,18 +124,18 @@
          
   
           <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">الاكثر قراءة</div>
-  
-          <div *ngFor="let article of more_articles_Read">
-            <h3 class="p-2 mt-2 "  routerLink="/News/{{article.slug}}"
-            style="background-color: darkgray;color: rgb(255, 0, 0);cursor: pointer;">
-              {{article.title |maxLenght:55}}
-            </h3>
-          </div>
+
+        <div *ngFor="let article of more_articles_Read">
+          <h3 class="p-2 mt-2 "  routerLink="/News/{{article.slug}}"
+          style="background-color: darkgray;color: black;cursor: pointer;">
+            {{article.title |maxLenght:55}}
+          </h3>
+        </div>
   
         </div>
   
   
-      </div>
+     
   
   </div>
 </div>
