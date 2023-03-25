@@ -59,7 +59,7 @@
 <!-- -----------------------------/Part top of Nav------------------------------------- -->
 <!-- -----------------------------Navbar------------------------------------- -->
 
-        <nav class="navbar navbar-expand-lg border-bottom ">
+        <nav class="navbar navbar-expand-lg border-bottom " *ngIf="allCategories">
             <div class="container-fluid ">
               <button
                 class="navbar-toggler"
@@ -111,12 +111,12 @@
                     </ul>
                   </li>
                 </ng-container>
-                  <li class="nav-item" >
+                  <li class="nav-item icons" >
                     <a class="nav-link  text-white" aria-current="page"  [routerLink]="['']" ><a href="https://www.facebook.com/index.php" class="text-reset">
                       <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="" class="me-4 text-reset">
-                      <i class="fab fa-twitter"></i>
+                      <i class="fab fa-youtube"></i>
                     </a>
                     <a href="" class="me-4 text-reset">
                       <i class="fab fa-tiktok"></i>
@@ -136,10 +136,14 @@
      <div class="d-flex bossDiv">
       <div  class="boss d-flex">
         <img src="./assets/icons/lLogo.png" height="180" width="180" class="bossImg"/>
-        <div>
-         <h6 class="bossName">رئيس التحرير : عبدالوارث محمد</h6>
-         <small class="bossAbout" >رئيس قلم الجريدة ومدقق أخبار على مستوى الشرق الاوسط</small>
+        <div class="Names">
+         <h6 class="bossName">رئيس مجلس الإدارة </h6>
+         <small class="bossAbout" >سامح أبو حمادي</small>
         </div>
+        <div>
+          <h6 class="bossName"> رئيس التحرير </h6>
+          <small class="bossAbout" > على جمال</small>
+         </div>
       </div>
       <div  class="advertise">
         <img src="./assets/temp-imgs/advertise.jfif" height="150" width="350" > 

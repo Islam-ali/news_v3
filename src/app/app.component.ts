@@ -17,6 +17,6 @@ export class AppComponent {
   title = 'template';
   safeURL:any;
   constructor(private _sanitizer: DomSanitizer){
-    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/ajs_FlDoAF0');
+    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/Ky7KQopv39Y');
   }
 }
