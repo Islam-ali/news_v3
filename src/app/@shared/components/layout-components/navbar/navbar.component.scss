@@ -194,13 +194,14 @@ a{
       margin-top:60px;
       color: red;
       margin-right:10px;
-      // font-weight: bold;
-      // margin-bottom:px;
+      font-size:20px!important;
+      font-weight: bold!important;
   }
   .bossAbout
   { margin-right:12px;
     color:$p1Color!important ;
-    // font-style: italic;
+    font-size:15px!important;
+    // font-weight: bold!important;
   }
   .boss
   {
@@ -223,6 +224,11 @@ a{
     margin-right:-8vw!important;
   }
   @media(max-width:990px) {
+    .icons
+    {
+      margin:0px!important;
+      padding: 0px!important;
+    }
     .navbar {
       text-align:right!important;
     }
@@ -237,12 +243,13 @@ height:30vw!important;
     }
     .bossName
     {
-      font-size:24px!important;
+      font-size:12px!important;
       font-weight: bold!important;
+      margin-right:0px;
     }
     .bossAbout
-    {
-      font-size:16px!important;
+    { margin-right:0px;
+      font-size:10px!important;
       font-weight: bold!important;
     }
     .boss
