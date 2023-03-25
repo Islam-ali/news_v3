@@ -194,13 +194,14 @@ a{
       margin-top:60px;
       color: red;
       margin-right:10px;
-      // font-weight: bold;
-      // margin-bottom:px;
+      font-size:20px!important;
+      font-weight: bold!important;
   }
   .bossAbout
   { margin-right:12px;
     color:$p1Color!important ;
-    font-style: italic;
+    font-size:15px!important;
+    // font-weight: bold!important;
   }
   .boss
   {
@@ -218,7 +219,16 @@ a{
     padding-top:150px;
     height:322px;
   }
+  .icons
+  {
+    margin-right:-8vw!important;
+  }
   @media(max-width:990px) {
+    .icons
+    {
+      margin:0px!important;
+      padding: 0px!important;
+    }
     .navbar {
       text-align:right!important;
     }
@@ -233,11 +243,14 @@ height:30vw!important;
     }
     .bossName
     {
-      font-size:4vw;
+      font-size:12px!important;
+      font-weight: bold!important;
+      margin-right:0px;
     }
     .bossAbout
-    {
-      font-size:2vw;
+    { margin-right:0px;
+      font-size:10px!important;
+      font-weight: bold!important;
     }
     .boss
   {
@@ -283,4 +296,9 @@ height:30vw!important;
 .youtubeIcon
 {
   margin-top:10px!important;
+}
+.Names
+{
+  margin-left:70px;
+  margin-right:30px;
 }
