@@ -190,7 +190,7 @@ a{
       // border-radius: 50%;
       width:400px!important;
       height:400px!important;
-      padding-top:0px;
+      padding-top:20px;
   }
   .bossName
   {
@@ -242,20 +242,20 @@ display:none;
     }
  .bossImg
     {
-width:30vw!important;
-height:30vw!important;
-padding-top:120px;
-margin:0px;
+width:35vw!important;
+height:30vh!important;
+margin-top:70px;
+// margin:0px;
     }
     .bossName
     {
-      font-size:12px!important;
+      font-size:10px!important;
       font-weight: bold!important;
       margin-right:0px;
     }
     .bossAbout
     { margin-right:0px;
-      font-size:10px!important;
+      font-size:8px!important;
       font-weight: bold!important;
     }
     .boss
