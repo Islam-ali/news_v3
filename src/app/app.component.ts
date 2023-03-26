@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { HttpService } from './@core/services/http/http.service';
 @Component({
   selector: 'app-root',
   template: `
@@ -16,8 +17,18 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent {
   title = 'template';
   safeURL:any;
-  constructor(private _sanitizer: DomSanitizer){
-    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/Ky7KQopv39Y?autoplay=1&mute=1');
+  tvLink:string='https://www.youtube.com/embed/Ky7KQopv39Y'
+  constructor(private _sanitizer: DomSanitizer,private httpService:HttpService){
+    this.getTv();
+    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.tvLink.concat('?autoplay=1&mute=1'));
   }
-  
+  getTv()
+  { 
+    this.httpService.getTv().subscribe((data: any) => {
+     
+      this.tvLink=data.data.link;
+     }, (err: any) => {
+   
+     });
+  }
 }

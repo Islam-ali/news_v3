@@ -80,6 +80,11 @@ getYoutubeLive(): Observable<IResponse> {
   return this.http.get<IResponse>(environment.baseUrl.concat(`/youtube-broadcast`));
 
 }
+getTv(): Observable<IResponse> {
+
+  return this.http.get<IResponse>(environment.baseUrl.concat(`/tv`));
+
+}
   /////////////////////////////////////////////////////////////////////////////
   // getAllReports(): Observable<IResponse> {
   // this.token = localStorage.getItem('token');

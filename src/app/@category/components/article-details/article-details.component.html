@@ -8,8 +8,8 @@
   </div>
   <div style="margin-top: 0px" class="pw1" >
     <div class="container" style="background-color: white">
-      <div class="row">
-        <div class="col-9">
+      <div class="row d-flex">
+        <div class="col-lg-9 col-md-10 col-sm-12 ">
           <div class="bg-light py-3 row">
              
                   <!-- <img src="{{selected?.user.image}}" class="img-thumbnail article-img img-fluid" /> -->
@@ -78,7 +78,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-2 col-sm-12 col-12">
+      <div class="col-lg-3 col-md-2 col-sm-12 ">
         <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">تريندات لحظة بلحظة </div>
         <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
           <h3 class="p-2 mt-2 " style="background-color: darkgray;color: black;cursor: pointer;">
