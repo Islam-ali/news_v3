@@ -82,7 +82,7 @@
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-4">
                   <li class="nav-item" >
-                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['']" >الرئيسية</a>
+                    <a class="nav-link active text-white" aria-current="page"  [routerLink]="['']" (click)="toggleNav()">الرئيسية</a>
                   </li>
                   <ng-container *ngFor="let cat of allCategories;let i=index">
                   <li class="nav-item"  >
@@ -95,25 +95,26 @@
                       data-mdb-toggle="dropdown"
                       aria-expanded="false"
                       (mouseover)="shDrop()"
+
                      
                     >
                       المزيد
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown"   (click)="shDrop()" (mouseleave)="shDrop()">
                       <li >
-                        <a class="dropdown-item" [routerLink]="['/articles']">مقالات</a>
+                        <a class="dropdown-item" [routerLink]="['/articles']" (click)="toggleNav()">مقالات</a>
                       </li>
                       <!-- <li >
                         <a class="dropdown-item" [routerLink]="['/tourism']">سياحة وترفيه</a>
                       </li> -->
                       <li *ngFor="let cat of allCategories;let i=index" >
-                        <p class="dropdown-item" href="#" *ngIf="i>=7" [routerLink]="['/category/',cat.slug]" (click)="setName(cat.name)">{{cat.name}}</p>
+                        <p class="dropdown-item" href="#" *ngIf="i>=7" [routerLink]="['/category/',cat.slug]" (click)="setName(cat.name);toggleNav()">{{cat.name}}</p>
                       </li>
                     </ul>
                   </li>
                 </ng-container>
                   <li class="nav-item icons" >
-                    <a class="nav-link  text-white" aria-current="page"  [routerLink]="['']" ><a href="https://www.facebook.com/index.php" class="text-reset">
+                    <a class="nav-link  text-white" aria-current="page"  [routerLink]="['']" ><a href="https://www.facebook.com/index.php" class="text-reset" (click)="toggleNav()">
                       <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="" class="me-4 text-reset">
