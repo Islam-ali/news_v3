@@ -187,11 +187,14 @@ a{
   }
   .bossImg
   {
-      border-radius: 50%;
+      // border-radius: 50%;
+      width:400px!important;
+      height:400px!important;
+      padding-top:0px;
   }
   .bossName
   {
-      margin-top:60px;
+      margin-top:210px;
       color: red;
       margin-right:10px;
       font-size:20px!important;
@@ -206,17 +209,18 @@ a{
   .boss
   {
     height:172px;
-    width:60%;
+    width:70%;
     padding-right:20px;
   }
   .advertise
   {
     height:172px;
-    width:40%;
+    width:30%;
+    padding-top:150px;
   }
   .bossDiv
   {
-    padding-top:150px;
+    
     height:322px;
   }
   .icons
@@ -240,6 +244,8 @@ display:none;
     {
 width:30vw!important;
 height:30vw!important;
+padding-top:120px;
+margin:0px;
     }
     .bossName
     {
