@@ -8,9 +8,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   <app-footer></app-footer>
   <!-- <app-loader></app-loader> -->
   <div style="position: fixed; bottom:0px; left:8px;">
-
-  <iframe [src]='safeURL' frameborder="0" width="200" height="140"  allow='autoplay'></iframe>
-</div>
+<a href="https://www.youtube.com/">
+  <iframe [src]='safeURL' frameborder="0" width="200" height="140"  allow='autoplay' allowfullscreen></iframe>
+</a></div>
   `,
 })
 export class AppComponent {
