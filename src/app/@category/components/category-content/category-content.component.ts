@@ -44,6 +44,7 @@ export class CategoryContentComponent implements OnInit {
 window.scrollTo(0,0);
   }
   getNews() {
+    this.loaded = false;
     this.catName=localStorage.getItem('categoryNmame');
     this.httpService.getCategoryContent(this.slug,this.page).subscribe(
       (data: any) => {
