@@ -1,9 +1,11 @@
+import { MdbCollapseDirective, MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { HttpService } from 'src/app/@core/services/http/http.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Subscription, timer } from 'rxjs';
 import { map, share } from 'rxjs/operators';
 import { registerLocaleData } from '@angular/common';
 import localeAr from '@angular/common/locales/ar-EG';
+import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 registerLocaleData(localeAr);
 @Component({
   selector: 'app-navbar',
@@ -21,6 +23,7 @@ time = new Date();
   rxTime = new Date();
   intervalId:any;
   subscription!: Subscription;
+  @ViewChild('basicNavbar') mdbCollapse!: NgbCollapse;
 constructor(private httpService:HttpService){ }
 
   ngOnInit(): void {
@@ -99,5 +102,11 @@ ngOnDestroy() {
   if (this.subscription) {
     this.subscription.unsubscribe();
   }
-}
+  }
+  toggleNav() {
+    if (window.innerWidth <= 991) {
+
+      this.mdbCollapse.toggle();
+     }
+  }
 }
