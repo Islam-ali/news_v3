@@ -11,7 +11,7 @@
             </div>
         <div class="form-check my-4" *ngFor="let answer of answers">
             <label class="form-check-label" [for]="answer.id">
-             {{answer.answer}}
+             {{answer?.answer}}
             </label>
             <input (change)="getAnswer(answer.id)" class="form-check-input" type="radio" name="flexRadioDefault" [id]="answer.id">
           </div>
@@ -31,21 +31,21 @@
                {{pollQuestion?.question}}
               </div>
           <div class="form-check my-4" *ngFor="let answer of answers">
-              <label class="form-check-label" [for]="answer.id">
-               {{answer.answer}}
+              <label class="form-check-label" [for]="answer?.id">
+               {{answer?.answer}}
               </label>
               <small *ngIf="answerCount">
                 
               </small>
               <p class="d-flex justify-content-between">
-                <small class="text-muted">عدد الاصوات - {{answer.count ||0}} </small>
-                <small class="fw-bold">{{answer.percentage?.toFixed(2) ||0}}%</small>
+                <small class="text-muted">عدد الاصوات - {{answer?.count ||0}} </small>
+                <small class="fw-bold">{{answer?.percentage?.toFixed(2) ||0}}%</small>
               </p>
-              <p><ngb-progressbar [showValue]="false" type="danger" [value]="answer.percentage?.toFixed(2)||0"></ngb-progressbar></p>
+              <p><ngb-progressbar [showValue]="false" type="danger" [value]="answer?.percentage?.toFixed(2)||0"></ngb-progressbar></p>
             </div>
             
         </div>
-        <div class="card-footer mt-5">
+        <div class="card-footer">
         </div>
       </div>
   </div>

@@ -20,3 +20,9 @@
     text-align: center;
     align-self: start;
 }
+@media (max-width:900px) {
+    .loading-spinner{    
+      
+        height: 65rem !important;
+    }
+}

@@ -22,9 +22,9 @@ export class PollComponent implements OnInit {
       next: (res: any) => {
         console.log(res);
         this.pollQuestion = res.data;
-        this.answers = res.data.answers;
+        this.answers = res.data?.answers;
         this.userAnswer = this.pollService.checkUserAnswer(
-          this.pollQuestion.id
+          this.pollQuestion?.id
         );
         console.log(this.userAnswer);
         if (this.userAnswer) {
