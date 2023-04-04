@@ -5,40 +5,40 @@
 
   <div class="searchDiv">
     <div class="container-fluid">
-     <div class="row justify-content-between d-flex" >
-       <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-7 col-12 taskBar">
-  
-         <div class="d-flex justify-content-between align-items-center breaking-news bg-white mt-2 rounded-5">
-           <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger
+      <div class="row justify-content-between d-flex">
+        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-7 col-12 taskBar">
+
+          <div class="d-flex justify-content-between align-items-center breaking-news bg-white mt-2 rounded-5">
+            <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger
                 py-2 text-white px-1 news rounded-5">
-             <span class="d-flex align-items-center title">&nbsp;لحظة بلحظة</span>
-           </div>
-           <marquee class="news-scroll" behavior="scroll" direction="up" style="height: 38px;" Scrollamount=1
-             onmouseover="this.stop();" onmouseout="this.start();">
-             <div *ngFor="let item of taskBarItems" class="mb-2 me-2">
-               <a href="#" [routerLink]="['/News/',item?.slug]">
-                 {{item?.title}}
-               </a>
-  
-             </div>
-           </marquee>
-         </div>
-  
-       </div>
-       <div class="col-lg-4 col-md-4 col-12 ">
-  
-         <div class="mt-3 d-flex justify-content-lg-start w-100 float-start search">
-           <input type="text" (keyup.enter)="search(inputSearch.value)" class="form-control" #inputSearch>
-           <a class="btn btn-sm btn-danger px-2 me-2" (click)="search(inputSearch.value)">بحث</a>
-         </div>
-       </div>
-     </div>
-   </div> 
-  
+              <span class="d-flex align-items-center title">&nbsp;لحظة بلحظة</span>
+            </div>
+            <marquee class="news-scroll" behavior="scroll" direction="up" style="height: 38px;" Scrollamount=1
+              onmouseover="this.stop();" onmouseout="this.start();">
+              <div *ngFor="let item of taskBarItems" class="mb-2 me-2">
+                <a href="#" [routerLink]="['/News/',item?.slug]">
+                  {{item?.title}}
+                </a>
+
+              </div>
+            </marquee>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-12 ">
+
+          <div class="mt-3 d-flex justify-content-lg-start w-100 float-start search">
+            <input type="text" (keyup.enter)="search(inputSearch.value)" class="form-control" #inputSearch>
+            <a class="btn btn-sm btn-danger px-2 me-2" (click)="search(inputSearch.value)">بحث</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   <!-- ////////////////////////////////////////// -->
   <div class="row  mt-3">
-   <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center">
+    <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center">
      <div>
        <button class="btn btn-danger p-1 px-3 my-2" (click)="Next()">
          <i class="fa fa-arrow-up" aria-hidden="true"></i>
@@ -59,27 +59,29 @@
   
   
    </div> -->
-   <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center mb-4">
-     <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280" class="w-100">
-   </div>
-   <div class=" col-lg-6 col-md-8 col-sm-12" *ngIf="slides">
-  
-     <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
-       (slide)="onSlide($event)">
-       <ng-template ngbSlide *ngFor="let slide of slides; index as i">
-         <a  routerLink="/News/{{slide.slug}}">
-         <div class="carousel-caption">
-           <h2 style="background-color: whitesmoke; color:red;border-radius:5px;padding-top:5px;padding-bottom:5px;">
-             {{slide.title}}</h2>
-         </div>
-           <div class="picsum-img-wrapper">
-             <img [src]="slide.image" alt="My image {{i + 1}} description" height="420px" class="w-100" />
-           </div>
-         </a>
-       </ng-template>
-     </ngb-carousel>
-  </div>
-     <!-- <hr />
+    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center mb-4">
+
+            <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280" class="home-img">
+         
+    </div>
+    <div class=" col-lg-6 col-md-8 col-sm-12 mb-4" *ngIf="slides">
+
+      <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+        (slide)="onSlide($event)">
+        <ng-template ngbSlide *ngFor="let slide of slides; index as i">
+          <a routerLink="/News/{{slide.slug}}">
+            <div class="carousel-caption">
+              <h2 style="background-color: whitesmoke; color:red;border-radius:5px;padding-top:5px;padding-bottom:5px;">
+                {{slide.title}}</h2>
+            </div>
+            <div class="picsum-img-wrapper">
+              <img [src]="slide.image" alt="My image {{i + 1}} description" height="420px" class="w-100" />
+            </div>
+          </a>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <!-- <hr />
   
    <div class="form-check">
    <input type="checkbox" class="form-check-input" id="pauseOnHover" [(ngModel)]="pauseOnHover" />
@@ -101,236 +103,242 @@
    {{paused ? 'Cycle' : 'Pause' }}
    </button> 
    </div>-->
-   <div class=" col-lg-3 col-md-4 col-sm-12 text-center mb-4">
-     <!-- <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280"> -->
-     <div class="m-auto">
-  
-      <app-poll></app-poll>
+    <div class=" col-lg-3 col-md-4 col-sm-12 text-center mb-4">
+      <!-- <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280"> -->
+      <div class="m-auto">
+
+        <app-poll></app-poll>
+      </div>
     </div>
-   </div>
-  </div> 
+  </div>
   <!-- ///////////////////////////////////////////// -->
   <div class="container-fluid pt-4 pb-4" *ngFor="let item of allCategories;let i=index">
-   <div class=" dTitle d-flex justify-content-between" style="background-color:#cbcbb3;"  *ngIf="item.news?.length>0">
-     <h1 class="titel pt-1"
-       style="padding-right:30px;font-weight:bold;cursor:pointer"
-       [routerLink]="['/category/',item.slug]">
-       {{item.name}}</h1>
-       <a class="btn more text-white px-2 align-items-center gap-4 d-flex"  [routerLink]="['/category/',item.slug]"> 
+    <div class=" dTitle d-flex justify-content-between" style="background-color:#cbcbb3;" *ngIf="item.news?.length>0">
+      <h1 class="titel pt-1" style="padding-right:30px;font-weight:bold;cursor:pointer"
+        [routerLink]="['/category/',item.slug]">
+        {{item.name}}</h1>
+      <a class="btn more text-white px-2 align-items-center gap-4 d-flex" (click)="setName(item.name)"
+        [routerLink]="['/category/',item.slug]">
         <small class="">المزيد</small>
 
         <i class="fas fa-arrow-left"></i>
-       </a>
-   </div>
-   <!-- Section: Images -->
-   <section class="" *ngIf="i % 7===0">
-     <div class="row" *ngIf="item.news?.length>0">
-      
-  
-      <div class="col-lg-12 col-md-12 col-sm-12 mb-4 mb-md-0 itemCategory">
-        <div class="row d-flex justify-content-around">
+      </a>
+    </div>
+    <!-- Section: Images -->
+    <section class="" *ngIf="i % 7===0">
+      <div class="row" *ngIf="item.news?.length>0">
 
-          <div  *ngFor="let newsItem of item.news ; let j=index;" class="col-lg-2 col-md-4 col-sm-12 mx-2">
-                 <div *ngIf="j<5">
 
-                   <div class="card mb-5 w-100"  [routerLink]="['/News/',newsItem.slug]">
-                     <div class="card-body pb-2">
-                       <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" style="height: 130px;" />
-                       <div class="mx-2">
+        <div class="col-lg-12 col-md-12 col-sm-12 mb-4 mb-md-0 itemCategory">
+          <div class="row d-flex justify-content-around">
 
-                         <small class="card-title">{{newsItem.title|maxLenght:55}} </small>
-                       </div>
-                         
-                     </div>
-                   </div>
-                 </div>
+            <div *ngFor="let newsItem of item.news ; let j=index;" class="col-lg-2 col-md-4 col-sm-12 mx-2">
+              <div *ngIf="j<5">
+
+                <div class="card mb-5 w-100" [routerLink]="['/News/',newsItem.slug]">
+                  <div class="card-body pb-2">
+                    <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2"
+                      style="height: 130px;" />
+                    <div class="mx-2">
+
+                      <small class="card-title">{{newsItem.title|maxLenght:55}} </small>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-       </div>
-  
-  
-     </div>
-   </section>
-   <!-- Section: Images -->
+
+
+      </div>
+    </section>
+    <!-- Section: Images -->
     <!-- Section: Images -->
     <section class="" *ngIf="i===1 || i===8 ||i===15">
-     <div class="row"  *ngIf="item.news?.length>0">
-  
-       <div class="col-lg-6 col-md-12 mb-4 mb-md-0 itemCategory"  >
-        <div class="card mb-5 w-100"  [routerLink]="['/News/',item.news[0].slug]" >
-          <div class="card-body mb-3">
-            <img [src]="item.news[0].image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" />
-            <h2 class="card-title px-2" style="font-weight: bold;">{{item.news[0].title|maxLenght:60}} </h2>
-              
-                   <!-- <p class="card-text px-2">
+      <div class="row" *ngIf="item.news?.length>0">
+
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0 itemCategory">
+          <div class="card mb-5 w-100" [routerLink]="['/News/',item.news[0].slug]">
+            <div class="card-body mb-3">
+              <img [src]="item.news[0].image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" />
+              <h2 class="card-title px-2" style="font-weight: bold;">{{item.news[0].title|maxLenght:60}} </h2>
+
+              <!-- <p class="card-text px-2">
                      {{item.news[0].subtitle|maxLenght:210}} </p> -->
-                   <p class="card-text px-2">
-                     <small class="text-muted py-3 my-5">{{item.news[0].updated_at}} </small>
-                   </p>
-          </div>
-        </div> 
-       </div>
-       <div class="col-lg-6 col-md-12 col-sm-12 mb-4 mb-md-0 itemCategory ">
-        <div class="row">
-
-          <div  *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-lg-5 col-md-5 col-sm-12 mx-2">
-                 <div *ngIf="j<4">
-
-                   <div class="card mb-5 w-100"  [routerLink]="['/News/',newsItem.slug]">
-                     <div class="card-body">
-                       <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" style="height: 175px;" />
-                       <h4 class="card-title p-2" style="font-weight: bold;">{{newsItem.title|maxLenght:60}} </h4>
-                         
-                     </div>
-                   </div>
-                 </div>
+              <p class="card-text px-2">
+                <small class="text-muted py-3 my-5">{{item.news[0].updated_at}} </small>
+              </p>
+            </div>
           </div>
         </div>
-       </div>
-  
-  
-     </div>
-   </section>
-   <!-- Section: Images -->
-   <!-- Section: Images -->
-   <section class="" *ngIf="i===2|| i===9 ||i===16">
-     <div class="row"  *ngIf="item.news?.length>0">
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0 itemCategory ">
-        <div class="row d-flex justify-content-end">
-          
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-4 mb-md-0 itemCategory ">
+          <div class="row">
 
-          <div  *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-lg-5 col-md-5 col-sm-12 mx-2" >
-                 <div *ngIf="j<4">
+            <div *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-lg-5 col-md-5 col-sm-12 mx-2">
+              <div *ngIf="j<4">
 
-                   <div class="card mb-5 w-100"  [routerLink]="['/News/',newsItem.slug]">
-                     <div class="card-body">
-                       <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2 float-end" style="height:170px ;" />
-                       <h4 class="card-title p-2" style="font-weight: bold;">{{newsItem.title |maxLenght:60}} </h4>
-                         
-                     </div>
-                   </div>
-                 </div>
+                <div class="card mb-5 w-100" [routerLink]="['/News/',newsItem.slug]">
+                  <div class="card-body">
+                    <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2"
+                      style="height: 175px;" />
+                    <h4 class="card-title p-2" style="font-weight: bold;">{{newsItem.title|maxLenght:60}} </h4>
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-       </div>
-       
-  
-       <div class="col-lg-6 col-md-12 mb-4 mb-md-0 itemCategory"  >
-        <div class="card mb-5 w-100"  [routerLink]="['/News/',item.news[0].slug]" >
-          <div class="card-body mb-3">
-            <img [src]="item.news[0].image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" />
-            <h2 class="card-title px-2" style="font-weight: bold;">{{item.news[0].title |maxLenght:60}} </h2>
-              
-                   <!-- <p class="card-text px-2">
+
+
+      </div>
+    </section>
+    <!-- Section: Images -->
+    <!-- Section: Images -->
+    <section class="" *ngIf="i===2|| i===9 ||i===16">
+      <div class="row" *ngIf="item.news?.length>0">
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0 itemCategory ">
+          <div class="row d-flex justify-content-end">
+
+
+            <div *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-lg-5 col-md-5 col-sm-12 mx-2">
+              <div *ngIf="j<4">
+
+                <div class="card mb-5 w-100" [routerLink]="['/News/',newsItem.slug]">
+                  <div class="card-body">
+                    <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2 float-end"
+                      style="height:170px ;" />
+                    <h4 class="card-title p-2" style="font-weight: bold;">{{newsItem.title |maxLenght:60}} </h4>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0 itemCategory">
+          <div class="card mb-5 w-100" [routerLink]="['/News/',item.news[0].slug]">
+            <div class="card-body mb-3">
+              <img [src]="item.news[0].image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" />
+              <h2 class="card-title px-2" style="font-weight: bold;">{{item.news[0].title |maxLenght:60}} </h2>
+
+              <!-- <p class="card-text px-2">
                      {{item.news[0].subtitle|maxLenght:290}} </p> -->
-                   <p class="card-text px-2">
-                     <small class="text-muted py-3 my-5">{{item.news[0].updated_at}} </small>
-                   </p>
+              <p class="card-text px-2">
+                <small class="text-muted py-3 my-5">{{item.news[0].updated_at}} </small>
+              </p>
+            </div>
           </div>
-        </div> 
-        
-  
-       </div>
-     </div>
-   </section>
-   <!-- Section: Images -->
+
+
+        </div>
+      </div>
+    </section>
+    <!-- Section: Images -->
     <!-- Section: Images -->
     <section class="" *ngIf="i===3|| i===10 ||i===17">
-     <div class="row"  *ngIf="item.news?.length>0">
-      <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory ">
-        <div class="row">
+      <div class="row" *ngIf="item.news?.length>0">
+        <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory ">
+          <div class="row">
 
-          <div  *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-5 mx-2 m-auto">
-                 <div *ngIf="j<4">
+            <div *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-5 mx-2 m-auto">
+              <div *ngIf="j<4">
 
-                   <div class="card mb-2 w-100"  [routerLink]="['/News/',newsItem.slug]">
-                     <div class="card-body pb-1">
-                       <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" style="height: 120px;" />
-                       <div class="mx-1">
-                        <small class="card-title">{{newsItem.title|maxLenght:50}} </small>
-                       </div>
-                         
-                     </div>
-                   </div>
-                 </div>
+                <div class="card mb-2 w-100" [routerLink]="['/News/',newsItem.slug]">
+                  <div class="card-body pb-1">
+                    <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2"
+                      style="height: 120px;" />
+                    <div class="mx-1">
+                      <small class="card-title">{{newsItem.title|maxLenght:50}} </small>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-       </div>
-      <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory"  >
-        <div class="card mb-5 w-100"  [routerLink]="['/News/',item.news[0]?.slug]" >
-          <div class="card-body mb-3">
-            <img [src]="item.news[0]?.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" />
-            <h4 class="card-title px-2" style="font-weight: bold;">{{item.news[0]?.title|maxLenght:60}} </h4>
-              
-                   <!-- <p class="card-text px-2">
+        <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory">
+          <div class="card mb-5 w-100" [routerLink]="['/News/',item.news[0]?.slug]">
+            <div class="card-body mb-3">
+              <img [src]="item.news[0]?.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" />
+              <h4 class="card-title px-2" style="font-weight: bold;">{{item.news[0]?.title|maxLenght:60}} </h4>
+
+              <!-- <p class="card-text px-2">
                      {{item.news[0].subtitle|maxLenght:290}} </p> -->
-                   <p class="card-text px-2">
-                     <small class="text-muted py-3 my-5">{{item.news[0].updated_at}} </small>
-                   </p> 
-          </div>
-        </div> 
-       </div>
-       <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory ">
-        <div class="row">
-
-          <div  *ngFor="let newsItem of item.news.slice(5) ; let j=index;" class="col-5 mx-2 m-auto">
-                 <div *ngIf="j<4">
-
-                   <div class="card mb-2 w-100"  [routerLink]="['/News/',newsItem.slug]">
-                     <div class="card-body pb-1">
-                       <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" style="height: 120px;" />
-                       <div class="mx-1">
-                        <small class="card-title">{{newsItem.title|maxLenght:50}} </small>
-                       </div>
-                         
-                     </div>
-                   </div>
-                 </div>
+              <p class="card-text px-2">
+                <small class="text-muted py-3 my-5">{{item.news[0].updated_at}} </small>
+              </p>
+            </div>
           </div>
         </div>
-       </div>
-  
-  
-     </div>
-   </section>
-   <!-- Section: Images -->
+        <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory ">
+          <div class="row">
+
+            <div *ngFor="let newsItem of item.news.slice(5) ; let j=index;" class="col-5 mx-2 m-auto">
+              <div *ngIf="j<4">
+
+                <div class="card mb-2 w-100" [routerLink]="['/News/',newsItem.slug]">
+                  <div class="card-body pb-1">
+                    <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2"
+                      style="height: 120px;" />
+                    <div class="mx-1">
+                      <small class="card-title">{{newsItem.title|maxLenght:50}} </small>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <!-- Section: Images -->
     <!-- Section: Images -->
     <section class="" *ngIf="i===4|| i===11 ||i===18">
-      <div class="row"  *ngIf="item.news?.length>0">
-        <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory"  >
-          <div class="card mb-5 w-100"  [routerLink]="['/News/',item.news[0]?.slug]" >
+      <div class="row" *ngIf="item.news?.length>0">
+        <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory">
+          <div class="card mb-5 w-100" [routerLink]="['/News/',item.news[0]?.slug]">
             <div class="card-body mb-3">
               <img [src]="item.news[0]?.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" />
               <h4 class="card-title px-2" style="font-weight: bold;">{{item.news[0]?.title|maxLenght:200}} </h4>
-                
-                     <!-- <p class="card-text px-2">
+
+              <!-- <p class="card-text px-2">
                        {{item.news[0].subtitle|maxLenght:290}} </p>
                      <p class="card-text px-2">
                        <small class="text-muted py-3 my-5">{{item.news[0].updated_at}} </small>
                      </p> -->
             </div>
-          </div> 
-         </div>
+          </div>
+        </div>
         <div class="col-lg-8 col-md-12 col-12 mb-4 mb-md-0 itemCategory ">
           <div class="row">
-  
-            <div  *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-lg-3 col-5 mx-2">
-                   <div *ngIf="j<8">
-  
-                     <div class="card mb-2 w-100"  [routerLink]="['/News/',newsItem.slug]">
-                       <div class="card-body pb-1">
-                         <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" style="height: 100px;" />
-                         <div class="me-1">
-                          <small class="card-title">{{newsItem.title|maxLenght:50}} </small>
-                         </div>
-                           
-                       </div>
-                     </div>
-                   </div>
+
+            <div *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-lg-3 col-5 mx-2">
+              <div *ngIf="j<8">
+
+                <div class="card mb-2 w-100" [routerLink]="['/News/',newsItem.slug]">
+                  <div class="card-body pb-1">
+                    <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2"
+                      style="height: 100px;" />
+                    <div class="me-1">
+                      <small class="card-title">{{newsItem.title|maxLenght:50}} </small>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-         </div>
-         <!-- <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory ">
+        </div>
+        <!-- <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory ">
           <div class="row">
   
             <div  *ngFor="let newsItem of item.news.slice(5) ; let j=index;" class="col-5 mx-2">
@@ -349,110 +357,115 @@
             </div>
           </div>
          </div> -->
-    
-    
-       </div>
-   </section>
-   <!-- Section: Images -->
+
+
+      </div>
+    </section>
+    <!-- Section: Images -->
     <!-- Section: Images -->
     <section class="" *ngIf="i===5|| i===12 ||i===19">
-      <div class="row"  *ngIf="item.news?.length>0">
-         <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory ">
+      <div class="row" *ngIf="item.news?.length>0">
+        <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory ">
           <div class="row d-flex justify-content-end">
-  
-            <div  *ngFor="let newsItem of item.news.slice(2); let j=index;" class="col-5 mx-2">
-                   <div *ngIf="j<4">
-  
-                     <div class="card mb-2 w-100"  [routerLink]="['/News/',newsItem.slug]">
-                       <div class="card-body pb-1">
-                         <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" style="height: 100px;" />
-                         <div class="me-1">
-                          <small class="card-title">{{newsItem.title|maxLenght:50}} </small>
-                         </div>
-                           
-                       </div>
-                     </div>
-                   </div>
+
+            <div *ngFor="let newsItem of item.news.slice(2); let j=index;" class="col-5 mx-2">
+              <div *ngIf="j<4">
+
+                <div class="card mb-2 w-100" [routerLink]="['/News/',newsItem.slug]">
+                  <div class="card-body pb-1">
+                    <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2"
+                      style="height: 100px;" />
+                    <div class="me-1">
+                      <small class="card-title">{{newsItem.title|maxLenght:50}} </small>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-         </div>
-        <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory" *ngFor="let newsItem of item.news; let j=index;" >
-          <div class="card mb-5 w-100"  [routerLink]="['/News/',newsItem?.slug]" *ngIf="j<2" >
+        </div>
+        <div class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 itemCategory"
+          *ngFor="let newsItem of item.news; let j=index;">
+          <div class="card mb-5 w-100" [routerLink]="['/News/',newsItem?.slug]" *ngIf="j<2">
             <div class="card-body mb-3">
-              <img [src]="newsItem?.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" style="height: 230px;" />
+              <img [src]="newsItem?.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2"
+                style="height: 230px;" />
               <h4 class="card-title px-2" style="font-weight: bold;">{{newsItem?.title|maxLenght:100}} </h4>
-                
-                     <!-- <p class="card-text px-2">
+
+              <!-- <p class="card-text px-2">
                        {{item.news[0].subtitle|maxLenght:290}} </p>
                      <p class="card-text px-2">
                        <small class="text-muted py-3 my-5">{{item.news[0].updated_at}} </small>
                      </p> -->
             </div>
-          </div> 
-         </div>
-        
-        
-    
-    
-       </div>
-       <div class="row">
-      
-  
-        <div class="col-lg-12 col-md-12 mb-md-0 itemCategory">
-          <div class="row d-flex justify-content-around">
-  
-            <div  *ngFor="let newsItem of item.news ; let j=index;" class="col-5 col-lg-2 col-md-2 mb-2">
-                   <div *ngIf="j<5">
-  
-                     <div class="card w-100"  [routerLink]="['/News/',newsItem.slug]">
-                       <div class="card-body pb-2">
-                         <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2" style="height: 100px;"/>
-                         <div class="me-2">
-  
-                           <small class="card-title">{{newsItem.title|maxLenght:60}} </small>
-                         </div>
-                           
-                       </div>
-                     </div>
-                   </div>
-            </div>
-          </div>
-         </div>
-    
-    
-       </div>
-   </section>
-   <!-- Section: Images -->
-   <!-- Section: Images -->
-   <section class="" *ngIf="i===6|| i===13 ||i===20">
-    <div class="row"  *ngIf="item.news?.length>0">
-      
-  
-      <div class="col-lg-12 col-md-12 mb-4 mb-md-0 itemCategory">
-        <div class="row d-flex justify-content-around">
-
-          <div  *ngFor="let newsItem of item.news ; let j=index;" class="col-5 col-lg-2 col-md-2 mx-2 mb-2">
-                 <div *ngIf="j<5">
-
-                   <div class="card mb-5 w-100"  [routerLink]="['/News/',newsItem.slug]">
-                     <div class="card-body pb-2">
-                       <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2"  style="height: 130px;" />
-                       <div class="mx-2">
-
-                         <small class="card-title">{{newsItem.title|maxLenght:55}} </small>
-                       </div>
-                         
-                     </div>
-                   </div>
-                 </div>
           </div>
         </div>
-       </div>
-  
-  
-     </div>
-   </section>
-   <!-- Section: Images -->
+
+
+
+
+      </div>
+      <div class="row">
+
+
+        <div class="col-lg-12 col-md-12 mb-md-0 itemCategory">
+          <div class="row d-flex justify-content-around">
+
+            <div *ngFor="let newsItem of item.news ; let j=index;" class="col-5 col-lg-2 col-md-2 mb-2">
+              <div *ngIf="j<5">
+
+                <div class="card w-100" [routerLink]="['/News/',newsItem.slug]">
+                  <div class="card-body pb-2">
+                    <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2"
+                      style="height: 100px;" />
+                    <div class="me-2">
+
+                      <small class="card-title">{{newsItem.title|maxLenght:60}} </small>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <!-- Section: Images -->
+    <!-- Section: Images -->
+    <section class="" *ngIf="i===6|| i===13 ||i===20">
+      <div class="row" *ngIf="item.news?.length>0">
+
+
+        <div class="col-lg-12 col-md-12 mb-4 mb-md-0 itemCategory">
+          <div class="row d-flex justify-content-around">
+
+            <div *ngFor="let newsItem of item.news ; let j=index;" class="col-5 col-lg-2 col-md-2 mx-2 mb-2">
+              <div *ngIf="j<5">
+
+                <div class="card mb-5 w-100" [routerLink]="['/News/',newsItem.slug]">
+                  <div class="card-body pb-2">
+                    <img [src]="newsItem.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2"
+                      style="height: 130px;" />
+                    <div class="mx-2">
+
+                      <small class="card-title">{{newsItem.title|maxLenght:55}} </small>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <!-- Section: Images -->
   </div>
   <!-- ///////////////////////////////////////// -->
 </div>

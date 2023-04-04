@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row" *ngIf="pollQuestion">
     <div class="card" *ngIf="!userAnswer">
       <div class="card-header">
 
@@ -48,5 +48,9 @@
         <div class="card-footer">
         </div>
       </div>
+  </div>
+  <div class="row" *ngIf="!pollQuestion">
+    <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280" class="w-100">
+
   </div>
 </div>

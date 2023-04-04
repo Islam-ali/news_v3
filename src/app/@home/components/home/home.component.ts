@@ -119,4 +119,8 @@ export class HomeComponent implements OnInit {
       this.perv--;
     }
   }
+  setName(name:string)
+{
+  localStorage.setItem('categoryNmame',name)
+}
 }
