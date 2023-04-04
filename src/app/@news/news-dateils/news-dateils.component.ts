@@ -14,29 +14,34 @@ export class NewsDateilsComponent implements OnInit {
   news: any;
   catId:any;
   Trends: any;
-  MoreRead:any;
+  MoreRead: any;
+  loaded = false;
   
   constructor(
     private httpService: HttpService,
     public activatedRoute: ActivatedRoute
   ) {
-    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
-      this.slug = String(params.get('slug'));
-      this.getSelected();
-      
-    });
+  
   }
 
   ngOnInit(): void {
-    this.getSelected();
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      this.slug = String(params.get('slug'));
+      scrollTo(0,0)
+      this.getSelected();
+    });
     this.getTrands();
     scrollTo(0,0);
   }
   getSelected() {
+    this.loaded=false
     this.httpService.getNewsContent(this.slug).subscribe(
       (data: any) => {
         this.selected = data.data;
-      
+        if (data.success) {
+          
+          this.loaded=true
+        }
         
         this.catId=this.selected.id;  
         this.getRelated()

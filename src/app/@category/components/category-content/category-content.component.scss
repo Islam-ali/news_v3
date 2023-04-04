@@ -29,9 +29,10 @@
     display: inline-block
   }
   img{
-    width:98%!important;
+    width:100%!important;
     height:200px!important;
     border-radius: 3px;
+    margin: auto !important;
   }
  .col-md-4:hover img
   { transition: transform 2s ease;

@@ -35,7 +35,7 @@
     </div>
   </div>
   <div class="container-fluid">
-    <div class="mx-5 " style="background-color: white;">
+    <div class="" style="background-color: white;">
       <div class="titel mt-2 p-2 " style="background-color: #4d4d4c; color:red;padding-right:30px;font-weight:bold;">
         {{catName}}</div>
   
@@ -50,7 +50,7 @@
   
                   <div class="row g-0">
                     <div class="col-12">
-                      <img src="{{item.image}}" class="img-fluid m-2" alt="...">
+                      <img src="{{item.image}}" class="img-fluid m-auto" alt="...">
                     </div>
                     <div class="col-12">
                       <div class="card-body">
@@ -60,9 +60,10 @@
                         <!-- <p class="card-text">
                           {{item.subtitle|slice:0:65}}...
                         </p>
-                        <p class="card-text"><small class="text-muted">
-                            {{item.updated_at}}
-                          </small></p> -->
+                      -->
+                      <p class="card-text"><small class="text-muted">
+                          {{item.updated_at}}
+                        </small></p>
                       </div>
                     </div>
                   </div>
@@ -87,9 +88,10 @@
                         <!-- <p class="card-text">
                           {{item.subtitle|slice:0:65}}...
                         </p>
-                        <p class="card-text"><small class="text-muted">
-                            {{item.updated_at}}
-                          </small></p> -->
+                      -->
+                      <p class="card-text"><small class="text-muted">
+                          {{item.updated_at}}
+                        </small></p>
                       </div>
                     </div>
                   </div>
@@ -110,7 +112,7 @@
           <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
             <h3 class="p-2 mt-2 " style="background-color: darkgray;color: #000000;cursor: pointer;"
               >
-              {{item.title|slice:0:55}} ...
+              {{item.title|maxLenght:55}}
             </h3>
           </div>
   
@@ -119,7 +121,7 @@
           <div *ngFor="let item of MoreRead" routerLink="/articles/{{item.slug}}">
             <h3 class="p-2 mt-2 " style="background-color: darkgray;color: #000000;cursor: pointer;"
               >
-              {{item.title|slice:0:55}} ...
+              {{item.title|maxLenght:55}} 
             </h3>
           </div>
   

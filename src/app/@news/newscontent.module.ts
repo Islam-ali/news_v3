@@ -5,6 +5,7 @@ import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { NewscontentRoutingModule } from './newscontent-routing.module';
 import { NewsDateilsComponent } from './news-dateils/news-dateils.component';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [NewsDateilsComponent],
   imports: [
@@ -15,6 +16,7 @@ import { NewsDateilsComponent } from './news-dateils/news-dateils.component';
       debug: true,
     }),
     ShareIconsModule,
+    NgbCarouselModule
   ],
 })
 export class NewscontentModule {}

@@ -67,6 +67,8 @@ export class SearchComponent implements OnInit {
   searchType(typeValue:any,inputValue:any) {
     this.searchObj.type = typeValue;
     this.searchObj.search = inputValue;
+    this.router.navigateByUrl(`/search/${this.searchObj.search}`);
+
     this.search(this.searchObj, 1);
     
   }

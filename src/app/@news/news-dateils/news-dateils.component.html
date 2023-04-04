@@ -1,76 +1,99 @@
-<div style="height: 50px; background-color: #3b3b3b">
-  <div class="container"></div>
+<div *ngIf="!loaded">
+  <app-loader></app-loader>
 </div>
-<div style="margin-top: 0px" class="pw1">
-  <div class="container" style="background-color: white">
-    <div class="row">
-      <div class="col-12 col-lg-9">
-        <div class="bg-light py-3" >
-          <div class="h2 mt-2 p-2" style="color: black;">
-            {{selected?.title}}</div>
-          <small class="my-3"> {{selected?.updated_at}}</small>
-        </div>
-        <div class="bg-light py-3 mt-2 text-center" >
-          <img src="{{selected?.image}}" class="img-thumbnail mainImg" height="600px" width="800px" />
-        </div>
-        <div class="bg-light p-3 mt-2">
-          
-          <div class="h4" style="color:red">
-            {{selected?.subtitle}}
-          </div>
-          <div [innerHTML]="selected?.content">
+<div *ngIf="loaded">
 
+  <div style="height: 50px; background-color: #3b3b3b">
+    <div class="container"></div>
+  </div>
+  <div style="margin-top: 0px" class="pw1">
+    <div class="container" style="background-color: white">
+      <div class="row">
+        <div class="col-12 col-lg-9">
+          <div class="bg-light py-3">
+            <div class="h2 mt-2 p-2" style="color: rgb(255, 0, 0);">
+              {{selected?.title}}</div>
+            <small class="my-3"> {{selected?.updated_at}}</small>
           </div>
-          <div>
-            <share-buttons theme="material-dark" [show]="11" [image]="selected?.image"></share-buttons>
+          <div class="bg-light py-3 mt-2 text-center">
+            <img src="{{selected?.image}}" class="img-thumbnail mainImg" height="600px" width="800px" />
+            <p class="pt-2">{{selected.image_describe}}</p>
           </div>
-          <div class="mt-5">
-            <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
-              الموضوعات المتعلقة
+          <div class="bg-light p-3 mt-2">
+
+            <div class="h4 mb-2" style="color:red">
+              {{selected?.editor_name}}
             </div>
-            <div class="card mb-3 mt-3" >
-              <div class="row g-0" *ngFor="let item of news" [routerLink]="['/News/',item.slug]">
-                <div class="col-md-4">
-                  <img [src]="item.image" class="img-fluid m-2" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
-                      {{item.title}}
-                    </h5>
-                    <p class="card-text">
-                      {{item.subtitle}}
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">
-                        {{item.created_at}} </small>
-                    </p>
-                  </div>
-                </div>
+            <div [innerHTML]="selected?.content">
 
+            </div>
+            <div class="mt-5" *ngIf=" selected.tags?.length>0">
+              <a *ngFor="let item of selected.tags">
+
+                <a class="btn btn-dark btn-sm m-2" *ngIf="item" routerLink="/search/{{item}}">
+                   {{item}} 
+                </a>
+              </a>
+
+            </div>
+            <div>
+              <share-buttons theme="material-dark" [show]="11" [image]="selected?.image"></share-buttons>
+            </div>
+            <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="true" [pauseOnFocus]="false"
+              *ngIf="selected.images.length>0" >
+       <ng-template ngbSlide *ngFor="let slide of selected.images; index as i">
+         <a >
+        
+           <div class="picsum-img-wrapper">
+             <img [src]="slide" height="420px" class="w-100" />
+           </div>
+         </a>
+       </ng-template>
+     </ngb-carousel>
+            <div class="mt-5">
+              <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
+                الموضوعات المتعلقة
+              </div>
+              <div class="card mb-3 mt-3" *ngFor="let item of news" [routerLink]="['/News/',item.slug]">
+                <div class="row g-0 m-1">
+                  <div class="col-md-4">
+                    <img [src]="item.image" class="img-fluid w-100" alt="..." style="height: 100px;" />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
+                        {{item.title |maxLenght:90}}
+                      </h5>
+
+                      <p class="card-text">
+                        <small class="text-muted">
+                          {{item.created_at}} </small>
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-2 col-sm-12 col-12">
-        <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">تريندات لحظة بلحظة </div>
-        <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: black;cursor: pointer;"
-            >
-            {{item.title|slice:0:55}} ...
-          </h3>
+        <div class="col-lg-3 col-md-2 col-sm-12 col-12">
+          <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">تريندات لحظة بلحظة </div>
+          <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
+            <h3 class="p-2 mt-2 " style="background-color: darkgray;color: black;cursor: pointer;">
+              {{item.title|slice:0:55}} ...
+            </h3>
+          </div>
+
+          <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">الاكثر قراءة</div>
+
+          <div *ngFor="let item of MoreRead" routerLink="/articles/{{item.slug}}">
+            <h3 class="p-2 mt-2 " style="background-color: darkgray;color: black;cursor: pointer;">
+              {{item.title|slice:0:55}} ...
+            </h3>
+          </div>
+
         </div>
-
-        <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">الاكثر قراءة</div>
-
-        <div *ngFor="let item of MoreRead" routerLink="/articles/{{item.slug}}">
-          <h3 class="p-2 mt-2 " style="background-color: darkgray;color: black;cursor: pointer;"
-            >
-            {{item.title|slice:0:55}} ...
-          </h3>
-        </div>
-
       </div>
     </div>
   </div>
