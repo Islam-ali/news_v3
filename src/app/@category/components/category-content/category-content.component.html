@@ -55,7 +55,7 @@
                     <div class="col-12">
                       <div class="card-body">
                         <h5 class="card-title" style="color:#000000;font-size: large;">
-                          {{item.title}}
+                          {{item.title |maxLenght:60}}
                         </h5>
                         <!-- <p class="card-text">
                           {{item.subtitle|slice:0:65}}...
@@ -72,7 +72,7 @@
             </div>
             <div class="col-lg-6 col-md-5 col-sm-12 col-12">
   
-              <div class="card mb-3 mt-3" *ngFor="let item of arr2 ; let i=index" style="height: 300px; ">
+              <div class="card mb-3 mt-3" *ngFor="let item of arr2 ; let i=index" style="height: 300px;">
   
                 <a [routerLink]="['/News/',item.slug]">
   
@@ -83,7 +83,7 @@
                     <div class="col-12">
                       <div class="card-body">
                         <h5 class="card-title" style="color:#000000;font-size: large;">
-                          {{item.title}}
+                          {{item.title |maxLenght:60}}
                         </h5>
                         <!-- <p class="card-text">
                           {{item.subtitle|slice:0:65}}...
