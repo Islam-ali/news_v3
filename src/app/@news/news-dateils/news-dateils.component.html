@@ -39,13 +39,13 @@
             <div>
               <share-buttons theme="material-dark" [show]="11" [image]="selected?.image"></share-buttons>
             </div>
-            <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="true" [pauseOnFocus]="false"
-              *ngIf="selected.images.length>0" >
+            <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="false" [pauseOnFocus]="false"
+              *ngIf="selected.images.length>0" class="mt-2">
        <ng-template ngbSlide *ngFor="let slide of selected.images; index as i">
          <a >
         
            <div class="picsum-img-wrapper">
-             <img [src]="slide" height="420px" class="w-100" />
+             <img [src]="slide.image" height="420px" class="w-100" />
            </div>
          </a>
        </ng-template>
