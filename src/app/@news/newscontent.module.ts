@@ -13,7 +13,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
     NewscontentRoutingModule,
     SharedModule,
     ShareButtonsModule.withConfig({
-      debug: true,
+      debug: false,
     }),
     ShareIconsModule,
     NgbCarouselModule

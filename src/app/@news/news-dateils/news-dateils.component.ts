@@ -2,6 +2,7 @@ import { environment } from './../../../environments/environment';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { HttpService } from 'src/app/@core/services/http/http.service';
+import { SeoService } from 'src/app/@core/services/seo.service';
 
 @Component({
   selector: 'app-news-dateils',
@@ -24,6 +25,7 @@ export class NewsDateilsComponent implements OnInit {
     private httpService: HttpService,
     public activatedRoute: ActivatedRoute,
     private router: Router,
+    private seoService:SeoService
   ) {
   
 
@@ -47,8 +49,10 @@ export class NewsDateilsComponent implements OnInit {
       (data: any) => {
         this.selected = data.data;
         if (data.success) {
+          console.log(data);
           
-          this.loaded=true
+          this.loaded = true;
+          this.seoUpdate(data.data)
         }
         
         this.catId=this.selected.id;  
@@ -76,5 +80,24 @@ export class NewsDateilsComponent implements OnInit {
     );
   }
    
-  
+  metaTitle!:string;
+  metaDescription!:string;
+  metaImage!:string;
+  seoUpdate(test:any) {
+    this.metaTitle = test.title;
+    this.metaDescription = test.content;
+    this.metaImage = test.image;
+    // this.seoService.updateUrl();
+    console.log(this.metaDescription,this.metaImage,this.metaTitle);
+    
+    if (this.metaTitle != null) {
+      // this.seoService.updateTitle(this.metaTitle);
+    }
+    if (this.metaDescription != null) {
+      this.seoService.updateDescription(this.metaTitle);
+    }
+    if (this.metaImage != null) {
+      this.seoService.updateImage(this.metaImage);
+    }
+  }
 }

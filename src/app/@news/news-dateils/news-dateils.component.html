@@ -31,25 +31,29 @@
               <a *ngFor="let item of selected.tags">
 
                 <a class="btn btn-dark btn-sm m-2" *ngIf="item" routerLink="/search/{{item}}">
-                   {{item}} 
+                  {{item}}
                 </a>
               </a>
 
             </div>
             <div>
-              <share-buttons theme="material-dark" [show]="11" [image]="selected?.image" [url]="carrenturl" [title]="selected?.title" [autoSetMeta]="true"></share-buttons>
+
+              <share-buttons theme="material-dark" [show]="3" 
+              [include]="['facebook','twitter','whatsapp']"
+              [image]="selected.image" [url]="carrenturl" [tags]="selected.tags" 
+                [title]="selected?.title" [autoSetMeta]="true" [description]="selected.title" ></share-buttons>
             </div>
             <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="true" [pauseOnFocus]="false"
-              *ngIf="selected.images.length>0" >
-       <ng-template ngbSlide *ngFor="let slide of selected.images; index as i">
-         <a >
-        
-           <div class="picsum-img-wrapper">
-             <img [src]="slide" height="420px" class="w-100" />
-           </div>
-         </a>
-       </ng-template>
-     </ngb-carousel>
+              *ngIf="selected.images.length>0">
+              <ng-template ngbSlide *ngFor="let slide of selected.images; index as i">
+                <a>
+
+                  <div class="picsum-img-wrapper">
+                    <img [src]="slide.image" height="420px" class="w-100" />
+                  </div>
+                </a>
+              </ng-template>
+            </ngb-carousel>
             <div class="mt-5">
               <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
                 الموضوعات المتعلقة
@@ -57,7 +61,7 @@
               <div class="card mb-3 mt-3" *ngFor="let item of news" [routerLink]="['/News/',item.slug]">
                 <div class="row g-0 m-1">
                   <div class="col-md-4">
-                    <img [src]="item.image" class="img-fluid w-100" alt="..." style="height: 100px;" />
+                    <img [src]="item.image" class="img-fluid w-100" alt="..." style="height: 120px;" />
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
