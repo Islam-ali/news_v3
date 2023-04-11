@@ -1,5 +1,6 @@
+import { environment } from './../../../environments/environment';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { HttpService } from 'src/app/@core/services/http/http.service';
 
 @Component({
@@ -17,11 +18,18 @@ export class NewsDateilsComponent implements OnInit {
   MoreRead: any;
   loaded = false;
   
+  url:any;
+  carrenturl:any;
   constructor(
     private httpService: HttpService,
-    public activatedRoute: ActivatedRoute
+    public activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {
   
+
+    this.url=this.router.url;
+   this.carrenturl=`https://admin.lhzanews.com/api${this.url}`
+    console.log(this.carrenturl)
   }
 
   ngOnInit(): void {

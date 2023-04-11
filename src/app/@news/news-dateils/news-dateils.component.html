@@ -37,7 +37,7 @@
 
             </div>
             <div>
-              <share-buttons theme="material-dark" [show]="11" [image]="selected?.image"></share-buttons>
+              <share-buttons theme="material-dark" [show]="11" [image]="selected?.image" [url]="carrenturl" [title]="selected?.title" ></share-buttons>
             </div>
             <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="true" [pauseOnFocus]="false"
               *ngIf="selected.images.length>0" >
