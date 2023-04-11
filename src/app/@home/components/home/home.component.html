@@ -307,8 +307,8 @@
         <div class="col-lg-4 col-md-12 col-12 mb-md-0 itemCategory">
           <div class="card mb-5 w-100" [routerLink]="['/News/',item.news[0]?.slug]">
             <div class="card-body mb-3">
-              <img [src]="item.news[0]?.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2 ph-img" />
-              <h4 class="card-title px-2" style="font-weight: bold;">{{item.news[0]?.title|maxLenght:200}} </h4>
+              <img [src]="item.news[0]?.image" alt="Trendy Pants and Shoes" class="img-fluid w-100 mb-2 ph-img" style="height: 250px;"/>
+              <h4 class="card-title px-2" style="font-weight: bold;">{{item.news[0]?.title|maxLenght:120}} </h4>
 
               <!-- <p class="card-text px-2">
                        {{item.news[0].subtitle|maxLenght:290}} </p>
@@ -318,10 +318,10 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-8 col-md-12 col-12 mb-md-0 itemCategory ">
+        <div class="col-lg-8 col-md-12 col-12 mb-md-0 itemCategory">
           <div class="row">
 
-            <div *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-lg-3 col-12 mx-2">
+            <div *ngFor="let newsItem of item.news.slice(1) ; let j=index;" class="col-lg-3 col-12 px-2 m-auto">
               <div *ngIf="j<8">
 
                 <div class="card mb-2 w-100" [routerLink]="['/News/',newsItem.slug]">
