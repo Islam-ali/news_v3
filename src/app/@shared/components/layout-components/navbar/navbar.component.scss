@@ -354,6 +354,9 @@ margin-top:70px;
   height: 255px !important;
 }
 }
+.navbar-brand{
+  display: none;
+}
 
 @media(max-width: 990px) {
   .listitem{
@@ -363,5 +366,8 @@ margin-top:70px;
   .listitem2{
     
     display: none !important;
+  }
+  .navbar-brand{
+    display: block;
   }
 }

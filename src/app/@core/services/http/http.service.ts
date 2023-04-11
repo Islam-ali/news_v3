@@ -14,6 +14,8 @@ export class HttpService {
   private httpOptions = {};
   private domain = environment.baseUrl;
   token: any;
+
+  tvvideo=false;
   constructor(private http: HttpClient) {}
   getCategories(): Observable<IResponse> {
     return this.http.get<IResponse>(environment.baseUrl.concat(`categories`));

@@ -10,7 +10,7 @@ import { HttpService } from './@core/services/http/http.service';
     <app-footer></app-footer>
     <!-- <app-loader></app-loader> -->
     <div
-      style="position: fixed; bottom:0px; left:8px;" class="parent">
+      style="position: fixed; bottom:0px; left:8px;" class="parent" *ngIf="this.tvvideo==true">
       <a href="https://www.youtube.com/">
         <iframe
           [src]="safeURL"
@@ -29,6 +29,7 @@ export class AppComponent {
   title = 'template';
   safeURL: any;
   tvLink: string = 'https://www.youtube.com/embed/Ky7KQopv39Y';
+  tvvideo:any;
   constructor(
     private _sanitizer: DomSanitizer,
     private httpService: HttpService
@@ -37,6 +38,7 @@ export class AppComponent {
     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(
       this.tvLink.concat('?autoplay=1&mute=1')
     );
+    this.tvvideo=this.httpService.tvvideo
   }
   getTv() {
     this.httpService.getTv().subscribe(
