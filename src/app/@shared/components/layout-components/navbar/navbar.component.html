@@ -36,11 +36,10 @@
         class="img-fluid"
       />
     </a>
-  </div>
-  <div class="dateDiv text-center mt-2 mx-3">
-    <div class="dateFont">
-      {{ rxTime | date : "EEEE, MMMM d, y, h:mm:ss a " : "+1" : "ar-EG" }}
-    </div>
+
+  </div> 
+   <div class="dateDiv text-center mt-2 mx-3 ">
+    <div class="dateFont"> {{ rxTime | date: 'EEEE,  d MMMM, y , h:mm:ss a ':'+2':'ar-EG'}} </div>
   </div>
   <!-- <mat-icon class="text-danger">live_tv</mat-icon> -->
 
@@ -85,10 +84,9 @@
   <div class="container-fluid">
     <a class="navbar-brand" (click)="toggletvvide()">
       
-      <img src="../../../../../assets/icons/icons8-tv-show-64.png" alt="">
+      <img src="../../../../../assets/icons/icons8-tv-show-64.png" alt="" width="20" height="20" class="ml-2">
       
-      
-      تلفزيون لحظه بلحظه</a>
+      <small>تلفزيون لحظة بلحظة</small></a>
   
   
   

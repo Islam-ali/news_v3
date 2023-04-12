@@ -32,7 +32,7 @@
               "src/styles.scss",
               "node_modules/ngx-sharebuttons/themes/modern.scss",
               "node_modules/ngx-sharebuttons/themes/material.scss",
-             
+              "node_modules/ngx-sharebuttons/themes/circles.scss",
               "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
