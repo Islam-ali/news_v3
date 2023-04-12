@@ -84,7 +84,7 @@ getYoutubeLive(): Observable<IResponse> {
 }
 getTv(): Observable<IResponse> {
 
-  return this.http.get<IResponse>(environment.baseUrl.concat(`/tv`));
+  return this.http.get<IResponse>(environment.baseUrl.concat(`tv`));
 
 }
   /////////////////////////////////////////////////////////////////////////////
