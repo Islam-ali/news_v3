@@ -317,6 +317,16 @@ margin-top:70px;
   margin-left:70px;
   margin-right:30px;
 }
+.listitem{
+  display: none;
+}
+.listitem2{
+  display: block;
+}
+
+
+
+
 @media(max-width:900px) {
   .bossImg
   {
@@ -344,4 +354,20 @@ margin-top:70px;
   height: 255px !important;
 }
 }
+.navbar-brand{
+  display: none;
+}
 
+@media(max-width: 990px) {
+  .listitem{
+    
+    display: block;
+  }
+  .listitem2{
+    
+    display: none !important;
+  }
+  .navbar-brand{
+    display: block;
+  }
+}

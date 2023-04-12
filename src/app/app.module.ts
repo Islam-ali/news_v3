@@ -30,9 +30,13 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderService } from './@core/services/loader.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 @NgModule({
   declarations: [AppComponent, AdsComponent],
   imports: [
+    ShareButtonsModule,
+  ShareIconsModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,

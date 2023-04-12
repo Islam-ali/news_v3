@@ -109,4 +109,10 @@ ngOnDestroy() {
       this.mdbCollapse.toggle();
      }
   }
+
+
+  toggletvvide(){
+    this.httpService.tvvideo=!this.httpService.tvvideo
+    console.log(this.httpService.tvvideo)
+  }
 }
