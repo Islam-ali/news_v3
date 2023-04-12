@@ -91,7 +91,7 @@ export class NewsDateilsComponent implements OnInit {
     console.log(this.metaDescription,this.metaImage,this.metaTitle);
     
     if (this.metaTitle != null) {
-      // this.seoService.updateTitle(this.metaTitle);
+      this.seoService.updateTitle(this.metaTitle);
     }
     if (this.metaDescription != null) {
       this.seoService.updateDescription(this.metaTitle);

@@ -69,6 +69,10 @@ export class AppComponent implements OnInit,OnChanges {
           this.getTv();
           this. checkwindow(window.innerWidth)
         }
-        
+        @HostListener('window:resize', ['$event.target'])
+        // tslint:disable-next-line: no-any
+        onResize(target: any): void {
+          this.checkwindow(window.innerWidth)
+        }
       }
       
