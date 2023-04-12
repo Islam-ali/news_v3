@@ -30,7 +30,7 @@ export class NewsDateilsComponent implements OnInit {
   
 
     this.url=this.router.url;
-   this.carrenturl=`https://lhzanews.com/${this.url}`
+   this.carrenturl=`https://lhzanews.com${this.url}`
     console.log(this.carrenturl)
   }
 
