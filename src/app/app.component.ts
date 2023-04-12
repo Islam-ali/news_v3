@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnChanges, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpService } from './@core/services/http/http.service';
 @Component({
@@ -10,7 +10,7 @@ import { HttpService } from './@core/services/http/http.service';
     <app-footer></app-footer>
     <!-- <app-loader></app-loader> -->
     <div
-      style="position: fixed; bottom:0px; left:8px;" class="parent" *ngIf="this.httpService.tvvideo">
+      style="position: fixed; bottom:0px; left:8px;" class="parent" *ngIf="this.httpService.tvvideo==true">
       <a href="https://www.youtube.com/">
         <iframe
           [src]="safeURL"
@@ -25,7 +25,8 @@ import { HttpService } from './@core/services/http/http.service';
     </div>
   `,  styleUrls: ['./app.component.css']
 })
-export class AppComponent  {
+export class AppComponent implements OnInit,OnChanges {
+  // tslint:disable-next-line: no-any
   title = 'template';
   safeURL: any;
   tvLink?: any;
@@ -33,25 +34,41 @@ export class AppComponent  {
   constructor(
     private _sanitizer: DomSanitizer,
     public httpService: HttpService
-  ) {
-    this.getTv();
-   
-   
-  }
-  getTv() {
-    this.httpService.getTv().subscribe(
-      (data: any) => {
-        this.tvLink = data.data.link;
-
-        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(
-          this.tvLink?.concat('?autoplay=1&mute=1')
-        );
-      },
-      (err: any) => {}
-    );
-  }
-  ngOnChanges(){
-    this.tvvideo=this.httpService.tvvideo
-
-  }
-}
+    ) {
+      // this.getTv();
+      
+      
+    }
+    getTv() {
+      this.httpService.getTv().subscribe(
+        (data: any) => {
+          this.tvLink = data.data.link;
+          
+          // this.httpService.tvvideo=false
+          this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(
+            this.tvLink?.concat('?autoplay=1&mute=1')
+            );
+          },
+          (err: any) => {}
+          );
+        }
+        ngOnChanges(){
+          // this.tvvideo=this.httpService.tvvideo
+          
+        }
+        checkwindow(width:any){
+          if(width<=991){
+            this.httpService.tvvideo=false
+          }
+          else{
+            this.httpService.tvvideo=true;
+          }
+        }
+       
+        ngOnInit(): void{
+          this.getTv();
+          this. checkwindow(window.innerWidth)
+        }
+        
+      }
+      
