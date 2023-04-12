@@ -10,7 +10,7 @@ import { HttpService } from './@core/services/http/http.service';
     <app-footer></app-footer>
     <!-- <app-loader></app-loader> -->
     <div
-      style="position: fixed; bottom:0px; left:8px;" class="parent" *ngIf="this.tvvideo==true">
+      style="position: fixed; bottom:0px; left:8px;" class="parent" *ngIf="this.httpService.tvvideo">
       <a href="https://www.youtube.com/">
         <iframe
           [src]="safeURL"
@@ -25,27 +25,33 @@ import { HttpService } from './@core/services/http/http.service';
     </div>
   `,  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'template';
   safeURL: any;
-  tvLink: string = 'https://www.youtube.com/embed/Ky7KQopv39Y';
+  tvLink?: any;
   tvvideo:any;
   constructor(
     private _sanitizer: DomSanitizer,
-    private httpService: HttpService
+    public httpService: HttpService
   ) {
     this.getTv();
-    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(
-      this.tvLink.concat('?autoplay=1&mute=1')
-    );
-    this.tvvideo=this.httpService.tvvideo
+   
+   
   }
   getTv() {
     this.httpService.getTv().subscribe(
       (data: any) => {
         this.tvLink = data.data.link;
+
+        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(
+          this.tvLink?.concat('?autoplay=1&mute=1')
+        );
       },
       (err: any) => {}
     );
+  }
+  ngOnChanges(){
+    this.tvvideo=this.httpService.tvvideo
+
   }
 }
