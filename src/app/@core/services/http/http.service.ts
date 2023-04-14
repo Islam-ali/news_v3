@@ -70,7 +70,7 @@ export class HttpService {
     return this.http.get<IResponse>(environment.baseUrl.concat(`articles/${slug}`));
   }
   relatedArticles(id:any) {
-    return this.http.get<IResponse>(environment.baseUrl.concat(`/related-articles/${id}`));
+    return this.http.get<IResponse>(environment.baseUrl.concat(`related-articles/${id}`));
   }
   getFaceLive(): Observable<IResponse> {
 
@@ -86,7 +86,15 @@ getTv(): Observable<IResponse> {
 
   return this.http.get<IResponse>(environment.baseUrl.concat(`tv`));
 
-}
+  }
+  latestArticles() {
+  return this.http.get<IResponse>(environment.baseUrl.concat(`latest-articles`));
+    
+  }
+  latestTrends() {
+    return this.http.get<IResponse>(environment.baseUrl.concat(`latest-trends`));
+      
+    }
   /////////////////////////////////////////////////////////////////////////////
   // getAllReports(): Observable<IResponse> {
   // this.token = localStorage.getItem('token');

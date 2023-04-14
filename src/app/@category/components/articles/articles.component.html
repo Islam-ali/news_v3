@@ -44,25 +44,22 @@
         مقالات</div>
   
       <div class="row ">
-        <div class="col-lg-8 col-md-8 col-sm-12 col-12">
-          <div class="card mb-3 mt-3" *ngFor="let item of news">
+        <div class="col-lg-4 col-md-8 col-sm-12 col-12" *ngFor="let item of news">
+          <div class="bg-light mb-3 mt-3" >
             <div class="row g-0" >
-              <div class="col-md-2 text-center mt-2">
+              <div class="col-md-4 text-center">
                 <div class="m-auto">
   
-                  <img [src]="item.user.image" class="userImage img-fluid">
-                  <div class="text-muted">{{item.user.name}}</div>
+                  <img [src]="item.user.image" class=" img-fluid" >
                 </div>
-  
+                
               </div>
-              <div class="col-md-10">
-                <div class="card-body mt-3" routerLink="/articles/{{item.slug}}" style="cursor: pointer;">
+              <div class="col-md-8">
+                <div class="card-body mt-3" routerLink="/Articles/{{item.slug}}" style="cursor: pointer;">
+                  <div class="text-muted mb-2">{{item.user.name}}</div>
   
                   <h5 class="card-title" style="color: rgb(255, 0, 0);font-size: large;">{{item.title}}
                   </h5>
-                  <div [innerHTML]="item.subtitle|maxLenght:180">
-  
-                  </div>
                   <p class="card-text"><small class="text-muted">
                       {{item.created_at}} </small></p>
                 </div>

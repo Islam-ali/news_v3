@@ -26,7 +26,8 @@ export class HomeComponent implements OnInit {
   next = 0;
   perv = 1;
   loaded = false;
-
+  articles :any []=[]
+  trends :any []=[]
   @ViewChild('carousel', { static: true }) carousel!: NgbCarousel;
 
   togglePaused() {
@@ -62,7 +63,8 @@ export class HomeComponent implements OnInit {
     this.getAllCategories();
     this.getTaskbar();
     this.getSliders();
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
+    this.latestArticles();
   }
   getAllCategories() {
     this.httpService.getCategories().subscribe(
@@ -122,5 +124,25 @@ export class HomeComponent implements OnInit {
   setName(name:string)
 {
   localStorage.setItem('categoryNmame',name)
-}
+  }
+  latestArticles() {
+    this.httpService.latestArticles().subscribe({
+      next: (res: any) => {
+        this.articles=res.data
+        
+      }, error: (err: any) => {
+        
+      }
+    })
+  }
+  latestTrends() {
+    this.httpService.latestTrends().subscribe({
+      next: (res: any) => {
+        this.trends=res.data
+        
+      }, error: (err: any) => {
+        
+      }
+    })
+  }
 }

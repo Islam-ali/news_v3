@@ -28,6 +28,8 @@ export class ArticleDetailsComponent implements OnInit {
       this.slug = String(params.get('slug'));
       this.articleDetail(this.slug);
       this.getTrands();
+    window.scroll(0,0)
+
     });
   }
   articleDetail(slug:any) {

@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'Trends/:slug/:id', component: TrandsComponent },
   { path: 'articles', component: ArticlesComponent },
   { path: 'tourism', component:TourismComponent },
-  { path: 'articles/:slug', component: ArticleDetailsComponent },
+  { path: 'Articles/:slug', component: ArticleDetailsComponent },
   { path: 'ads', component: AdsComponent },
   { path: 'articles', component:ArticlesComponent },
   { path: 'search/:key', component:SearchComponent },

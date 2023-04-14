@@ -91,7 +91,7 @@
 
           <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">الاكثر قراءة</div>
 
-          <div *ngFor="let item of MoreRead" routerLink="/articles/{{item.slug}}">
+          <div *ngFor="let item of MoreRead" routerLink="/Articles/{{item.slug}}">
             <h3 class="p-2 mt-2 " style="background-color: darkgray;color: black;cursor: pointer;">
               {{item.title|slice:0:55}} ...
             </h3>
