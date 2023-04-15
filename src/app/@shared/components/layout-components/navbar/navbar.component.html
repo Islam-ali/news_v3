@@ -1,13 +1,6 @@
 <!-- -----------------------------Top Marquee------------------------------------- -->
-<marquee
-  class="news-scroll"
-  behavior="scroll"
-  direction="right"
-  Scrollamount="10"
-  Scrollamount="10"
-  onmouseover="this.stop();"
-  onmouseout="this.start();"
->
+<marquee class="news-scroll" behavior="scroll" direction="right" Scrollamount="10" Scrollamount="10"
+  onmouseover="this.stop();" onmouseout="this.start();">
   <ng-container *ngFor="let item of taskBarItems">
     <a href="#" [routerLink]="['/News/', item?.slug]">
       {{ item?.title }}
@@ -29,16 +22,11 @@
   </div> -->
   <div style="flex-grow: 1" class="mt-2">
     <a routerLink="/ads">
-      <img
-        src="assets/icons/ad.webp"
-        width="100"
-        height="100"
-        class="img-fluid"
-      />
+      <img src="assets/icons/ad.webp" width="100" height="100" class="img-fluid" />
     </a>
 
-  </div> 
-   <div class="dateDiv text-center mt-2 mx-3 ">
+  </div>
+  <div class="dateDiv text-center mt-2 mx-3 ">
     <div class="dateFont"> {{ rxTime | date: 'EEEE,  d MMMM, y , h:mm:ss a ':'+2':'ar-EG'}} </div>
   </div>
   <!-- <mat-icon class="text-danger">live_tv</mat-icon> -->
@@ -49,30 +37,17 @@
 
   <button class="liveBtn1">
     <a href="{{ youtubeLive }}" target="_blank">
-      <small>مباشر</small>&nbsp;<i class="fab fa-youtube youtubeIcon fs-6"></i
-      >&nbsp;&nbsp;<img
-        src="../../../../../assets/icons/live1.png"
-        width="20"
-        height="20"
-        class="mt-2"
-    /></a>
+      <small>مباشر</small>&nbsp;<i class="fab fa-youtube youtubeIcon fs-6"></i>&nbsp;&nbsp;<img
+        src="../../../../../assets/icons/live1.png" width="20" height="20" class="mt-2" /></a>
   </button>
   <button class="liveBtn2">
     <a href="{{ faceLive }}" target="_blank">
-      <small> مباشر</small>&nbsp;<i class="fab fa-facebook-f fs-6"></i
-      >&nbsp;&nbsp;<img
-        src="../../../../../assets/icons/live1.png"
-        width="20"
-        height="20"
-        class="mt-2"
-    /></a>
+      <small> مباشر</small>&nbsp;<i class="fab fa-facebook-f fs-6"></i>&nbsp;&nbsp;<img
+        src="../../../../../assets/icons/live1.png" width="20" height="20" class="mt-2" /></a>
   </button>
   <button class="trendBtn">
     <a routerLink="/trends">
-      <small> تريندات لحظة</small>&nbsp;&nbsp;<i
-        class="fa-solid fa-money-bill-trend-up"
-      ></i
-    ></a>
+      <small> تريندات لحظة</small>&nbsp;&nbsp;<i class="fa-solid fa-money-bill-trend-up"></i></a>
   </button>
   <!-- <a class="text-light b" routerLink="/trends">تريند</a> -->
 </header>
@@ -83,139 +58,82 @@
 <nav class="navbar navbar-expand-lg border-bottom" *ngIf="allCategories">
   <div class="container-fluid">
     <a class="navbar-brand" (click)="toggletvvide()">
-      
+
       <img src="../../../../../assets/icons/icons8-tv-show-64.png" alt="" width="20" height="20" class="ml-2">
-      
-      <small>تلفزيون لحظة بلحظة</small></a>
-  
-  
-  
-  
-  
-  
-    <button
-      class="navbar-toggler"
-      type="button"
-      (click)="basicNavbar.toggle()"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fa fa-sliders text-warning"></i>
+
+      <small class="pe-2">تلفزيون لحظة بلحظة</small></a>
+
+
+
+
+
+
+    <button class="navbar-toggler" type="button" (click)="basicNavbar.toggle()" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fa fa-sliders text-white"></i>
     </button>
 
     <!-- Collapsible wrapper -->
-    <div
-      class="collapse navbar-collapse"
-      id="navbarSupportedContent"
-      mdbCollapse
-      #basicNavbar="mdbCollapse"
-      #www
-    >
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" mdbCollapse #basicNavbar="mdbCollapse" #www>
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-4">
         <li class="nav-item">
-          <a
-            class="nav-link active text-white"
-            aria-current="page"
-            [routerLink]="['']"
-            (click)="toggleNav()"
-            >الرئيسية</a
-          >
+          <a class="nav-link active text-white border-nav" aria-current="page" [routerLink]="['']"
+            (click)="toggleNav()">الرئيسية</a>
         </li>
         <ng-container *ngFor="let cat of allCategories; let i = index">
           <li class="nav-item">
-            <a
-              class="nav-link active text-white"
-              aria-current="page"
-              [routerLink]="['/category/', cat.slug]"
-              *ngIf="i < 7"
-              (click)="setName(cat.name); toggleNav()"
-              >{{ cat.name }}</a
-            >
+            <a class="nav-link active text-white border-nav" aria-current="page" [routerLink]="['/category/', cat.slug]"
+              *ngIf="i < 7" (click)="setName(cat.name); toggleNav()">{{ cat.name }}</a>
           </li>
-          <li class="nav-item me-3 me-lg-0 dropdown listitem2" *ngIf="showMore && i == 7" >
-            <a
-              class="nav-link dropdown-toggle "
-              id="navbarDropdown"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-              (mouseleave)="shDrop()"
-            >
+          <li class="nav-item me-3 me-lg-0 dropdown listitem2" *ngIf="showMore && i == 7">
+            <a class="nav-link dropdown-toggle " id="navbarDropdown" data-mdb-toggle="dropdown" aria-expanded="false"
+              (mouseleave)="shDrop()">
               المزيد
             </a>
-            <div
-              class="dropdown-menu"
-              aria-labelledby="navbarDropdown"
-              *ngIf="isShown"
-              (click)="shDrop()"
-              (mouseleave)="shDrop()"
-            >
-              <a
-                class="dropdown-item"
-                [routerLink]="['/articles']"
-                (click)="toggleNav()"
-                >مقالات</a
-              >
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown" (click)="shDrop()"
+              (mouseleave)="shDrop()">
+              <a class="dropdown-item innernav-item" [routerLink]="['/articles']" (click)="toggleNav()">مقالات</a>
 
               <!-- <li >
                         <a class="dropdown-item" [routerLink]="['/tourism']">سياحة وترفيه</a>
                       </li> -->
               <div *ngFor="let cat of allCategories; let i = index">
-                <a
-                  class="dropdown-item"
-                  href="#"
-                  *ngIf="i >= 7"
-                  [routerLink]="['/category/', cat.slug]"
-                  (click)="setName(cat.name); toggleNav()"
-                  >{{ cat.name }}</a
-                >
+                <a class="dropdown-item innernav-item" href="#" *ngIf="i >= 7" [routerLink]="['/category/', cat.slug]"
+                  (click)="setName(cat.name); toggleNav()">{{ cat.name }}</a>
               </div>
             </div>
           </li>
 
+          <li class="listitem">
 
-
-
-
-
-          <li  class="listitem">
-            <a
-              class="dropdown-item"
-              href="#"
-              *ngIf="i >= 7"
-              [routerLink]="['/category/', cat.slug]"
-              (click)="setName(cat.name); toggleNav()"
-              >{{ cat.name }}</a
-            >
+            <a class="dropdown-item innernav-item border-nav" href="#" *ngIf="i >= 7"
+              [routerLink]="['/category/', cat.slug]" (click)="setName(cat.name); toggleNav()">{{ cat.name }}</a>
           </li>
+          
 
 
 
 
         </ng-container>
+        <li class="listitem">
+          <a class="dropdown-item innernav-item border-nav" [routerLink]="['/articles']"
+            (click)="toggleNav()">مقالات</a>
+        </li>
         <li class="nav-item icons">
-          <a class="nav-link text-white" aria-current="page"
-            ><a
-              href="https://www.facebook.com/profile.php?id=100091430983924&mibextid=ZbWKwL"
-              target="_blank"
-              class="text-reset"
-              (click)="toggleNav()"
-            >
+          <a class="nav-link text-white" aria-current="page"><a
+              href="https://www.facebook.com/profile.php?id=100091430983924&mibextid=ZbWKwL" target="_blank"
+              class="text-reset" (click)="toggleNav()">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a
-              class="me-4 text-reset"
-              target="_blank"
-              href="https://youtube.com/@lhzabelhza"
-            >
+            <a class="me-4 text-reset" target="_blank" href="https://youtube.com/@lhzabelhza">
               <i class="fab fa-youtube"></i>
             </a>
             <a href="" class="me-4 text-reset">
               <i class="fab fa-tiktok"></i>
             </a>
             <a href="" class="me-4 text-reset">
-              <i class="fab fa-instagram"></i> </a
-          ></a>
+              <i class="fab fa-instagram"></i> </a></a>
         </li>
       </ul>
     </div>
