@@ -1,8 +1,8 @@
 <!-- -----------------------------Top Marquee------------------------------------- -->
-<marquee class="news-scroll" behavior="scroll" direction="right" Scrollamount="10" Scrollamount="10"
-  onmouseover="this.stop();" onmouseout="this.start();">
+<marquee  behavior="scroll" direction="right" Scrollamount="5"
+  onmouseover="this.stop();" onmouseout="this.start();" >
   <ng-container *ngFor="let item of taskBarItems">
-    <a href="#" [routerLink]="['/News/', item?.slug]">
+    <a  class="text-dark" [routerLink]="['/News/', item?.slug]" style="color: black !important;">
       {{ item?.title }}
     </a>
     <span class="dot"> </span>
