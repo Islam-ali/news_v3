@@ -37,7 +37,7 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
   imports: [
     ShareButtonsModule,
   ShareIconsModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,

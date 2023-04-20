@@ -32,7 +32,6 @@ export class TrandsComponent implements OnInit {
       this.getTrandscontent();
       this.getTrands();
       this.lastNews();
-      scroll(0,0)
     });
   }
   getTrandscontent() {

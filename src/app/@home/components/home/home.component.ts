@@ -63,7 +63,6 @@ export class HomeComponent implements OnInit {
     this.getAllCategories();
     this.getTaskbar();
     this.getSliders();
-    window.scrollTo(0, 0);
     this.latestArticles();
   }
   getAllCategories() {

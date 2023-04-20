@@ -18,7 +18,6 @@ export class PaginationComponent implements OnInit {
     console.log(event);
     this.page = event;
     this.onChange.emit(event);
-    window.scroll(0,0);
     
   }
   getPageSymbol(current: number) {

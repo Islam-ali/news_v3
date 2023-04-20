@@ -1,11 +1,13 @@
 import { MdbCollapseDirective, MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { HttpService } from 'src/app/@core/services/http/http.service';
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
 import { Subscription, timer } from 'rxjs';
 import { map, share } from 'rxjs/operators';
 import { registerLocaleData } from '@angular/common';
 import localeAr from '@angular/common/locales/ar-EG';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
+import {isPlatformBrowser} from '@angular/common';
+
 registerLocaleData(localeAr);
 @Component({
   selector: 'app-navbar',
@@ -24,11 +26,13 @@ time = new Date();
   intervalId:any;
   subscription!: Subscription;
   @ViewChild('basicNavbar') mdbCollapse!: NgbCollapse;
-constructor(private httpService:HttpService){ }
+constructor(private httpService:HttpService,@Inject(PLATFORM_ID) private platformId: Object){ }
 
   ngOnInit(): void {
-    this.getAllCategories();
-    this.getTaskbar();
+    if (isPlatformBrowser(this.platformId)) {
+
+      this.getAllCategories();
+      this.getTaskbar();
     this.getFaceLive();
     this.getYoutubeLive();
     this.intervalId = setInterval(() => {
@@ -49,6 +53,7 @@ constructor(private httpService:HttpService){ }
         let NewTime = hour+ ":" + minuts + ":" + seconds
         this.rxTime = time;
       });
+    }
   }
 shDrop()
 {

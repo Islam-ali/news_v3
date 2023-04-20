@@ -85,7 +85,7 @@
 
         <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;" *ngIf="MoreRead?.length>0">الاكثر قراءة</div>
 
-        <div *ngFor="let item of MoreRead">
+        <div *ngFor="let item of MoreRead" [routerLink]="['/Articles/',item.slug]">
           <h3 class="p-2 mt-2 " style="background-color: darkgray;color:black;cursor: pointer;">
             {{item.title|maxLenght:55}} 
           </h3>

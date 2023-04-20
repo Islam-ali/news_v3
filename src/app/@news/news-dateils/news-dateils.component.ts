@@ -37,11 +37,9 @@ export class NewsDateilsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.slug = String(params.get('slug'));
-      scrollTo(0,0)
       this.getSelected();
     });
     this.getTrands();
-    scrollTo(0,0);
   }
   getSelected() {
     this.loaded=false
@@ -94,7 +92,7 @@ export class NewsDateilsComponent implements OnInit {
       this.seoService.updateTitle(this.metaTitle);
     }
     if (this.metaDescription != null) {
-      this.seoService.updateDescription(this.metaTitle);
+      this.seoService.updateDescription(this.metaDescription);
     }
     if (this.metaImage != null) {
       this.seoService.updateImage(this.metaImage);

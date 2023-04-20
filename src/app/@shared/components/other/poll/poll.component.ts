@@ -20,24 +20,20 @@ export class PollComponent implements OnInit {
   getPollQuestion() {
     this.pollService.pollQuestion().subscribe({
       next: (res: any) => {
-        console.log(res);
         this.pollQuestion = res.data;
         this.answers = res.data?.answers;
         this.userAnswer = this.pollService.checkUserAnswer(
           this.pollQuestion?.id
         );
-        console.log(this.userAnswer);
         if (this.userAnswer) {
           this.pollResult();
         }
       },
       error: (err: any) => {
-        console.log(err);
       },
     });
   }
   getAnswer(answerID: number) {
-    console.log(answerID);
     this.answerID = answerID;
   }
   submitPoll() {
@@ -51,7 +47,6 @@ export class PollComponent implements OnInit {
       })
       .subscribe({
         next: (res: any) => {
-          console.log(res);
           if (res.success) {
             localStorage.setItem('pollAnswer', this.pollQuestion.id);
             this.pollResult();
@@ -59,7 +54,6 @@ export class PollComponent implements OnInit {
           }
         },
         error: (err: any) => {
-          console.log(err);
         },
       });
   }
@@ -67,17 +61,13 @@ export class PollComponent implements OnInit {
     this.answers.forEach((answer: any) => {
       this.pollService.pollResult(answer.id).subscribe({
         next: (res: any) => {
-          console.log(res);
           if (res.success) {
             answer.count = res.data.count;
             answer.percentage = res.data.percentage;
-
-            console.log(this.answers);
             this.answerCount = true;
           }
         },
         error: (err: any) => {
-          console.log(err);
         },
       });
     });

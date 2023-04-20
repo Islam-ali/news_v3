@@ -28,7 +28,6 @@ export class ArticlesComponent implements OnInit {
   ngOnInit(): void {
     this.getNews(this.page);
     this.getTrands();
-    window.scroll(0,0)
   }
   getNews(page:any) {
     this.httpService.getArticles(page).subscribe(

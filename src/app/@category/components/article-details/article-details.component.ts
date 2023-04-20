@@ -28,11 +28,11 @@ export class ArticleDetailsComponent implements OnInit {
       this.slug = String(params.get('slug'));
       this.articleDetail(this.slug);
       this.getTrands();
-    window.scroll(0,0)
 
     });
   }
-  articleDetail(slug:any) {
+  articleDetail(slug: any) {
+    this.loaded = false;
     this.httpService.articleDetails(slug).subscribe({
       next: (res: any) => {
         console.log(res);

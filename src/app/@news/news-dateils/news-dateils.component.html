@@ -39,9 +39,8 @@
             <div>
 
               <share-buttons theme="material-dark" [show]="3" 
-              [include]="['facebook','twitter','whatsapp']"
-              [image]="selected.image" [url]="carrenturl" [tags]="selected.tags" 
-                [title]="selected?.title" [autoSetMeta]="true" [description]="selected.title" ></share-buttons>
+              [include]="['facebook','twitter','whatsapp']" [url]="carrenturl" 
+              [title]="selected?.title" [autoSetMeta]="true"  ></share-buttons>
             </div>
             <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="false" [pauseOnFocus]="false"
               *ngIf="selected.images.length>0" class="mt-2">
