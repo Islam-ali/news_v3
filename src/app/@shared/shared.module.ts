@@ -13,6 +13,7 @@ import { NgbPaginationModule, NgbProgressbarModule } from '@ng-bootstrap/ng-boot
 import { MaxLenghtPipe } from './pipes/max-lenght.pipe';
 import { LoaderComponent } from './components/other/loader/loader.component';
 import { PollComponent } from './components/other/poll/poll.component';
+import { SideAdsComponent } from './components/other/side-ads/side-ads.component';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -21,7 +22,8 @@ import { PollComponent } from './components/other/poll/poll.component';
     PaginationComponent,
     MaxLenghtPipe,
     LoaderComponent,
-    PollComponent
+    PollComponent,
+    SideAdsComponent
   ],
   imports: [
     MdbCollapseModule,
@@ -39,7 +41,8 @@ import { PollComponent } from './components/other/poll/poll.component';
     PaginationComponent,
     MaxLenghtPipe,
     LoaderComponent,
-    PollComponent
+    PollComponent,
+    
 
   ]
 })

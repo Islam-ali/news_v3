@@ -42,6 +42,7 @@
     "mdb-angular-ui-kit": "^3.0.0",
     "mock-browser": "^0.92.14",
     "ng-marquee": "^9.5.0",
+    "ng2-adsense": "^11.0.0",
     "ngx-embed-video": "^1.0.4",
     "ngx-sharebuttons": "^11.0.0",
     "ngx-toastr": "^15.0.0",

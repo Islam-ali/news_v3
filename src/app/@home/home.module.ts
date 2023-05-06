@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbAccordionModule, NgbCarouselModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
+import { AdsenseModule } from 'ng2-adsense';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchComponent } from './components/search/search.component';
     FormsModule,
     NgFor,
     NgbAccordionModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    AdsenseModule
   ]
 })
 export class HomeModule { }

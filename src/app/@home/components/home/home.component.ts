@@ -7,6 +7,7 @@ import {
   NgbSlideEventSource,
 } from '@ng-bootstrap/ng-bootstrap';
 import { HttpService } from 'src/app/@core/services/http/http.service';
+import { SeoService } from 'src/app/@core/services/seo.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
   articles :any []=[]
   trends :any []=[]
   @ViewChild('carousel', { static: true }) carousel!: NgbCarousel;
+  banner: any;
 
   togglePaused() {
     if (this.paused) {
@@ -57,13 +59,24 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  constructor(private httpService: HttpService, private router: Router) {}
+    
+    constructor(private httpService: HttpService, private router: Router,private seoService:SeoService) {}
 
   ngOnInit(): void {
     this.getAllCategories();
     this.getTaskbar();
     this.getSliders();
     this.latestArticles();
+    this.seoService.updateTitle('لحظة بلحظة');
+
+
+  }
+  ngAfterViewInit() {
+    // (window['adsbygoogle'] = window['adsbygoogle'] || []).push({
+    //   google_ad_client: 'your-publisher-id-here',
+    //   enable_page_level_ads: true,
+    //   adSlot: 'my-ad'
+    // });
   }
   getAllCategories() {
     this.httpService.getCategories().subscribe(

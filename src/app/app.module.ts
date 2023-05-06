@@ -32,6 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { AdsenseModule } from 'ng2-adsense';
+
 @NgModule({
   declarations: [AppComponent, AdsComponent],
   imports: [
@@ -51,6 +53,9 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
       closeButton: true,
       progressBar: true,
     }),
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-6405002906731110',
+    }),
     
     
     
@@ -61,6 +66,8 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 
   ],
   bootstrap: [AppComponent],
+ 
+  
 })
 export class AppModule {}
 //

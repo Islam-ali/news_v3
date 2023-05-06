@@ -26,13 +26,17 @@ time = new Date();
   intervalId:any;
   subscription!: Subscription;
   @ViewChild('basicNavbar') mdbCollapse!: NgbCollapse;
-constructor(private httpService:HttpService,@Inject(PLATFORM_ID) private platformId: Object){ }
+  constructor(private httpService: HttpService, @Inject(PLATFORM_ID) private platformId: Object) {
+    // this.getTaskbar();
+  
+  }
+  
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
 
-      this.getAllCategories();
       this.getTaskbar();
+      this.getAllCategories();
     this.getFaceLive();
     this.getYoutubeLive();
     this.intervalId = setInterval(() => {
@@ -72,8 +76,9 @@ this.showMore=true
 }
 getTaskbar() {
   
-  this.httpService.getTopTaskbar().subscribe((data: any) => {
-   this.taskBarItems=data.data;
+  this.httpService.getTopTaskbar().subscribe((data: any) => {  
+    this.taskBarItems=data.data; 
+  
   }, (err: any) => {
 
   });
