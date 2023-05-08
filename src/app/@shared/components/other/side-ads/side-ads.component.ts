@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class SideAdsComponent implements OnInit,AfterViewInit {
 
   @Input() banner!: any;
-  showAd = environment.adsense.show;
+  // showAd = environment.adsense.show;
       constructor() {    }
   
       ngAfterViewInit() {

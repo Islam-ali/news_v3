@@ -2,7 +2,7 @@
 <marquee class="news-scroll" behavior="scroll" Scrollamount="4"
   onmouseover="this.stop();" onmouseout="this.start();">
   <span *ngFor="let item of taskBarItems"> 
-    <a  class="text-dark" [routerLink]="['/News/', item?.slug]" style="color: black !important;">
+    <a  class="text-dark fw-bold" [routerLink]="['/News/', item?.slug]" style="color: black !important;">
       {{ item?.title }}
     </a>
     <span class="dot"> </span>
@@ -27,7 +27,7 @@
 
   </div>
   <div class="dateDiv text-center mt-2 mx-3 ">
-    <div class="dateFont"> {{ rxTime | date: 'EEEE,  d MMMM, y , h:mm:ss a ':'+2':'ar-EG'}} </div>
+    <div class="dateFont"> {{ rxTime | date: 'EEEE,  d MMMM, y , h:mm:ss a ':'+3':'ar-EG'}} </div>
   </div>
   <!-- <mat-icon class="text-danger">live_tv</mat-icon> -->
 
