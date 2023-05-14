@@ -8,6 +8,8 @@ export class SeoService {
   constructor(private title: Title, private meta: Meta) { }
 
   updateTitle(title: string): any {
+    title = title.replace(/\&nbsp;/g, '');
+
     title = title.replace(/<\/?[^>]+(>|$)/g, '').substring(0, 40);
     this.title.setTitle(title);
     this.meta.updateTag({name: 'title', content: title});
@@ -16,6 +18,8 @@ export class SeoService {
   }
 
   updateDescription(desc: string): any  {
+
+    desc = desc.replace(/\&nbsp;/g, '');
     desc = desc.replace(/<\/?[^>]+(>|$)/g, '').substring(0, 110);
     this.meta.updateTag({name: 'description', content: desc});
     this.meta.updateTag({property: 'og:description', content: desc});

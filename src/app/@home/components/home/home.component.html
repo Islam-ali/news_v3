@@ -61,7 +61,8 @@
    </div> -->
     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center mb-4">
 
-            <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280" class="home-img">
+            <!-- <img src="./assets/temp-imgs/advertise.jfif" height="420" width="280" class="home-img"> -->
+            <!-- <ng-adsense></ng-adsense> -->
          
     </div>
     <div class=" col-lg-6 col-md-8 col-sm-12 mb-4" *ngIf="slides">
@@ -75,7 +76,7 @@
                 {{slide.title}}</h2>
             </div>
             <div class="picsum-img-wrapper d-flex justify-content-center bg-dark">
-              <img [src]="slide.image"  height="420px" class="sliderimg w-100" />
+              <img [src]="slide.image"  height="420px" class="sliderimg" />
             </div>
           </a>
         </ng-template>
@@ -117,7 +118,7 @@
 
       <div class="container-fluid pt-4 pb-4" *ngFor="let item of allCategories;let i=index">
         <div class=" dTitle d-flex justify-content-between" style="background-color:#cbcbb3;" *ngIf="item.news?.length>0">
-          <h1 class="titel pt-1" style="padding-right:30px;font-weight:bold;cursor:pointer"
+          <h1 class="titel pt-1" style="padding-right:30px;font-weight:bold;cursor:pointer" (click)="setName(item.name)"
             [routerLink]="['/category/',item.slug]">
             {{item.name}}</h1>
           <a class="btn more text-white px-2 align-items-center gap-4 d-flex" (click)="setName(item.name)"
@@ -475,9 +476,9 @@
     <div class="col-md-3 col-12">
       <div class="container-fluid pt-3 pb-4">
 
-        <img src="./assets/temp-imgs/advertise.jfif" height="350" width="290" class="home-img my-2">
-        <div id="my-ad"></div>
-        <ng-adsense></ng-adsense>
+        <!-- <img src="./assets/temp-imgs/advertise.jfif" height="350" width="290" class="home-img my-2"> -->
+        
+        <!-- <ng-adsense></ng-adsense> -->
         <div class="mt-1 ms-2" *ngIf="trends.length>0">
 
           <div class=" d-flex justify-content-between" style="background-color:#cbcbb3;" >
@@ -517,7 +518,7 @@
   
           </section>
         </div>
-        <img src="./assets/temp-imgs/advertise.jfif" height="430" width="290" class="home-img my-2">
+        <!-- <img src="./assets/temp-imgs/advertise.jfif" height="430" width="290" class="home-img my-2"> -->
         <div class="mt-1 ms-2" *ngIf="articles.length>0">
 
           <div class=" d-flex justify-content-between" style="background-color:#cbcbb3;" >
@@ -558,7 +559,8 @@
             </div>
           </section>
         </div>
-        <img src="./assets/temp-imgs/advertise.jfif" height="430" width="290" class="home-img my-2">
+        <ng-adsense></ng-adsense>
+        <!-- <img src="./assets/temp-imgs/advertise.jfif" height="430" width="290" class="home-img my-2"> -->
   
       </div>
     </div>

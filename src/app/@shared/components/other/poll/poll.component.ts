@@ -58,7 +58,7 @@ export class PollComponent implements OnInit {
       });
   }
   pollResult() {
-    this.answers.forEach((answer: any) => {
+    this.answers?.forEach((answer: any) => {
       this.pollService.pollResult(answer.id).subscribe({
         next: (res: any) => {
           if (res.success) {

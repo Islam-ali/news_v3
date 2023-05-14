@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from '../@shared/shared.module';
@@ -15,13 +14,13 @@ import { AdsenseModule } from 'ng2-adsense';
     HomeComponent,
     SearchComponent
   ],
-  imports: [BrowserModule,
+  imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule, HttpClientModule,
+    SharedModule,
+    HttpClientModule,
     NgbCarouselModule,
     FormsModule,
-    NgFor,
     NgbAccordionModule,
     NgbCollapseModule,
     AdsenseModule

@@ -74,12 +74,12 @@ export class HttpService {
   }
   getFaceLive(): Observable<IResponse> {
 
-    return this.http.get<IResponse>(environment.baseUrl.concat(`/facebook-broadcast`));
+    return this.http.get<IResponse>(environment.baseUrl.concat(`facebook-broadcast`));
 
 }
 getYoutubeLive(): Observable<IResponse> {
 
-  return this.http.get<IResponse>(environment.baseUrl.concat(`/youtube-broadcast`));
+  return this.http.get<IResponse>(environment.baseUrl.concat(`youtube-broadcast`));
 
 }
 getTv(): Observable<IResponse> {

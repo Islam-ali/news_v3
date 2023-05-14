@@ -55,7 +55,8 @@ import { AdsenseModule } from 'ng2-adsense';
     }),
     AdsenseModule.forRoot({
       adClient: 'ca-pub-6405002906731110',
-      adSlot:6580355565
+      adSlot: 6580355565,
+      height:100
     }),
     
     
