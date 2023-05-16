@@ -24,7 +24,7 @@
             <div class="h4 mb-2" style="color:red">
               {{selected?.editor_name}}
             </div>
-            <div [innerHTML]="selected?.content">
+            <div [innerHTML]="selected?.content" class="content">
 
             </div>
             <div class="mt-5" *ngIf=" selected.tags?.length>0">
