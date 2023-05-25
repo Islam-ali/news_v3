@@ -15,6 +15,7 @@ import { LoaderComponent } from './components/other/loader/loader.component';
 import { PollComponent } from './components/other/poll/poll.component';
 import { SideAdsComponent } from './components/other/side-ads/side-ads.component';
 import { AdsenseModule } from 'ng2-adsense';
+import { HorizontalComponent } from './components/layout-components/horizontal/horizontal.component';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -24,7 +25,8 @@ import { AdsenseModule } from 'ng2-adsense';
     MaxLenghtPipe,
     LoaderComponent,
     PollComponent,
-    SideAdsComponent
+    SideAdsComponent,
+    HorizontalComponent
   ],
   imports: [
     NgbModule,
