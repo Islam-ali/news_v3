@@ -8,11 +8,14 @@ import { NgbAccordionModule, NgbCarouselModule, NgbCollapseModule } from '@ng-bo
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
 import { AdsenseModule } from 'ng2-adsense';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { GridListComponent } from './components/grid-list/grid-list.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    GridListComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +26,8 @@ import { AdsenseModule } from 'ng2-adsense';
     FormsModule,
     NgbAccordionModule,
     NgbCollapseModule,
-    AdsenseModule
+    AdsenseModule,
+    MatGridListModule
   ]
 })
 export class HomeModule { }

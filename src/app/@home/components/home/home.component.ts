@@ -29,6 +29,13 @@ export class HomeComponent implements OnInit {
   loaded = false;
   articles :any []=[]
   trends :any []=[]
+  tiles: any[] = [
+    {text: '../../../../assets/temp-imgs/1.jpg', cols: 1, rows: 1, color: 'lightblue'},
+    {text: '../../../../assets/temp-imgs/1.jpg', cols: 1, rows: 1, color: 'lightblue'},
+    {text: '../../../../assets/temp-imgs/1.jpg', cols: 2, rows: 2, color: 'lightgreen'},
+    {text: '../../../../assets/temp-imgs/1.jpg', cols: 1, rows: 1, color: 'lightpink'},
+    {text: '../../../../assets/temp-imgs/1.jpg', cols: 1, rows: 1, color: '#DDBDF1'},
+  ];
   @ViewChild('carousel', { static: true }) carousel!: NgbCarousel;
   banner: any;
 
@@ -67,6 +74,7 @@ export class HomeComponent implements OnInit {
     this.getTaskbar();
     this.getSliders();
     this.latestArticles();
+    this.latestTrends();
     this.seoService.updateTitle('لحظة بلحظة');
 
 
