@@ -9,48 +9,48 @@
             </div>
 			<div class="row align-items-stretch retro-layout">
 				<div class="col-md-4">
-					<a href="single.html" class="h-entry mb-30 v-height gradient">
+					<a href="javascript:void(0)" [routerLink]="['/News',data.news[0].slug]" class="h-entry mb-30 v-height gradient">
 						<div class="featured-img" style="background-image: url({{data.news[0].image}});"></div>
 						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
+							<span class="date">{{data.news[0].created_at}}</span>
 							<h2 class="card-title">{{data.news[0].title|maxLenght:50}}</h2>
 						</div>
 					</a>
-					<a href="single.html" class="h-entry v-height gradient">
+					<a href="javascript:void(0)" [routerLink]="['/News',data.news[1].slug]" class="h-entry v-height gradient">
 						<div class="featured-img" style="background-image: url({{data.news[1].image}});"></div>
 						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
+							<span class="date">{{data.news[1].created_at}}</span>
 							<h2 class="card-title">{{data.news[1].title|maxLenght:50}}</h2>
 						</div>
 					</a>
 				</div>
 				<div class="col-md-4">
-					<a href="single.html" class="h-entry img-5 h-100 gradient">
+					<a href="javascript:void(0)" [routerLink]="['/News',data.news[2].slug]" class="h-entry img-5 h-100 gradient">
 
 						<div class="featured-img" style="background-image: url({{data.news[2].image}});"></div>
 
 						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
+							<span class="date">{{data.news[2].created_at}}</span>
 							<h2 class="card-title">{{data.news[2].title|maxLenght:50}}</h2>
 						</div>
 					</a>
 				</div>
 				<div class="col-md-4">
-					<a href="single.html" class="h-entry mb-30 v-height gradient">
+					<a href="javascript:void(0)" [routerLink]="['/News',data.news[3].slug]" class="h-entry mb-30 v-height gradient">
 
 						<div class="featured-img" style="background-image: url({{data.news[3].image}});"></div>
 
 						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
+							<span class="date">{{data.news[3].created_at}}</span>
 							<h2 class="card-title">{{data.news[3].title|maxLenght:50}}</h2>
 						</div>
 					</a>
-					<a href="single.html" class="h-entry v-height gradient">
+					<a href="javascript:void(0)" [routerLink]="['/News',data.news[4].slug]" class="h-entry v-height gradient">
 
 						<div class="featured-img" style="background-image: url({{data.news[4].image}});"></div>
 
 						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
+							<span class="date">{{data.news[4].created_at}}</span>
 							<h2 class="card-title">{{data.news[4].title|maxLenght:50}}</h2>
 						</div>
 					</a>
@@ -69,48 +69,46 @@
             </div>
 			<div class="row align-items-stretch retro-layout" [class]="index % 2 == 0 ? 'flex-row-reverse':''" >
 				<div class="col-md-4">
-					<a href="single.html" class="h-entry img-5 h-100 gradient">
-
+					<a href="javascript:void(0)" [routerLink]="['/News',data.news[2].slug]" class="h-entry img-5 h-100 gradient">
 						<div class="featured-img" style="background-image: url({{data.news[2].image}});"></div>
-
 						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
+							<span class="date">{{data.news[2].created_at}}</span>
 							<h2 class="card-title">{{data.news[2].title|maxLenght:50}}</h2>
 						</div>
 					</a>
 				</div>
 				<div class="col-md-4">
-					<a href="single.html" class="h-entry mb-30 v-height gradient">
+					<a href="javascript:void(0)" [routerLink]="['/News',data.news[0].slug]" class="h-entry mb-30 v-height gradient">
 						<div class="featured-img" style="background-image: url({{data.news[0].image}});"></div>
 						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
+							<span class="date">{{data.news[0].created_at}}</span>
 							<h2 class="card-title">{{data.news[0].title|maxLenght:50}}</h2>
 						</div>
 					</a>
-					<a href="single.html" class="h-entry v-height gradient">
+					<a href="javascript:void(0)" [routerLink]="['/News',data.news[1].slug]" class="h-entry v-height gradient">
 						<div class="featured-img" style="background-image: url({{data.news[1].image}});"></div>
 						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
+							<span class="date">{{data.news[1].created_at}}</span>
 							<h2 class="card-title">{{data.news[1].title|maxLenght:50}}</h2>
 						</div>
 					</a>
 				</div>
 				<div class="col-md-4">
-					<a href="single.html" class="h-entry mb-30 v-height gradient">
+					<a href="javascript:void(0)" [routerLink]="['/News',data.news[3].slug]" class="h-entry mb-30 v-height gradient">
 
 						<div class="featured-img" style="background-image: url({{data.news[3].image}});"></div>
 
 						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
+							<span class="date">{{data.news[3].created_at}}</span>
 							<h2 class="card-title">{{data.news[3].title|maxLenght:50}}</h2>
 						</div>
 					</a>
-					<a href="single.html" class="h-entry v-height gradient">
+					<a href="javascript:void(0)" [routerLink]="['/News',data.news[4].slug]" class="h-entry v-height gradient">
 
 						<div class="featured-img" style="background-image: url({{data.news[4].image}});"></div>
 
 						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
+							<span class="date">{{data.news[4].created_at}}</span>
 							<h2 class="card-title">{{data.news[4].title|maxLenght:50}}</h2>
 						</div>
 					</a>
