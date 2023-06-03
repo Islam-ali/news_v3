@@ -38,7 +38,7 @@ import { AdsenseModule } from 'ng2-adsense';
   declarations: [AppComponent, AdsComponent],
   imports: [
     ShareButtonsModule,
-  ShareIconsModule,
+    ShareIconsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NgbModule,
@@ -48,7 +48,7 @@ import { AdsenseModule } from 'ng2-adsense';
     CategoryModule,
     TrandsModule,
     ReactiveFormsModule
-    ,ToastrModule.forRoot({
+    , ToastrModule.forRoot({
       timeOut: 15000, // 15 seconds
       closeButton: true,
       progressBar: true,
@@ -57,11 +57,11 @@ import { AdsenseModule } from 'ng2-adsense';
       adClient: 'ca-pub-9927217944576560',
       adSlot: 9059883514,
       height: 100,
-      width: 300,  
+      width: 300,
     }),
-    
-    
-    
+
+
+
   ],
   providers: [
     // LoaderService,
@@ -69,8 +69,8 @@ import { AdsenseModule } from 'ng2-adsense';
 
   ],
   bootstrap: [AppComponent],
- 
-  
+
+
 })
-export class AppModule {}
+export class AppModule { }
 //

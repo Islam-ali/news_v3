@@ -1,57 +1,57 @@
 	<!-- Start retroy layout blog posts -->
-	<section class="section" *ngIf="index == 0">
+	<section class="section" *ngIf="slider">
         <div >
-            <div class="row justify-content-between align-items-center three mb-4 mx-1" >
+            <!-- <div class="row justify-content-between align-items-center three mb-4 mx-1" >
                 <h2 [routerLink]="['/category/',data.slug]" class="m-0 px-0" style="width: max-content;cursor: pointer;">{{data.name}}</h2>
                 <div  [routerLink]="['/category/',data.slug]" style="width: max-content;cursor: pointer;" id="pot" >
                     <i class="fas fa-arrow-left"></i>
                 </div>
-            </div>
+            </div> -->
 			<div class="row align-items-stretch retro-layout">
 				<div class="col-md-4">
-					<a href="javascript:void(0)" [routerLink]="['/News',data.news[0].slug]" class="h-entry mb-30 v-height gradient">
-						<div class="featured-img" style="background-image: url({{data.news[0].image}});"></div>
+					<a href="javascript:void(0)" [routerLink]="['/News',data[2].slug]" class="h-entry img-5 h-100 gradient">
+
+						<div class="featured-img" style="background-image: url({{data[2].image}});"></div>
+
 						<div class="text">
-							<span class="date">{{data.news[0].created_at}}</span>
-							<h2 class="card-title">{{data.news[0].title|maxLenght:50}}</h2>
-						</div>
-					</a>
-					<a href="javascript:void(0)" [routerLink]="['/News',data.news[1].slug]" class="h-entry v-height gradient">
-						<div class="featured-img" style="background-image: url({{data.news[1].image}});"></div>
-						<div class="text">
-							<span class="date">{{data.news[1].created_at}}</span>
-							<h2 class="card-title">{{data.news[1].title|maxLenght:50}}</h2>
+							<span class="date">{{data[2].created_at}}</span>
+							<h2 class="card-title">{{data[2].title|maxLenght:50}}</h2>
 						</div>
 					</a>
 				</div>
-				<div class="col-md-4">
-					<a href="javascript:void(0)" [routerLink]="['/News',data.news[2].slug]" class="h-entry img-5 h-100 gradient">
-
-						<div class="featured-img" style="background-image: url({{data.news[2].image}});"></div>
-
+				<div class="col-md-4 col-sm-6">
+					<a href="javascript:void(0)" [routerLink]="['/News',data[0].slug]" class="h-entry mb-30 v-height gradient">
+						<div class="featured-img" style="background-image: url({{data[0].image}});"></div>
 						<div class="text">
-							<span class="date">{{data.news[2].created_at}}</span>
-							<h2 class="card-title">{{data.news[2].title|maxLenght:50}}</h2>
+							<span class="date">{{data[0].created_at}}</span>
+							<h2 class="card-title">{{data[0].title|maxLenght:50}}</h2>
+						</div>
+					</a>
+					<a href="javascript:void(0)" [routerLink]="['/News',data[1].slug]" class="h-entry v-height gradient">
+						<div class="featured-img" style="background-image: url({{data[1].image}});"></div>
+						<div class="text">
+							<span class="date">{{data[1].created_at}}</span>
+							<h2 class="card-title">{{data[1].title|maxLenght:50}}</h2>
 						</div>
 					</a>
 				</div>
-				<div class="col-md-4">
-					<a href="javascript:void(0)" [routerLink]="['/News',data.news[3].slug]" class="h-entry mb-30 v-height gradient">
+				<div class="col-md-4 col-sm-6">
+					<a href="javascript:void(0)" [routerLink]="['/News',data[3].slug]" class="h-entry mb-30 v-height gradient">
 
-						<div class="featured-img" style="background-image: url({{data.news[3].image}});"></div>
+						<div class="featured-img" style="background-image: url({{data[3].image}});"></div>
 
 						<div class="text">
-							<span class="date">{{data.news[3].created_at}}</span>
-							<h2 class="card-title">{{data.news[3].title|maxLenght:50}}</h2>
+							<span class="date">{{data[3].created_at}}</span>
+							<h2 class="card-title">{{data[3].title|maxLenght:50}}</h2>
 						</div>
 					</a>
-					<a href="javascript:void(0)" [routerLink]="['/News',data.news[4].slug]" class="h-entry v-height gradient">
+					<a href="javascript:void(0)" [routerLink]="['/News',data[4].slug]" class="h-entry v-height gradient">
 
-						<div class="featured-img" style="background-image: url({{data.news[4].image}});"></div>
+						<div class="featured-img" style="background-image: url({{data[4].image}});"></div>
 
 						<div class="text">
-							<span class="date">{{data.news[4].created_at}}</span>
-							<h2 class="card-title">{{data.news[4].title|maxLenght:50}}</h2>
+							<span class="date">{{data[4].created_at}}</span>
+							<h2 class="card-title">{{data[4].title|maxLenght:50}}</h2>
 						</div>
 					</a>
 				</div>
@@ -59,7 +59,7 @@
 		</div>
 	</section>
 	<!-- End retroy layout blog posts -->
-	<section class="section" *ngIf="index != 0">
+	<section class="section" *ngIf="!slider">
         <div >
             <div class="row justify-content-between align-items-center three mb-4 mx-1">
                 <h2 [routerLink]="['/category/',data.slug]" class="m-0 px-0" style="width: max-content;cursor: pointer;">{{data.name}}</h2>
@@ -77,7 +77,7 @@
 						</div>
 					</a>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 col-sm-6">
 					<a href="javascript:void(0)" [routerLink]="['/News',data.news[0].slug]" class="h-entry mb-30 v-height gradient">
 						<div class="featured-img" style="background-image: url({{data.news[0].image}});"></div>
 						<div class="text">
@@ -93,7 +93,7 @@
 						</div>
 					</a>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 col-sm-6">
 					<a href="javascript:void(0)" [routerLink]="['/News',data.news[3].slug]" class="h-entry mb-30 v-height gradient">
 
 						<div class="featured-img" style="background-image: url({{data.news[3].image}});"></div>

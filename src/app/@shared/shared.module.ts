@@ -16,6 +16,8 @@ import { PollComponent } from './components/other/poll/poll.component';
 import { SideAdsComponent } from './components/other/side-ads/side-ads.component';
 import { AdsenseModule } from 'ng2-adsense';
 import { HorizontalComponent } from './components/layout-components/horizontal/horizontal.component';
+import { GridListCardComponent } from './components/other/grid-list-card/grid-list-card.component';
+import { VerticalSliderComponent } from './components/other/vertical-slider/vertical-slider.component';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -26,7 +28,9 @@ import { HorizontalComponent } from './components/layout-components/horizontal/h
     LoaderComponent,
     PollComponent,
     SideAdsComponent,
-    HorizontalComponent
+    HorizontalComponent,
+    GridListCardComponent,
+    VerticalSliderComponent
   ],
   imports: [
     NgbModule,
@@ -49,6 +53,8 @@ import { HorizontalComponent } from './components/layout-components/horizontal/h
     MaxLenghtPipe,
     LoaderComponent,
     PollComponent,
+    HorizontalComponent,
+    GridListCardComponent
     
 
   ]

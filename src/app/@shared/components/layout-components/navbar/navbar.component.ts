@@ -7,6 +7,7 @@ import { registerLocaleData } from '@angular/common';
 import localeAr from '@angular/common/locales/ar-EG';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 import {isPlatformBrowser} from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 
 registerLocaleData(localeAr);
 @Component({
@@ -21,12 +22,13 @@ youtubeLive:any;
 faceLive:any;
 showMore:boolean=false;
 taskBarItems:any[]=[];
+hideSearch:boolean = false;
 time = new Date();
   rxTime = new Date();
   intervalId:any;
   subscription!: Subscription;
   @ViewChild('basicNavbar') mdbCollapse!: NgbCollapse;
-  constructor(private httpService: HttpService, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private httpService: HttpService, @Inject(PLATFORM_ID) private platformId: Object,private router: Router) {
     // this.getTaskbar();
   
   }
@@ -63,6 +65,7 @@ shDrop()
 {
 this.isShown=!this.isShown;
 }
+
 getAllCategories() {
   
   this.httpService.getCategories().subscribe((data: any) => {
@@ -83,6 +86,9 @@ getTaskbar() {
 
   });
 
+}
+search(key: any) {
+  this.router.navigateByUrl(`/search/${key}`);
 }
 getYoutubeLive() {
     
@@ -115,7 +121,6 @@ ngOnDestroy() {
   }
   toggleNav() {
     if (window.innerWidth <= 991) {
-
       this.mdbCollapse.toggle();
      }
   }
@@ -123,6 +128,5 @@ ngOnDestroy() {
 
   toggletvvide(){
     this.httpService.tvvideo=!this.httpService.tvvideo
-    console.log(this.httpService.tvvideo)
   }
 }
