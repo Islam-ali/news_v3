@@ -1,6 +1,6 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://admin.lhzanews.com/api/',
+  baseUrl: 'https://api.lhzanews.com/api/',
 };
 

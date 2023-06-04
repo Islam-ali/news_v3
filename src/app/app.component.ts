@@ -1,6 +1,7 @@
-import { Component, HostListener, OnChanges, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, Inject, OnChanges, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpService } from './@core/services/http/http.service';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-root',
   template: `
@@ -45,16 +46,22 @@ import { HttpService } from './@core/services/http/http.service';
     </div>
   `, styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnChanges {
+export class AppComponent implements OnInit, OnChanges , AfterViewInit {
   // tslint:disable-next-line: no-any
   title = 'template';
   safeURL: any;
   tvLink?: any;
   tvvideo: any;
+  isBrowser!: boolean;
+
   constructor(
     private _sanitizer: DomSanitizer,
-    public httpService: HttpService
+    public httpService: HttpService,
+    @Inject(PLATFORM_ID) private platformId: any,
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2,
   ) {
+    this.isBrowser = isPlatformBrowser(platformId);
     // this.getTv();
 
 
@@ -94,5 +101,15 @@ export class AppComponent implements OnInit, OnChanges {
   onResize(target: any): void {
     // this.checkwindow(window.innerWidth)
 
+  }
+  ngAfterViewInit() {
+    if (this.isBrowser) {
+      setTimeout(()=>{
+        let loader = this.renderer.selectRootElement('#loader')
+        const body = document.getElementsByTagName("body");
+        this.renderer.setStyle(loader, 'display', 'none')
+        body[0].style.overflowY = 'scroll'
+      },2000)
+    }
   }
 }

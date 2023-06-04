@@ -30,8 +30,106 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9927217944576560"
   crossorigin="anonymous"></script>
 </head>
-
+<style>
+  #loader {
+     height: 100%;
+     min-height: 100vh;
+     background-color: #fdfdff;
+     z-index: 99999999999999999;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+ 
+   .box-img11 {
+     width: 110px;
+     height: 110px;
+     max-width: 110px;
+     max-height: 110px;
+     position: relative;
+     /* left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%); */
+     padding: 0;
+     margin: 0;
+   }
+/*  
+   .box-img11::after {
+     content: "";
+     max-width: 110px;
+     width: 110px;
+     height: 110px;
+     border-right: 8px solid #800040;
+     border-radius: 50%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     z-index: 99999;
+     animation: circle infinite 2s reverse;
+   } */
+ 
+   .img-loading11 {
+     width: 150px;
+     height: 150px;
+     border-radius: 50%;
+     position: absolute;
+     top: calc(50% - 75px);
+     left: calc(50% - 75px);
+     z-index: 999999;
+     animation: air infinite 1s alternate;
+   }
+/*  
+   .box-img11::before {
+     content: "";
+     max-width: 110px;
+     width: 110px;
+     height: 110px;
+     border-left: 8px solid #800040;
+     border-radius: 50%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     animation: circle infinite 2s linear;
+     z-index: 999999;
+   } */
+   @keyframes circle {
+     0% {
+       transform: rotate(0deg)
+     }
+ 
+     100% {
+       transform: rotate(360deg)
+     }
+   }
+ 
+   @keyframes air {
+     from {
+       transform: scale(1, 1)
+     }
+ 
+     to {
+       transform: scale(1.5, 1.5)
+     }
+ 
+   }
+ </style>
 <body class="mat-typography">
+  <div id="loader" dir="rtl">
+    <div class="box-img11">
+      <img class="img-loading11" src="assets/icons/logo.svg" alt="logo">
+    </div>
+  </div>
   <app-root></app-root>
   <script src="https://www.youtube.com/iframe_api"></script>
 </body>
