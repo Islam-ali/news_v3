@@ -143,7 +143,7 @@ export class HomeComponent implements OnInit {
   }
   setName(name:string)
 {
-  localStorage.setItem('categoryNmame',name)
+  // localStorage.setItem('categoryNmame',name)
   }
   latestArticles() {
     this.httpService.latestArticles().subscribe({

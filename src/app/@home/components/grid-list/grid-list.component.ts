@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./grid-list.component.scss']
 })
 export class GridListComponent implements OnInit {
-  @Input() data:any;
+  @Input() data:any[]=[];
   @Input() index:number = 0;
   @Input() slider:boolean = false;
   constructor() { }

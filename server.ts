@@ -24,7 +24,10 @@ export function app(): express.Express {
   server.engine('html', ngExpressEngine({
     bootstrap: AppServerModule,
   }));
-
+//   ngExpressEngine({
+//     bootstrap: AppServerModule,
+//     inlineCriticalCss: false,
+// })
   server.set('view engine', 'html');
   server.set('views', distFolder);
 

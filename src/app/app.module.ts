@@ -43,10 +43,10 @@ import { AdsenseModule } from 'ng2-adsense';
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    HomeModule,
+    // HomeModule,
     SharedModule,
-    CategoryModule,
-    TrandsModule,
+    // CategoryModule,
+    // TrandsModule,
     ReactiveFormsModule
     , ToastrModule.forRoot({
       timeOut: 15000, // 15 seconds

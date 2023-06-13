@@ -73,7 +73,7 @@
     <section>
       <div class="row" *ngIf="item.news?.length>0">
         <div [class]="i == 0 ? 'col-md-9':''">
-          <app-grid-list [data]="item" [index]="i" [slider]="false"></app-grid-list>
+          <app-grid-list [data]="[item]" [index]="i" [slider]="false"></app-grid-list>
         </div>
 
         <div class="col-md-3 col-12 mt-5 pt-4" *ngIf="i == 0">

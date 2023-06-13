@@ -5,11 +5,11 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-root',
   template: `
-      <!-- <app-horizontal></app-horizontal> -->
-      <app-navbar></app-navbar>
-      <div style="padding-top: 140px;">
+      <app-horizontal></app-horizontal>
+      <!-- <app-navbar></app-navbar> -->
+      <div >
       <div class="container w-100 my-2">
-  <div class="row m-0 justify-content-center align-items-center">
+  <!-- <div class="row m-0 justify-content-center align-items-center">
     <div class="boss col-md-4 col-sm-12">
       <h3>رئيس مجلس الإدارة</h3>
       <h5>سامح أبو حمادي</h5>
@@ -21,8 +21,8 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
       <h3>رئيس التحرير</h3>
       <h5> على جمال</h5>
     </div>
-  </div>
-</div>
+  </div>-->
+</div> 
     <div class="container">
     <router-outlet></router-outlet>
     </div>
@@ -46,7 +46,7 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
     </div>
   `, styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnChanges , AfterViewInit {
+export class AppComponent implements OnInit, OnChanges, AfterViewInit {
   // tslint:disable-next-line: no-any
   title = 'template';
   safeURL: any;
@@ -104,12 +104,12 @@ export class AppComponent implements OnInit, OnChanges , AfterViewInit {
   }
   ngAfterViewInit() {
     if (this.isBrowser) {
-      setTimeout(()=>{
+      setTimeout(() => {
         let loader = this.renderer.selectRootElement('#loader')
         const body = document.getElementsByTagName("body");
         this.renderer.setStyle(loader, 'display', 'none')
         body[0].style.overflowY = 'scroll'
-      },2000)
+      }, 2000)
     }
   }
 }

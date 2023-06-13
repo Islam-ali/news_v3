@@ -111,7 +111,7 @@ getFaceLive() {
 }
 setName(name:string)
 {
-  localStorage.setItem('categoryNmame',name)
+  // localStorage.setItem('categoryNmame',name)
 }
 ngOnDestroy() {
   clearInterval(this.intervalId);
