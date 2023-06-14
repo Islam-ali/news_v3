@@ -10,8 +10,6 @@ export class GridListComponent implements OnInit {
   @Input() index:number = 0;
   @Input() slider:boolean = false;
   constructor() { }
-
   ngOnInit(): void {
   }
-
 }

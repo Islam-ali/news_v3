@@ -11925,15 +11925,15 @@ h5,
 
 @media (max-width: 991.98px) {
   .social-media {
-    margin: 0 auto;
+    margin: 0;
   }
 }
 
-@media (max-width: 767.98px) {
-  .social-media {
-    margin-bottom: 20px;
-  }
-}
+// @media (max-width: 767.98px) {
+//   .social-media {
+//     margin-bottom: 20px;
+//   }
+// }
 
 .social-media p a {
   border: 1px solid #e6e6e6;
@@ -12071,28 +12071,28 @@ h5,
 #menu__toggle {
   opacity: 0;
 }
-#menu__toggle:checked + .menu__btn > span {
+
+.active_sidebar + .menu__btn > span {
   transform: rotate(45deg);
 }
-#menu__toggle:checked + .menu__btn > span::before {
+.active_sidebar + .menu__btn > span::before {
   top: 0;
   transform: rotate(0deg);
 }
-#menu__toggle:checked + .menu__btn > span::after {
+.active_sidebar + .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
 }
-#menu__toggle:checked ~ .menu__box {
+.active_sidebar ~ .menu__box {
   left: 0 !important;
 }
 .menu__btn {
   position: relative;
-  top: 20px;
-  left: 20px;
+  top: 32px;
   width: 26px;
   height: 26px;
   cursor: pointer;
-  z-index: 999;
+  z-index: 99999999;
 
 }
 .menu__btn > span,
@@ -12119,15 +12119,18 @@ h5,
   top: 0;
   left: -100%;
   width: 100%;
-  min-height: 100vh;
+  min-height: max-content;
+  height: 100vh;
   overflow-y: auto;
   margin: 0;
-  padding: 80px 0;
+  padding: 0;
+  padding-top: 64px ;
   list-style: none;
   background-color: #ECEFF1;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
   transition-duration: .25s;
-  z-index: 99;
+  z-index: 9999;
+  background-color: #fff;
 }
 .menu__item {
   display: block;
@@ -12143,7 +12146,15 @@ h5,
   background-color: #CFD8DC;
 }
 .hamburger-menu{
-    min-width: 100%;
-    background: #fff;
-    min-height: 64px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  min-width: 100%;
+  min-height: 64px;
+  z-index: 999999999;
+  box-shadow: 0 0 6px #ccc;
+}
+.active-link{
+  border-bottom: 2px solid #800040;
 }

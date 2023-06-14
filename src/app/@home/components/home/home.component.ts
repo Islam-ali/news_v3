@@ -38,6 +38,11 @@ export class HomeComponent implements OnInit {
   ];
   @ViewChild('carousel', { static: true }) carousel!: NgbCarousel;
   banner: any;
+    slidess = [
+      { title: 'عنوان الخبر 1', content: 'محتوى الخبر 1' },
+      { title: 'عنوان الخبر 2', content: 'محتوى الخبر 2' },
+      { title: 'عنوان الخبر 3', content: 'محتوى الخبر 3' }
+    ];
 
   togglePaused() {
     if (this.paused) {

@@ -9,7 +9,7 @@ import { LayoutService } from './@shared/components/layout-components/layout.ser
       <app-horizontal *ngIf="!sidbar"></app-horizontal>
       <app-sidebar *ngIf=" sidbar"></app-sidebar>
       <!-- <app-navbar>_LayoutService.isSidebar.value &&</app-navbar> -->
-      <div >
+      <div style="margin-top:80px">
       <div class="container w-100 my-2">
   <!-- <div class="row m-0 justify-content-center align-items-center">
     <div class="boss col-md-4 col-sm-12">
@@ -88,28 +88,24 @@ export class AppComponent implements OnInit, OnChanges, AfterViewInit {
   }
   checkwindow(width: any) {
     if (width <= 991) {
-      this.httpService.tvvideo = false
+      // this.httpService.tvvideo = false;
+      this.sidbar = true
     }
     else {
-      this.httpService.tvvideo = true;
+      // this.httpService.tvvideo = true;
+      this.sidbar = false
+
     }
   }
 
   ngOnInit(): void {
     this.getTv();
-    // this. checkwindow(window.innerWidth)
+    this.checkwindow(window.innerWidth)
   }
   @HostListener('window:resize', ['$event.target'])
   // tslint:disable-next-line: no-any
   onResize(target: any): void {
-    // this.checkwindow(window.innerWidth)
-    if(target.innerWidth <= 991){
-      this.sidbar = true
-    }else{
-      this.sidbar = false
-
-    }
-
+    this.checkwindow(window.innerWidth)
   }
   ngAfterViewInit() {
     if (this.isBrowser) {

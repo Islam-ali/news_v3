@@ -19,6 +19,7 @@ import { HorizontalComponent } from './components/layout-components/horizontal/h
 import { GridListCardComponent } from './components/other/grid-list-card/grid-list-card.component';
 import { VerticalSliderComponent } from './components/other/vertical-slider/vertical-slider.component';
 import { SidebarComponent } from './components/layout-components/sidebar/sidebar.component';
+import { SlideVerticalComponent } from './components/other/slide-vertical/slide-vertical.component';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -32,7 +33,8 @@ import { SidebarComponent } from './components/layout-components/sidebar/sidebar
     HorizontalComponent,
     GridListCardComponent,
     VerticalSliderComponent,
-    SidebarComponent
+    SidebarComponent,
+    SlideVerticalComponent
   ],
   imports: [
     NgbModule,
@@ -59,6 +61,7 @@ import { SidebarComponent } from './components/layout-components/sidebar/sidebar
     HorizontalComponent,
     GridListCardComponent,
     SidebarComponent,
+    SlideVerticalComponent
 
   ]
 })

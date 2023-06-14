@@ -1,0 +1,83 @@
+.custom-coursepage-banner{
+    width: 100%;
+    background: #3f62c2;
+    background: -moz-linear-gradient(-45deg, #3f62c2 0%, #7db9e8 100%);
+    background: -webkit-linear-gradient(-45deg, #3f62c2 0%,#7db9e8 100%);
+    background: linear-gradient(135deg, #3f62c2 0%,#7db9e8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f62c2', endColorstr='#7db9e8',GradientType=1 );
+  }
+  
+  .custom-coursepage-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    margin-top: -30px;
+    color: #FFF;
+  }
+  
+  .items{
+    height: 400px;
+    background: transparent;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .item {
+    width: 400px;
+    height: 120px;
+    background: #FFF;
+    margin-bottom: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 2s ease;
+    transform: translateY(142px) scale(0.9);
+    opacity: .2;
+    display:flex;
+    padding-top: 20px;
+  
+  }
+  
+  .item > div{
+    opacity: 0;
+    transition: all 2s ease;
+  }
+  
+  .active{
+    opacity: 1;
+  }
+  
+  .active > div{
+    opacity: 1;
+  }
+  
+  .custom-profilepic-wrapper {
+    flex:1;
+  }
+  .custom-profilepic {
+    width: 50px;
+    height: 50px;
+    background: #D8D8D8;
+    border-radius: 100px;
+    margin: 4px auto; 
+  }
+  
+  .custom-testimonial-content{
+    flex:4;
+  
+  }
+  
+  .custom-testimonial-title{
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 2px;
+    
+  }
+  
+  .custom-testimonial-author{
+    opacity: 0.5;
+    
+  }

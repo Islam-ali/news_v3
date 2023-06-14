@@ -24,16 +24,18 @@ export class SidebarComponent implements OnInit {
   }
   search(key: any) {
     this.router.navigateByUrl(`/search/${key}`);
+    this._LayoutService.toggleNav(false);
+  }
+  toggleSidebar(){
+    this.navigation = !this.navigation
+    this._LayoutService.toggleNav(this.navigation)
   }
   getAllCategories() {
-
     this._httpService.getCategories().subscribe((data: any) => {
       this.allCategories = data.data;
       if (this.allCategories.length > 8)
         this.showMore = true
     }, (err: any) => {
-
     });
-
   }
 }
