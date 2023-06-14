@@ -7,6 +7,11 @@
 @import 'node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
 @import 'node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
 @import 'node_modules/mdb-angular-ui-kit/assets/scss/mdb.scss';
+@font-face {
+    font-family: Cairo;
+    font-display: swap;
+    src: url("assets/fonts/Cairo-VariableFont_slnt,wght.ttf");
+  }
 html, body { height: 100%;
 }
 body {
@@ -15,10 +20,11 @@ body {
      
     }
     *{
-        font-family:Arial, Helvetica, sans-serif;
-
+        font-family:Cairo;
+        letter-spacing: 1.2px;
+        line-height: 1.7rem;
      }
-$p1Color:#800040;
+$p1Color:#96225c;
 $p2Color:#cbcbb3;
 a{cursor: pointer;}
 button{cursor: pointer;}
@@ -51,3 +57,39 @@ marquee{
         margin-bottom: 0;
     }
 }
+.three{
+    position: relative;
+}
+.three h2 {
+    color: #96225c;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    padding-bottom: 15px;
+    &:hover{
+        color: #96225c;
+    }
+  }
+  .three h2:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    width: 70px;
+    background-color: #96225c;
+  }
+  .three h2:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    height: 1px;
+    width: 100%;
+    transform: translateY(-50%);
+    background-color: #999;
+  }
+  .border-radius-6{
+    border-radius: 6px;
+  }

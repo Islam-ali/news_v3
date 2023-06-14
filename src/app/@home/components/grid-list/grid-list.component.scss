@@ -84,7 +84,7 @@
 .retro-layout .text h2,
 .retro-layout .text .h2 {
     color: #fff;
-    font-size: 18px;
+    // font-size: 18px;
     line-height: 1.2;
     margin-bottom: 0;
 }
@@ -338,38 +338,7 @@
 //     height: 2px;
 //     color: #ff0;
 // }
-.three{
-    position: relative;
-}
-.three h2 {
-    font-size: 28px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 1.5em;
-    padding-bottom: 15px;
-    &:hover{
-        color: #800040;
-    }
-  }
-  .three h2:before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 4px;
-    width: 70px;
-    background-color: #800040;
-  }
-  .three h2:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0px;
-    height: 1px;
-    width: 100%;
-    transform: translateY(-50%);
-    background-color: #000;
-  }
+
 
   #pot {
     animation: linear infinite alternate;

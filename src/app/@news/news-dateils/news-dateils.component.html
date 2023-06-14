@@ -4,14 +4,14 @@
 <div *ngIf="loaded">
 
   <!-- <div style="height: 50px; background-color: #3b3b3b">
-    <div class="container"></div>
+    <div ></div>
   </div> -->
   <div style="margin-top: 0px" class="pw1">
-    <div class="container" style="background-color: white">
+    <div  style="background-color: white">
       <div class="row">
         <div class="col-12 col-lg-9">
           <div class="bg-light py-3">
-            <div class="h2 mt-2 p-2" style="color: rgb(255, 0, 0);">
+            <div class="h2 mt-2 p-2" style="color: #96225c;">
               {{selected?.title}}</div>
             <small class="my-3"> {{selected?.created_at}}</small>
           </div>
@@ -21,7 +21,7 @@
           </div>
           <div class="bg-light p-3 mt-2">
 
-            <div class="h4 mb-2" style="color:red">
+            <div class="h4 mb-2" style="color:#96225c">
               {{selected?.editor_name}}
             </div>
             <div [innerHTML]="selected?.content" class="content">
@@ -54,17 +54,17 @@
        </ng-template>
      </ngb-carousel>
             <div class="mt-5">
-              <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
+              <div class="titel mt-2 p-2" style="background-color: #96225c; color: #fff">
                 الموضوعات المتعلقة
               </div>
               <div class="card mb-3 mt-3" *ngFor="let item of news" [routerLink]="['/News/',item.slug]">
-                <div class="row g-0 m-1">
+                <div class="row g-0">
                   <div class="col-md-4">
-                    <img [src]="item.image" class="img-fluid w-100" alt="..." style="height: 120px;" />
+                    <img [src]="item.image" class="border-radius-6 img-fluid w-100" alt="..." style="height: 120px;" />
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title" style="color: rgb(255, 0, 0); font-size: large">
+                      <h5 class="card-title" style="color: #96225c; font-size: large;font-weight: 600;">
                         {{item.title |maxLenght:90}}
                       </h5>
 
@@ -81,18 +81,18 @@
           </div>
         </div>
         <div class="col-lg-3 col-md-2 col-sm-12 col-12">
-          <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;"
+          <div class="titel border-radius-6 p-2" style="background-color: #96225c; color: aliceblue;"
           *ngIf="Trends.length>0">تريندات لحظة بلحظة </div>
           <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
-            <h3 class="p-2 mt-2 " style="background-color: darkgray;color: black;cursor: pointer;">
+            <h3 class="p-2 mt-2  border-radius-6" style="background-color: #ddd;color: black;cursor: pointer;">
               {{item.title|slice:0:55}} ...
             </h3>
           </div>
 
-          <div class="titel mt-2 p-2" style="background-color: #800040; color: aliceblue;">الاكثر قراءة</div>
+          <div class="titel border-radius-6 p-2" style="background-color: #96225c; color: aliceblue;">الاكثر قراءة</div>
 
           <div *ngFor="let item of MoreRead" routerLink="/Articles/{{item.slug}}">
-            <h3 class="p-2 mt-2 " style="background-color: darkgray;color: black;cursor: pointer;">
+            <h3 class="p-2 mt-2  border-radius-6" style="background-color: #ddd;color: black;cursor: pointer;">
               {{item.title|slice:0:55}} ...
             </h3>
           </div>

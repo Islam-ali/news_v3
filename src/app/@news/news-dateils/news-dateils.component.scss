@@ -1,6 +1,7 @@
 .card
 {
     cursor: pointer;
+    overflow: hidden;
 }
 ::ng-deep .MsoNormal span img{
 width: 100% !important;
