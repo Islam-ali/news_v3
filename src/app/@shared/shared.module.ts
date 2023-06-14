@@ -9,7 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { HomeSliderComponent } from './components/other/home-slider/home-slider.component';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { PaginationComponent } from './components/other/pagination/pagination.component';
-import { NgbDropdownModule, NgbModule, NgbPaginationModule, NgbPopover, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbDropdownModule, NgbModule, NgbPaginationModule, NgbPopover, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaxLenghtPipe } from './pipes/max-lenght.pipe';
 import { LoaderComponent } from './components/other/loader/loader.component';
 import { PollComponent } from './components/other/poll/poll.component';
@@ -18,6 +18,7 @@ import { AdsenseModule } from 'ng2-adsense';
 import { HorizontalComponent } from './components/layout-components/horizontal/horizontal.component';
 import { GridListCardComponent } from './components/other/grid-list-card/grid-list-card.component';
 import { VerticalSliderComponent } from './components/other/vertical-slider/vertical-slider.component';
+import { SidebarComponent } from './components/layout-components/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -30,7 +31,8 @@ import { VerticalSliderComponent } from './components/other/vertical-slider/vert
     SideAdsComponent,
     HorizontalComponent,
     GridListCardComponent,
-    VerticalSliderComponent
+    VerticalSliderComponent,
+    SidebarComponent
   ],
   imports: [
     NgbModule,
@@ -42,7 +44,8 @@ import { VerticalSliderComponent } from './components/other/vertical-slider/vert
     NgbPaginationModule,
     NgbProgressbarModule,
     NgbDropdownModule,
-    AdsenseModule
+    AdsenseModule,
+    NgbCollapseModule
     
   ],
   exports:[
@@ -54,8 +57,8 @@ import { VerticalSliderComponent } from './components/other/vertical-slider/vert
     LoaderComponent,
     PollComponent,
     HorizontalComponent,
-    GridListCardComponent
-    
+    GridListCardComponent,
+    SidebarComponent,
 
   ]
 })

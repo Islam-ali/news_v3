@@ -1,0 +1,39 @@
+<div class="hamburger-menu">
+    <!-- <div class="w-100"> -->
+        <input id="menu__toggle" type="checkbox" size="z-index:9999999"/>
+        <label class="menu__btn" for="menu__toggle">
+            <span></span>
+        </label>
+    <!-- </div> -->
+    <!-- <div class="col-md-6 text-center">
+        <a class="navbar-brand" routerLink="/" ><img style="max-width:40px!important;min-width: 40px!important;" src="assets/icons/SVG/logoo.png" alt=""></a>
+    </div> -->
+    <ul class="menu__box">
+<nav #stickyMenu 
+    class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" 
+    id="ftco-navbar">
+    <div class="container-fluid">
+        <div class="col-md-8 order-md-last">
+            <div class="row">
+                <div class="col-md-6 d-md-flex justify-content-end align-items-center mb-md-0 mb-3">
+                    <form action="#" class="searchform order-lg-last">
+                        <div class="form-group d-flex">
+                            <input type="text"(keyup.enter)="search(inputSearch.value)" class="form-control pl-3" placeholder="بحث ..."  #inputSearch>
+                            <button type="button" (click)="search(inputSearch.value)" class="form-control search"><span
+                                    class="fa fa-search"></span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+            <ul class="navbar-nav m-auto p-0 text-center">
+                <ng-container *ngFor="let cat of allCategories; let i = index">
+                    <li class="nav-item active"><a [routerLink]="['/category/', cat.slug]" routerLinkActive="active-link"
+                        [routerLinkActiveOptions]="{exact : true}"
+                            class="nav-link">{{cat.name}}</a></li>
+                </ng-container>
+            </ul>
+    </div>
+</nav>
+    </ul>
+</div>

@@ -2,11 +2,13 @@ import { AfterViewInit, Component, HostListener, Inject, OnChanges, OnInit, PLAT
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpService } from './@core/services/http/http.service';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { LayoutService } from './@shared/components/layout-components/layout.service';
 @Component({
   selector: 'app-root',
   template: `
-      <app-horizontal></app-horizontal>
-      <!-- <app-navbar></app-navbar> -->
+      <app-horizontal *ngIf="!sidbar"></app-horizontal>
+      <app-sidebar *ngIf=" sidbar"></app-sidebar>
+      <!-- <app-navbar>_LayoutService.isSidebar.value &&</app-navbar> -->
       <div >
       <div class="container w-100 my-2">
   <!-- <div class="row m-0 justify-content-center align-items-center">
@@ -53,12 +55,13 @@ export class AppComponent implements OnInit, OnChanges, AfterViewInit {
   tvLink?: any;
   tvvideo: any;
   isBrowser!: boolean;
-
+  sidbar:boolean=false;
   constructor(
     private _sanitizer: DomSanitizer,
     public httpService: HttpService,
     @Inject(PLATFORM_ID) private platformId: any,
     @Inject(DOCUMENT) private document: Document,
+    public _LayoutService:LayoutService,
     private renderer: Renderer2,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -100,6 +103,12 @@ export class AppComponent implements OnInit, OnChanges, AfterViewInit {
   // tslint:disable-next-line: no-any
   onResize(target: any): void {
     // this.checkwindow(window.innerWidth)
+    if(target.innerWidth <= 991){
+      this.sidbar = true
+    }else{
+      this.sidbar = false
+
+    }
 
   }
   ngAfterViewInit() {

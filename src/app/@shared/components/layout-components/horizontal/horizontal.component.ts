@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/@core/services/http/http.service';
+import { LayoutService } from '../layout.service';
 
 @Component({
   selector: 'app-horizontal',
@@ -10,13 +11,17 @@ import { HttpService } from 'src/app/@core/services/http/http.service';
 export class HorizontalComponent implements OnInit {
 
   @ViewChild('stickyMenu') menuElement!: ElementRef;
-  allCategories:any[]=[];
+  allCategories: any[] = [];
   sticky: boolean = false;
   elementPosition: any;
-  showMore:boolean = false;
-  isShown:boolean = false;
-
-  constructor(private _httpService: HttpService , private router: Router) { }
+  showMore: boolean = false;
+  isShown: boolean = false;
+  navigation: boolean = false;
+  constructor(
+    private _httpService: HttpService,
+    private router: Router,
+    public _LayoutService:LayoutService
+  ) { }
 
   ngOnInit() {
     this.getAllCategories();
@@ -32,7 +37,7 @@ export class HorizontalComponent implements OnInit {
     });
 
   }
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }
   search(key: any) {
@@ -41,13 +46,17 @@ export class HorizontalComponent implements OnInit {
   shDrop() {
     this.isShown = !this.isShown;
   }
+  toggleNav(){
+    this.navigation = !this.navigation;
+    this._LayoutService.toggleNav(this.navigation);
+  }
   @HostListener('window:scroll', ['$event'])
-    handleScroll(){
-      const windowScroll = document.documentElement.scrollTop
-      if(windowScroll >= this.elementPosition){
-        this.sticky = true;
-      } else {
-        this.sticky = false;
-      }
+  handleScroll() {
+    const windowScroll = document.documentElement.scrollTop
+    if (windowScroll >= this.elementPosition) {
+      this.sticky = true;
+    } else {
+      this.sticky = false;
     }
+  }
 }
