@@ -34,7 +34,6 @@
     "@ng-bootstrap/ng-bootstrap": "^13.1.1",
     "@nguniversal/express-engine": "^14.2.3",
     "@popperjs/core": "^2.10.2",
-    "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
     "chart.js": "^3.1.1",
     "express": "^4.15.2",

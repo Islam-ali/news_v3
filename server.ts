@@ -23,6 +23,7 @@ export function app(): express.Express {
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine('html', ngExpressEngine({
     bootstrap: AppServerModule,
+    inlineCriticalCss: false,
   }));
 //   ngExpressEngine({
 //     bootstrap: AppServerModule,
