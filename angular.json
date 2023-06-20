@@ -65,7 +65,8 @@
                 "styles": {
                   "minify": true,
                   "inlineCritical": false
-                }
+                },
+                "fonts": false
               },
               "outputHashing": "all"
             },
@@ -76,7 +77,8 @@
                 "styles": {
                   "minify": true,
                   "inlineCritical": false
-                }
+                },
+                "fonts": false
               },
               "vendorChunk": true,
               "extractLicenses": false,

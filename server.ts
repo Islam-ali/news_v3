@@ -1,5 +1,5 @@
 import 'zone.js/node';
-
+const domino = require('domino');
 import { APP_BASE_HREF } from '@angular/common';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
@@ -11,14 +11,16 @@ import 'localstorage-polyfill';
 global['localStorage'] = localStorage;
 
 
-const MockBrowser = require('mock-browser').mocks.MockBrowser;
-const mock = new MockBrowser();
-global['window'] = mock.getWindow();
+// const MockBrowser = require('mock-browser').mocks.MockBrowser;
+// const mock = new MockBrowser();
+// global['window'] = mock.getWindow();
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/template/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
+  const win = domino.createWindow(indexHtml.toString());
+  global['window'] = win;
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine('html', ngExpressEngine({
