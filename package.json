@@ -10,7 +10,7 @@
     "test": "ng test",
     "dev:ssr": "ng run template:serve-ssr",
     "serve:ssr": "node dist/template/server/main.js",
-    "build:ssr": "ng build && ng run template:server",
+    "build:ssr": "ng build --configuration production && gzipper compress ./dist && ng run template:server",
     "prerender": "ng run template:prerender"
   },
   "private": true,
