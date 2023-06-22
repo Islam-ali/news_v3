@@ -45,16 +45,7 @@ export function app(): express.Express {
   server.get('*', (req, res) => {
     res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
   });
-  server.get('*', (req, res) => {
-    res.render(indexHtml, {
-      req,
-      providers: [
-        { provide: APP_BASE_HREF, useValue: req.baseUrl },
-        { provide: 'REQUEST', useValue: req },
-        { provide: 'RESPONSE', useValue: res },
-      ],
-    });
-  });
+
   return server;
 }
 
@@ -64,6 +55,7 @@ function run(): void {
   // Start up the Node server
   const server = app();
   server.listen(port, () => {
+    console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
 
