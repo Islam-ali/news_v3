@@ -1,0 +1,134 @@
+# Google Bots
+User-agent: Googlebot
+User-agent: Googlebot-mobile
+User-agent: AdsBot-Google
+User-agent: Googlebot-Image
+User-agent: Mediapartners
+User-agent: Mediapartners-Google
+User-agent: Googlebot-News
+User-agent: Googlebot-Video
+
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /author/admin/
+Disallow: */trackback/$
+Disallow: /comments/feed*
+Disallow: *?comments=
+Disallow: *?replytocom
+Disallow: *?s=
+Disallow: */feed
+Disallow: */page/
+Disallow: */tag/
+
+Allow: /*.js*
+Allow: /*.css*
+
+
+# slow down Yahoo
+User-agent: Slurp
+
+Crawl-delay: 10
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /author/admin/
+Disallow: */trackback/$
+Disallow: /comments/feed*
+Disallow: *?comments=
+Disallow: *?replytocom
+Disallow: *?s=
+Disallow: */feed
+Disallow: */page/
+Disallow: */tag/
+
+Allow: /*.js*
+Allow: /*.css*
+
+
+# Slow Down Bing Bot
+User-Agent: bingbot
+
+Crawl-delay: 10
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /author/admin/
+Disallow: */trackback/$
+Disallow: /comments/feed*
+Disallow: *?comments=
+Disallow: *?replytocom
+Disallow: *?s=
+Disallow: */feed
+Disallow: */page/
+Disallow: */tag/
+
+Allow: /*.js*
+Allow: /*.css*
+
+
+# Yandex Bot
+User-agent: Yandex
+User-agent: YandexBot
+User-agent: YandexMedia
+User-agent: YandexImages
+User-agent: YandexCatalog
+User-agent: YandexDirect
+User-agent: YandexBlogs
+User-agent: YandexNews
+User-agent: YandexPagechecker
+
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /author/admin/
+Disallow: */trackback/$
+Disallow: /comments/feed*
+Disallow: *?comments=
+Disallow: *?replytocom
+Disallow: *?s=
+Disallow: */feed
+Disallow: */page/
+Disallow: */tag/
+
+
+Allow: /*.js*
+Allow: /*.css*
+
+# Moz Bot
+User-agent: dotbot
+User-agent: rogerbot
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /author/admin/
+Disallow: */trackback/$
+Disallow: /comments/feed*
+Disallow: *?comments=
+Disallow: *?replytocom
+Disallow: *?s=
+Disallow: */feed
+Disallow: */page/
+Disallow: */tag/
+
+
+Allow: /*.js*
+Allow: /*.css*
+
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /author/admin/
+Disallow: */trackback/$
+Disallow: /comments/feed*
+Disallow: *?comments=
+Disallow: *?replytocom
+Disallow: *?s=
+Disallow: */feed
+Disallow: */page/
+Disallow: */tag/
+
+Allow: /*.js*
+Allow: /*.css*
+
+User-agent: *
+Disallow: /
+Disallow: /admin/*
+Disallow: /api/*
+
+Sitemap: https://api.lhzanews.com/sitemap.xml

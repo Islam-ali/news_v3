@@ -20,6 +20,7 @@ import { GridListCardComponent } from './components/other/grid-list-card/grid-li
 import { VerticalSliderComponent } from './components/other/vertical-slider/vertical-slider.component';
 import { SidebarComponent } from './components/layout-components/sidebar/sidebar.component';
 import { SlideVerticalComponent } from './components/other/slide-vertical/slide-vertical.component';
+import { InfiniteScrollingComponent } from './components/other/infinite-scrolling/infinite-scrolling.component';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -34,7 +35,8 @@ import { SlideVerticalComponent } from './components/other/slide-vertical/slide-
     GridListCardComponent,
     VerticalSliderComponent,
     SidebarComponent,
-    SlideVerticalComponent
+    SlideVerticalComponent,
+    InfiniteScrollingComponent
   ],
   imports: [
     NgbModule,
@@ -61,7 +63,8 @@ import { SlideVerticalComponent } from './components/other/slide-vertical/slide-
     HorizontalComponent,
     GridListCardComponent,
     SidebarComponent,
-    SlideVerticalComponent
+    SlideVerticalComponent,
+    InfiniteScrollingComponent,
 
   ]
 })

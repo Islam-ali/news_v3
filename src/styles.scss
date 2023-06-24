@@ -19,11 +19,14 @@ body {
       
      
     }
-    *{
-        font-family:Cairo;
-        letter-spacing: 1.2px;
+    *:not(i){
+        font-family:Cairo !important;
+        letter-spacing: 1px;
         line-height: 1.7rem;
      }
+    //  h1,h2,h3,h4,h5,h6{
+    //     font-family:Cairo;
+    //  }
 $p1Color:#96225c;
 $p2Color:#cbcbb3;
 a{cursor: pointer;}

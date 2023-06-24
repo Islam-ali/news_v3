@@ -40,7 +40,14 @@
     <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 text-center mb-4">
     </div> -->
     <div class="w-100" *ngIf="slides">
-      <app-grid-list [data]="slides" [slider]="true"></app-grid-list>
+      <div class="row">
+        <div class="col-lg-9 col-md-9">
+          <app-grid-list [data]="slides" [slider]="true"></app-grid-list>
+        </div>
+        <div class="col-lg-3 col-md-3">
+        <app-infinite-scrolling [taskBarItems]="taskBarItems"></app-infinite-scrolling>
+        </div>
+      </div>
       <!-- <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="false" [pauseOnFocus]="false" (slide)="onSlide($event)">
         <ng-template ngbSlide *ngFor="let slide of slides; index as i">
           <a routerLink="/News/{{slide.slug}}">
