@@ -1,0 +1,70 @@
+.c {
+    position: relative;
+    background: #eee;
+    max-height: 400px;
+    /*height to show an exact number of spans  - in this case span is 45px (40 height plus 5 margin as margins collapse) and we are showing 5 spans to start */
+    width: 100%;
+    border-radius: 6px;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.card-home {
+    position: absolute;
+    top: 44px;
+}
+.animation{
+    animation: scroll 10s linear 1s infinite;
+
+}
+.header-box {
+    position: absolute;
+    top: 0;
+    // left: 0;
+    height: 40px;
+    width: 100%;
+    background-color: #eee;
+    color: #96225c;
+    z-index: 2;
+
+    h2 {
+        font-weight: 800;
+
+    }
+}
+
+span {
+    min-width: 290px;
+    min-height: 40px;
+    display: block;
+    color: white;
+    margin: 5px;
+    background: blue;
+}
+
+.title {
+    cursor: pointer;
+    color: #000;
+
+    &:hover {
+        color: #96225c;
+    }
+
+    p {
+        font-weight: 400;
+    }
+}
+
+@keyframes scroll {
+    100% {
+        top: -360px;
+    }
+
+    /* top is the number of spans (in this case 8) multiplied by span height (45px as described above)*/
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none !important;
+    width: 0;
+}
