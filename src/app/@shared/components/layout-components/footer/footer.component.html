@@ -9,28 +9,20 @@
     <!-- Left -->
 
     <!-- Right -->
-    <div>
-      <a href="https://www.facebook.com/profile.php?id=100092450328221&mibextid=ZbWKwL" target="_blank" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <!-- <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-tiktok"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a> -->
-      <a href="" class="me-4 text-reset" target="_blank" href="https://youtube.com/@lhzabelhzatv2">
-        <i class="fab fa-youtube" ></i>
-      </a>
-      <!-- <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a> -->
+    <div class="d-flex ">
+      <div class="social-media">
+        <p class="mb-0 d-flex">
+          <ng-container *ngFor="let item of socialMedia">
+            <a [href]="item.link" target="_blank" class="me-4 text-reset">
+              <i class="fab" [ngClass]="item.icon"></i>
+            </a>
+          </ng-container>
+          <!-- <a href="javascript:void(0)" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+          <a href="javascript:void(0)" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+          <a href="javascript:void(0)" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+          <a href="javascript:void(0)" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a> -->
+        </p>
+      </div>
     </div>
     <!-- Right -->
   </section>
@@ -45,11 +37,12 @@
         <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4 uname">
           <!-- Content -->
           <h2 class="text-uppercase fw-bold mb-2">
-            <i class="fas fa-gem me-3 fs-4"></i>&nbsp;&nbsp;&nbsp;لحظة بلحظة 
+            <i class="fas fa-gem me-3 fs-4"></i>&nbsp;&nbsp;&nbsp;لحظة بلحظة
           </h2>
           <p class="desc">
             &nbsp;بوابة الكترونية يومية شاملة شعارها
-" منبر ينشر الحقيقة ويلتزم بالمبادئ المهنية في إطار مؤسسي للوصول إلى قرائها وذلك بلا انتماءات سياسية أو حزبية أو انحيازات عقائدية أو مذهبية"
+            " منبر ينشر الحقيقة ويلتزم بالمبادئ المهنية في إطار مؤسسي للوصول إلى قرائها وذلك بلا انتماءات سياسية أو
+            حزبية أو انحيازات عقائدية أو مذهبية"
           </p>
         </div>
         <!-- Grid column -->
@@ -60,12 +53,13 @@
           <h3 class="text-uppercase fw-bold mb-4">
             أخبارنا
           </h3>
-          <ng-container *ngFor="let cat of allCategories;let i=index"> 
-            <p *ngIf="i<=4" [routerLink]="['/category/',cat.slug]" class="newsLink">
-            <a  class="text-reset">{{cat.name}}</a>
-          </p></ng-container>
-         
-          
+          <ng-container *ngFor="let cat of allCategories;let i=index">
+            <p *ngIf="i<=4" class="newsLink">
+              <a href="javascript:void(0)" [routerLink]="['/category/',cat.slug]" class="text-reset">{{cat.name}}</a>
+            </p>
+          </ng-container>
+
+
         </div>
         <!-- Grid column -->
 
@@ -76,31 +70,31 @@
            روابط تهمك
           </h3>
           <p>
-            <a href="#!" class="text-reset">أسعار الذهب اليوم</a>
+            <a href="javascript:void(0)" class="text-reset">أسعار الذهب اليوم</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">عدوى منتشرة بين الاطفال</a>
+            <a href="javascript:void(0)" class="text-reset">عدوى منتشرة بين الاطفال</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">الدولار والسوق العالمى</a>
+            <a href="javascript:void(0)" class="text-reset">الدولار والسوق العالمى</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">السلع الغذائية</a>
+            <a href="javascript:void(0)" class="text-reset">السلع الغذائية</a>
           </p> -->
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <!-- <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4"> -->
-          <!-- Links -->
-          <!-- <h3 class="text-uppercase fw-bold mb-4">روابط التواصل</h3> -->
-          <!-- <p><i class="fas fa-home me-3"></i> القاهرة, مصر</p> -->
-          <!-- <p>
+        <!-- Links -->
+        <!-- <h3 class="text-uppercase fw-bold mb-4">روابط التواصل</h3> -->
+        <!-- <p><i class="fas fa-home me-3"></i> القاهرة, مصر</p> -->
+        <!-- <p>
             <i class="fas fa-envelope me-3">&nbsp;</i>
             info@example.com
           </p> -->
-          <!-- <p><i class="fas fa-phone me-3">&nbsp;</i> 0233790973</p> -->
-          <!-- <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p> -->
+        <!-- <p><i class="fas fa-phone me-3">&nbsp;</i> 0233790973</p> -->
+        <!-- <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p> -->
         <!-- </div> -->
         <!-- Grid column -->
       </div>
@@ -111,7 +105,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-     جميع الحقوق محفوظة :
+    جميع الحقوق محفوظة :
     <a class="text-reset fw-bold" href="https://mdbootstrap.com/"> لحظة بلحظة © 2022</a>
   </div>
   <!-- Copyright -->

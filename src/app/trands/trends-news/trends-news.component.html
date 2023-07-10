@@ -52,7 +52,7 @@
         <marquee class="news-scroll marquee" behavior="scroll" direction="up" Scrollamount=3 onbounce="4"
           onmouseover="this.stop();" onmouseout="this.start();">
           <div *ngFor="let item of last_news" style="margin-bottom: 50px;">
-            <a href="" routerLink="/News/{{item.slug}}">
+            <a href="javascript:void(0)" routerLink="/News/{{item.slug}}">
               <p style="color: black;">
                 {{item.title}}
               </p>

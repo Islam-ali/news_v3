@@ -30,7 +30,17 @@ section {
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
-
+.search-nav{
+  color: #721c24;
+  font-size: 1.3em;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.searchform{
+  position: absolute;
+    bottom: -60px;
+    left: 0;
+}
 hr {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;

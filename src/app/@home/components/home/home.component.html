@@ -16,7 +16,7 @@
             <marquee class="news-scroll" behavior="scroll" direction="up" style="height: 38px;" Scrollamount=2
               onmouseover="this.stop();" onmouseout="this.start();">
               <div *ngFor="let item of taskBarItems" class="mb-2 me-2 fw-bold">
-                <a href="#" [routerLink]="['/News/',item?.slug]" class="fw-bold">
+                <a href="javascript:void(0)" [routerLink]="['/News/',item?.slug]" class="fw-bold">
                   {{item?.title}}
                 </a>
 
@@ -96,8 +96,8 @@
                   <div class="col-md-6 col-12 border-bottom mt-2" *ngFor="let trend of trends">
                     <div class="row">
                       <div class="col-12 text-center">
-                        <div class="m-auto">
-                          <img [src]="trend?.images[0]?.image" class="userImage img-fluid" style="height: 120px;">
+                        <div class="m-auto" style="height: 120px;">
+                          <img [src]="trend?.images[0]?.image" class="userImage img-fluid">
                         </div>
                       </div>
                       <div class="col-12" style="font-size: 10px !important;">

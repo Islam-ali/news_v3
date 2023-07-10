@@ -1,4 +1,13 @@
-<div class="hamburger-menu d-flex">
+<div class="col-12 order-md-last">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <a class="navbar-brand" routerLink="/"><img
+                    style="max-width:240px!important;min-width: 80px!important;"
+                    src="assets/icons/SVG/logoo.png" alt=""></a>
+        </div>
+    </div>
+</div>
+<div #stickyMenu [style.position]="sticky ? 'fixed' : ''" class="hamburger-menu d-flex">
     <!-- <div class="w-100"> -->
     <input id="menu__toggle" type="checkbox" size="z-index:9999999" (click)="toggleSidebar()" [class.active_sidebar]="_LayoutService.isSidebar.value" />
     <label class="menu__btn" for="menu__toggle" size="z-index:9999999">
@@ -8,18 +17,16 @@
     <div class="col d-flex align-items-center justify-content-end">
         <div class="social-media">
             <p class="mb-0 d-flex">
-                <a href="https://www.facebook.com/profile.php?id=100092450328221&mibextid=ZbWKwL"
-                    target="_blank" class="d-flex align-items-center justify-content-center">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="" class="d-flex align-items-center justify-content-center" target="_blank"
-                    href="https://youtube.com/@lhzabelhzatv2">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <!-- <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a> -->
+                <ng-container *ngFor="let item of socialMedia">
+                    <a [href]="item.link" target="_blank"
+                        class="d-flex align-items-center justify-content-center">
+                        <i class="fab" [ngClass]="item.icon"></i>
+                    </a>
+                </ng-container>
+                <!-- <a href="javascript:void(0)" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+            <a href="javascript:void(0)" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+            <a href="javascript:void(0)" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+            <a href="javascript:void(0)" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a> -->
             </p>
         </div>
     </div>

@@ -11,7 +11,7 @@
            <marquee class="news-scroll" behavior="scroll" direction="up" style="height: 38px;" Scrollamount=1
              onmouseover="this.stop();" onmouseout="this.start();">
              <div *ngFor="let item of taskBarItems" class="mb-2 me-2">
-               <a href="#" [routerLink]="['/News/',item?.slug]">
+               <a href="javascript:void(0)" [routerLink]="['/News/',item?.slug]">
                  {{item?.title}}
                </a>
  
@@ -24,7 +24,7 @@
  
          <div class="mt-3 d-flex justify-content-lg-start w-100 float-start search">
            <input type="text" (keyup.enter)="search(inputSearch.value)" class="form-control" #inputSearch>
-           <a class="btn btn-sm btn-danger px-2 me-2" (click)="search(inputSearch.value)">بحث</a>
+           <a href="javascript:void(0)" class="btn btn-sm btn-danger px-2 me-2" (click)="search(inputSearch.value)">بحث</a>
          </div>
        </div>
      </div>

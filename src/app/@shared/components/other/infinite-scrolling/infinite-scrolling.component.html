@@ -2,11 +2,13 @@
     <div class="header-box p-2">
         <h2>أخر الاخبار</h2>
     </div>
-    <div #card class="card-home animation" >
-        <ng-container *ngFor="let item of taskBarItems">
-            <a class="title nav-link" [routerLink]="['/News',item.slug]">
-              <p>{{item.title}}</p>
-            </a>
-        </ng-container>
+    <div class="box-content">
+        <div #card class="card-home animation">
+            <ng-container *ngFor="let item of taskBarItems">
+                <a class="title nav-link" [routerLink]="['/News',item.slug]">
+                    <p>{{item.title}}</p>
+                </a>
+            </ng-container>
+        </div>
     </div>
-    </div>
+</div>

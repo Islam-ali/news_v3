@@ -10,7 +10,7 @@
 			<div class="row align-items-stretch retro-layout">
 				<div class="col-md-4">
 					<a href="javascript:void(0)" [routerLink]="['/News',data[2]?.slug]" class="h-entry img-5 h-100 gradient">
-
+						<span class="badge badge-pill badge-danger">{{data[2]?.category.name}}</span>
 						<div class="featured-img" style="background-image: url({{data[2]?.image}});"></div>
 
 						<div class="text">
@@ -21,6 +21,8 @@
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.slug]" class="h-entry mb-30 v-height gradient">
+						<span class="badge badge-pill badge-danger">{{data[0]?.category.name}}</span>
+					
 						<div class="featured-img" style="background-image: url({{data[0]?.image}});"></div>
 						<div class="text">
 							<span class="date">{{data[0]?.created_at}}</span>
@@ -28,6 +30,8 @@
 						</div>
 					</a>
 					<a href="javascript:void(0)" [routerLink]="['/News',data[1]?.slug]" class="h-entry v-height gradient">
+						<span class="badge badge-pill badge-danger">{{data[1]?.category.name}}</span>
+					
 						<div class="featured-img" style="background-image: url({{data[1]?.image}});"></div>
 						<div class="text">
 							<span class="date">{{data[1]?.created_at}}</span>
@@ -37,6 +41,8 @@
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<a href="javascript:void(0)" [routerLink]="['/News',data[3]?.slug]" class="h-entry mb-30 v-height gradient">
+						<span class="badge badge-pill badge-danger">{{data[3]?.category.name}}</span>
+
 
 						<div class="featured-img" style="background-image: url({{data[3]?.image}});"></div>
 
@@ -46,6 +52,8 @@
 						</div>
 					</a>
 					<a href="javascript:void(0)" [routerLink]="['/News',data[4]?.slug]" class="h-entry v-height gradient">
+						<span class="badge badge-pill badge-danger">{{data[4]?.category.name}}</span>
+
 
 						<div class="featured-img" style="background-image: url({{data[4]?.image}});"></div>
 
@@ -70,6 +78,8 @@
 			<div class="row align-items-stretch retro-layout" [class]="index % 2 == 0 ? 'flex-row-reverse':''" >
 				<div class="col-md-4">
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.news[2]?.slug]" class="h-entry img-5 h-100 gradient">
+						<span class="badge badge-pill badge-danger">{{data[0]?.name}}</span>
+					
 						<div class="featured-img" style="background-image: url({{data[0]?.news[2]?.image}});"></div>
 						<div class="text">
 							<span class="date">{{data[0]?.news[2]?.created_at}}</span>
@@ -79,6 +89,8 @@
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.news[0]?.slug]" class="h-entry mb-30 v-height gradient">
+						<span class="badge badge-pill badge-danger">{{data[0]?.name}}</span>
+					
 						<div class="featured-img" style="background-image: url({{data[0]?.news[0]?.image}});"></div>
 						<div class="text">
 							<span class="date">{{data[0]?.news[0]?.created_at}}</span>
@@ -86,6 +98,8 @@
 						</div>
 					</a>
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.news[1]?.slug]" class="h-entry v-height gradient">
+						<span class="badge badge-pill badge-danger">{{data[0]?.name}}</span>
+					
 						<div class="featured-img" style="background-image: url({{data[0]?.news[1]?.image}});"></div>
 						<div class="text">
 							<span class="date">{{data[0]?.news[1]?.created_at}}</span>
@@ -95,6 +109,8 @@
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.news[3]?.slug]" class="h-entry mb-30 v-height gradient">
+						<span class="badge badge-pill badge-danger">{{data[0]?.name}}</span>
+
 
 						<div class="featured-img" style="background-image: url({{data[0]?.news[3]?.image}});"></div>
 
@@ -104,6 +120,8 @@
 						</div>
 					</a>
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.news[4]?.slug]" class="h-entry v-height gradient">
+						<span class="badge badge-pill badge-danger">{{data[0]?.name}}</span>
+
 
 						<div class="featured-img" style="background-image: url({{data[0]?.news[4]?.image}});"></div>
 

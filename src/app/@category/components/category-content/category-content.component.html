@@ -16,7 +16,7 @@
               <marquee class="news-scroll" behavior="scroll" direction="right" Scrollamount=10 onmouseover="this.stop();"
                 onmouseout="this.start();">
                 <ng-container *ngFor="let item of taskBarItems">
-                  <a href="#" [routerLink]="['/News/',item?.slug]">
+                  <a item.user.name [routerLink]="['/News/',item?.slug]">
                     {{item?.title}}
                   </a>
                   <span class="dot">

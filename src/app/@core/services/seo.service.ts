@@ -25,7 +25,9 @@ export class SeoService {
     this.meta.updateTag({property: 'og:description', content: desc});
     this.meta.updateTag({name: 'twitter:description', content: desc});
   }
-
+  updateKeywords(listOfKeywords:string[]=[]){
+    this.meta.updateTag({name: 'keywords', content: `${listOfKeywords.toString()}`});
+  }
   // updateUrl(url = this.doc.location.href): any {
   //   this.meta.updateTag({property: 'og:url', content: url});
   //   this.meta.updateTag({name: 'twitter:url', content: url});
@@ -34,8 +36,6 @@ export class SeoService {
   // }
 
   updateImage(image :any): any  {
-    console.log(image);
-    
     this.meta.updateTag({property: 'og:image', content: image});
     this.meta.updateTag({name: 'twitter:image', content: image});
   }
