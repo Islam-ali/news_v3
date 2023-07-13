@@ -5,7 +5,7 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { existsSync } from 'fs';
 import { join } from 'path';
-
+import {EnumChangefreq, SitemapItem, SitemapStream} from 'sitemap';
 import { AppServerModule } from './src/main.server';
 import 'localstorage-polyfill';
 global['localStorage'] = localStorage;
@@ -31,6 +31,7 @@ export function app(): express.Express {
 //     bootstrap: AppServerModule,
 //     inlineCriticalCss: false,
 // })
+// server.get('/sitemap.xml', sitemap);
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
