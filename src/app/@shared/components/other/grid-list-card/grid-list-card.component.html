@@ -10,10 +10,10 @@
             <ng-container *ngFor="let item of data;let i = index">
             <div [class]="'col-lg-4 col-sm-6 col-12'">
                 <a href="javascript:void(0)" [routerLink]="['/News',item.slug]" class="h-entry mb-30 v-height gradient">
-                    <div class="featured-img" style="background-image: url({{item.image}});"></div>
+                    <div class="featured-img" loading="lazy"  style="background-image: url({{item.image}});"></div>
                     <div class="text">
                         <span class="date">{{item.created_at}}</span>
-                        <h2 class="card-title">{{item.title|maxLenght:50}}</h2>
+                        <h3 class="card-title">{{item.title|maxLenght:50}}</h3>
                     </div>
                 </a>
             </div>

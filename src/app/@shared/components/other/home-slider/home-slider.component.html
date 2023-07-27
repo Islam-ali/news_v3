@@ -11,7 +11,7 @@
         <img style="height:420px !important"
         src={{item}}
           class="d-block w-100 item"
-          alt="..."
+          [alt]="item.title" [title]="item.title" loading="lazy" 
         />
         <div class="carousel-caption d-none d-md-block">
           <!-- <h5>{{item.title}}</h5> -->

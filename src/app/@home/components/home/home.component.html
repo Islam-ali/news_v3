@@ -97,7 +97,7 @@
                     <div class="row">
                       <div class="col-12 text-center">
                         <div class="m-auto" style="height: 120px;">
-                          <img [src]="trend?.images[0]?.image" class="userImage img-fluid">
+                          <img [src]="trend?.images[0]?.image" [title]="trend.title" [alt]="trend.title" loading="lazy" class="userImage img-fluid">
                         </div>
                       </div>
                       <div class="col-12" style="font-size: 10px !important;">
@@ -148,7 +148,7 @@
                     <div class="row">
                       <div class="col-4 text-center">
                         <div class="m-auto">
-                          <img [src]="item.user.image" class="userImage img-fluid mb-2">
+                          <img [src]="item.user.image" [title]="item.user.name" [alt]="item.user.name" loading="lazy" class="userImage img-fluid mb-2">
                           <small>{{item.user.name}}</small>
                         </div>
                       </div>

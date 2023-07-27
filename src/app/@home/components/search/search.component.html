@@ -55,7 +55,7 @@
                         <a (click)="viewNew(item)">
                           <div class="row g-0">
                             <div class="col-md-3 d-grid justify-content-center" *ngIf="item?.image || item?.images">
-                              <img [src]="item.image || item.images[0].image" class="img-fluid align-self-center" alt="...">
+                              <img [src]="item.image || item.images[0].image" class="img-fluid align-self-center" [alt]="item.category?.name" loading="lazy">
                             </div>
                             <div class="col-md-9">
                               <div class="card-body float-end" >

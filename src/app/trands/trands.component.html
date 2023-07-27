@@ -18,7 +18,7 @@
           </div>
           <ng-template class="py-3 mt-2 text-center w-100" #img>
             
-            <img [src]="trandcontent?.images[0]?.image" class="mainImg img-fluid w-100" />
+            <img [src]="trandcontent?.images[0]?.image" [alt]="trandcontent?.title" [title]="trandcontent?.title" loading="lazy"  class="mainImg img-fluid w-100" />
             <div>
               <!-- <small class="my-3"> احمد فتوح</small> -->
             </div>
@@ -63,7 +63,7 @@
                     </div>
                     <ng-template #img>
   
-                      <img [src]="trend?.images[0]?.image" class="img-fluid m-auto" alt="..." />
+                      <img [src]="trend?.images[0]?.image" [alt]="trend.title |maxLenght:30" [title]="trend.title |maxLenght:30" loading="lazy"  class="img-fluid m-auto" alt="..." />
                     </ng-template>
                   </div>
   

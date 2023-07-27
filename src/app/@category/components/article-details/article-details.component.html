@@ -4,15 +4,15 @@
 <div *ngIf="!loaded">
 <app-loader></app-loader>
 </div>
-<div style="margin-top: 0px" class="pw1" *ngIf="loaded">
+<article style="margin-top: 0px" class="pw1" *ngIf="loaded">
   <div  style="background-color: white">
     <div class="row">
       <div class="col-md-9 col-12">
         <div class="bg-light p-3 row">
            
-                <!-- <img src="{{selected?.user.image}}" class="img-thumbnail article-img img-fluid" /> -->
+                <!-- <img loading="lazy" src="{{selected?.user.image}}" class="img-thumbnail article-img img-fluid" /> -->
                 <div class="col-md-3 text-center my-2">
-                  <img [src]="selected?.user?.image" class="userImage img-fluid article-img">
+                  <img loading="lazy" [src]="selected?.user?.image" [title]="selected?.user?.name" [alt]="selected?.user?.name" class="userImage img-fluid article-img">
                   
                 </div>
                 
@@ -31,7 +31,7 @@
 
         </div>
         <!-- <div class="bg-light py-3 mt-2 text-center" >
-            <img src="{{selected?.image}}" class="img-thumbnail mainImg" height="600px" width="800px" />
+            <img loading="lazy" src="{{selected?.image}}" class="img-thumbnail mainImg" height="600px" width="800px" />
           </div> -->
         <div class="bg-light p-3 mt-2 row">
 
@@ -51,7 +51,7 @@
             <div class="card mb-3 mt-3"  *ngFor="let item of news" [routerLink]="['/Articles/',item.slug]">
               <div class="row g-0">
                 <div class="col-md-2 me-3 text-center">
-                  <img [src]="item?.user?.image" class="img-fluid m-2 article-img w-75" alt="..." />
+                  <img loading="lazy" [src]="item?.user?.image" [title]="item?.user?.name" [alt]="item?.user?.name" class="img-fluid m-2 article-img w-75" />
                   <div class="text-muted">{{item?.user?.name}}</div>
 
                 </div>
@@ -94,4 +94,4 @@
       </div>
     </div>
   </div>
-</div>
+</article>

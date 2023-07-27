@@ -2,7 +2,7 @@
 	<section class="section" *ngIf="slider">
         <div >
             <!-- <div class="row justify-content-between align-items-center three mb-4 mx-1" >
-                <h2 [routerLink]="['/category/',data[0]?.slug]" class="m-0 px-0" style="width: max-content;cursor: pointer;">{{data[0]?.name}}</h2>
+                <h3 [routerLink]="['/category/',data[0]?.slug]" class="m-0 px-0" style="width: max-content;cursor: pointer;">{{data[0]?.name}}</h3>
                 <div  [routerLink]="['/category/',data[0]?.slug]" style="width: max-content;cursor: pointer;" id="pot" >
                     <i class="fas fa-arrow-left"></i>
                 </div>
@@ -11,11 +11,11 @@
 				<div class="col-md-4">
 					<a href="javascript:void(0)" [routerLink]="['/News',data[2]?.slug]" class="h-entry img-5 h-100 gradient">
 						<span class="badge badge-pill badge-danger">{{data[2]?.category.name}}</span>
-						<div class="featured-img" style="background-image: url({{data[2]?.image}});"></div>
+						<div class="featured-img" loading="lazy"  style="background-image: url({{data[2]?.image}});"></div>
 
 						<div class="text">
 							<span class="date">{{data[2]?.created_at}}</span>
-							<h2 class="card-title">{{data[2]?.title|maxLenght:50}}</h2>
+							<h3 class="card-title">{{data[2]?.title|maxLenght:50}}</h3>
 						</div>
 					</a>
 				</div>
@@ -23,19 +23,19 @@
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.slug]" class="h-entry mb-30 v-height gradient">
 						<span class="badge badge-pill badge-danger">{{data[0]?.category.name}}</span>
 					
-						<div class="featured-img" style="background-image: url({{data[0]?.image}});"></div>
+						<div class="featured-img" loading="lazy"  style="background-image: url({{data[0]?.image}});"></div>
 						<div class="text">
 							<span class="date">{{data[0]?.created_at}}</span>
-							<h2 class="card-title">{{data[0]?.title|maxLenght:50}}</h2>
+							<h3 class="card-title">{{data[0]?.title|maxLenght:50}}</h3>
 						</div>
 					</a>
 					<a href="javascript:void(0)" [routerLink]="['/News',data[1]?.slug]" class="h-entry v-height gradient">
 						<span class="badge badge-pill badge-danger">{{data[1]?.category.name}}</span>
 					
-						<div class="featured-img" style="background-image: url({{data[1]?.image}});"></div>
+						<div class="featured-img" loading="lazy"  style="background-image: url({{data[1]?.image}});"></div>
 						<div class="text">
 							<span class="date">{{data[1]?.created_at}}</span>
-							<h2 class="card-title">{{data[1]?.title|maxLenght:50}}</h2>
+							<h3 class="card-title">{{data[1]?.title|maxLenght:50}}</h3>
 						</div>
 					</a>
 				</div>
@@ -44,22 +44,22 @@
 						<span class="badge badge-pill badge-danger">{{data[3]?.category.name}}</span>
 
 
-						<div class="featured-img" style="background-image: url({{data[3]?.image}});"></div>
+						<div class="featured-img" loading="lazy"  style="background-image: url({{data[3]?.image}});"></div>
 
 						<div class="text">
 							<span class="date">{{data[3]?.created_at}}</span>
-							<h2 class="card-title">{{data[3]?.title|maxLenght:50}}</h2>
+							<h3 class="card-title">{{data[3]?.title|maxLenght:50}}</h3>
 						</div>
 					</a>
 					<a href="javascript:void(0)" [routerLink]="['/News',data[4]?.slug]" class="h-entry v-height gradient">
 						<span class="badge badge-pill badge-danger">{{data[4]?.category.name}}</span>
 
 
-						<div class="featured-img" style="background-image: url({{data[4]?.image}});"></div>
+						<div class="featured-img" loading="lazy"  style="background-image: url({{data[4]?.image}});"></div>
 
 						<div class="text">
 							<span class="date">{{data[4]?.created_at}}</span>
-							<h2 class="card-title">{{data[4]?.title|maxLenght:50}}</h2>
+							<h3 class="card-title">{{data[4]?.title|maxLenght:50}}</h3>
 						</div>
 					</a>
 				</div>
@@ -70,8 +70,8 @@
 	<section class="section" *ngIf="!slider">
         <div >
             <div class="row justify-content-between align-items-center three mb-4 mx-1">
-                <h2 [routerLink]="['/category/',data[0]?.slug]" class="m-0 px-0" style="width: max-content;cursor: pointer;">{{data[0]?.name}}</h2>
-                <div [routerLink]="['/category/',data[0]?.slug]"  style="width: max-content;cursor: pointer;" id="pot">
+                <h3 [routerLink]="['/category/',data[0]?.slug]" class="m-0 px-0" style="width: max-content;cursor: pointer;">{{data[0]?.name}}</h3>
+                <div [routerLink]="['/category/',data[0]?.slug]"  style="width: max-content;cursor: pointer;" class="pot">
                     <i class="fas fa-arrow-left"></i>
                 </div>
             </div>
@@ -80,10 +80,10 @@
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.news[2]?.slug]" class="h-entry img-5 h-100 gradient">
 						<span class="badge badge-pill badge-danger">{{data[0]?.name}}</span>
 					
-						<div class="featured-img" style="background-image: url({{data[0]?.news[2]?.image}});"></div>
+						<div class="featured-img" loading="lazy"  style="background-image: url({{data[0]?.news[2]?.image}});"></div>
 						<div class="text">
 							<span class="date">{{data[0]?.news[2]?.created_at}}</span>
-							<h2 class="card-title">{{data[0]?.news[2]?.title|maxLenght:50}}</h2>
+							<h3 class="card-title">{{data[0]?.news[2]?.title|maxLenght:50}}</h3>
 						</div>
 					</a>
 				</div>
@@ -91,19 +91,19 @@
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.news[0]?.slug]" class="h-entry mb-30 v-height gradient">
 						<span class="badge badge-pill badge-danger">{{data[0]?.name}}</span>
 					
-						<div class="featured-img" style="background-image: url({{data[0]?.news[0]?.image}});"></div>
+						<div class="featured-img" loading="lazy"  style="background-image: url({{data[0]?.news[0]?.image}});"></div>
 						<div class="text">
 							<span class="date">{{data[0]?.news[0]?.created_at}}</span>
-							<h2 class="card-title">{{data[0]?.news[0]?.title|maxLenght:50}}</h2>
+							<h3 class="card-title">{{data[0]?.news[0]?.title|maxLenght:50}}</h3>
 						</div>
 					</a>
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.news[1]?.slug]" class="h-entry v-height gradient">
 						<span class="badge badge-pill badge-danger">{{data[0]?.name}}</span>
 					
-						<div class="featured-img" style="background-image: url({{data[0]?.news[1]?.image}});"></div>
+						<div class="featured-img" loading="lazy"  style="background-image: url({{data[0]?.news[1]?.image}});"></div>
 						<div class="text">
 							<span class="date">{{data[0]?.news[1]?.created_at}}</span>
-							<h2 class="card-title">{{data[0]?.news[1]?.title|maxLenght:50}}</h2>
+							<h3 class="card-title">{{data[0]?.news[1]?.title|maxLenght:50}}</h3>
 						</div>
 					</a>
 				</div>
@@ -112,22 +112,22 @@
 						<span class="badge badge-pill badge-danger">{{data[0]?.name}}</span>
 
 
-						<div class="featured-img" style="background-image: url({{data[0]?.news[3]?.image}});"></div>
+						<div class="featured-img" loading="lazy"  style="background-image: url({{data[0]?.news[3]?.image}});"></div>
 
 						<div class="text">
 							<span class="date">{{data[0]?.news[3]?.created_at}}</span>
-							<h2 class="card-title">{{data[0]?.news[3]?.title|maxLenght:50}}</h2>
+							<h3 class="card-title">{{data[0]?.news[3]?.title|maxLenght:50}}</h3>
 						</div>
 					</a>
 					<a href="javascript:void(0)" [routerLink]="['/News',data[0]?.news[4]?.slug]" class="h-entry v-height gradient">
 						<span class="badge badge-pill badge-danger">{{data[0]?.name}}</span>
 
 
-						<div class="featured-img" style="background-image: url({{data[0]?.news[4]?.image}});"></div>
+						<div class="featured-img" loading="lazy"  style="background-image: url({{data[0]?.news[4]?.image}});"></div>
 
 						<div class="text">
 							<span class="date">{{data[0]?.news[4]?.created_at}}</span>
-							<h2 class="card-title">{{data[0]?.news[4]?.title|maxLenght:50}}</h2>
+							<h3 class="card-title">{{data[0]?.news[4]?.title|maxLenght:50}}</h3>
 						</div>
 					</a>
 				</div>

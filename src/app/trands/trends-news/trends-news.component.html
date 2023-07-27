@@ -11,7 +11,7 @@
         <div style="height: 400px;border: #96225c 2px solid;" class="text-center p-2">
           <h2>تواصل معنا لوضع اعلانك هنا</h2>
 
-          <img src="../../../assets/temp-imgs/images.jpeg" width="255px" alt="" srcset="">
+          <img src="../../../assets/temp-imgs/images.jpeg" width="255px" alt="lhza news" title="lhza news" loading="lazy" >
         </div>
       </div>
       <div class="col-lg-6 col-md-5 col-sm-12 col-12">
@@ -25,7 +25,7 @@
           <ng-template #img >
             <div class="card-image" >
 
-              <img height="300px" width="750px" [src]="trend?.images[0]?.image" />
+              <img height="300px" width="750px" [alt]="trend.title | maxLenght:40" [title]="trend.title | maxLenght:40" loading="lazy"  [src]="trend?.images[0]?.image" />
             </div>
           </ng-template>
 

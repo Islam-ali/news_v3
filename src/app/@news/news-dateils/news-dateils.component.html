@@ -6,7 +6,7 @@
   <!-- <div style="height: 50px; background-color: #3b3b3b">
     <div ></div>
   </div> -->
-  <div style="margin-top: 0px" class="pw1">
+  <article style="margin-top: 0px" class="pw1">
     <div  style="background-color: white">
       <div class="row">
         <div class="col-12 col-lg-9">
@@ -16,7 +16,7 @@
             <small class="my-3"> {{selected?.created_at}}</small>
           </div>
           <div class="bg-light py-3 mt-2 text-center">
-            <img src="{{selected?.image}}" class="img-thumbnail mainImg" height="600px" width="800px" />
+            <img src="{{selected?.image}}" [alt]="selected?.title" [title]="selected?.title" loading="lazy" class="img-thumbnail mainImg" height="600px" width="800px" />
             <p class="pt-2">{{selected.image_describe}}</p>
           </div>
           <div class="bg-light p-3 mt-2">
@@ -48,7 +48,7 @@
          <a >
         
            <div class="picsum-img-wrapper">
-             <img [src]="slide.image" height="420px" class="w-100" />
+             <img [src]="slide.image" [alt]="selected?.title" [title]="selected?.title" loading="lazy" height="420px" class="w-100" />
            </div>
          </a>
        </ng-template>
@@ -60,7 +60,7 @@
               <div class="card mb-3 mt-3" *ngFor="let item of news" [routerLink]="['/News/',item.slug]">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img [src]="item.image" class="border-radius-6 img-fluid w-100" alt="..." style="height: 120px;" />
+                    <img [src]="item.image" [alt]="item.title | maxLenght:30" [title]="item.title | maxLenght:30" loading="lazy" class="border-radius-6 img-fluid w-100" style="height: 120px;" />
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -100,5 +100,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </article>
 </div>
