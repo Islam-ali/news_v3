@@ -5,7 +5,11 @@ import {DOCUMENT} from '@angular/common';
   providedIn: 'root'
 })
 export class SeoService {
-  constructor(private title: Title, private meta: Meta) { }
+  constructor(
+    private title: Title,
+    private meta: Meta,
+    @Inject(DOCUMENT) private doc: Document,
+     ) { }
 
   updateTitle(title: string): any {
     title = title.replace(/\&nbsp;/g, '');
@@ -27,18 +31,23 @@ export class SeoService {
   }
   updateKeywords(listOfKeywords:string[]=[]){
     this.meta.updateTag({name: 'keywords', content: `${listOfKeywords.toString()}`});
-    this.meta.updateTag({property: 'article:tag', content: 'xxxxxxxxxxxxxx'});
+    listOfKeywords.forEach((ele:any , index:number)=>{
+      this.updateArticle(ele);
+    })
 
   }
-  // updateUrl(url = this.doc.location.href): any {
-  //   this.meta.updateTag({property: 'og:url', content: url});
-  //   this.meta.updateTag({name: 'twitter:url', content: url});
-  //   this.meta.updateTag({name: 'canonical_tag', content: url});
-  //   this.updateCanonicalURL(url);
-  // }
-  updateArticle(tag:string){
-      this.meta.updateTag({property: 'article:tag', content: 'xxxxxxxxxxxxxx'});
+  updateUrl(url:any): any {
+    console.log(url);
+    this.meta.updateTag({property: 'og:url', content: url});
+    this.meta.updateTag({name: 'twitter:url', content: url});
+    this.meta.updateTag({name: 'canonical_tag', content: url});
+    this.updateCanonicalURL(url);
   }
+
+  updateArticle(tag:string){
+      this.meta.addTag({property: 'article:tag', content: tag});
+  }
+
   updateImage(image :any): any  {
     this.meta.updateTag({property: 'og:image', content: image});
     this.meta.updateTag({name: 'twitter:image', content: image});
@@ -49,8 +58,8 @@ export class SeoService {
     this.meta.updateTag({name: 'twitter:card', content: 'summary'});
   }
 
-  // updateCanonicalURL(url: string): any  {
-  //   const canonicalLink = this.doc.getElementById('canonical');
-  //   canonicalLink.setAttribute('href', url);
-  //  }
+  updateCanonicalURL(url: string): any  {
+    const canonicalLink:any = this.doc.getElementById('canonical');
+    canonicalLink.setAttribute('href', url);
+   }
 }

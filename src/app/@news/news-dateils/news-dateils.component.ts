@@ -12,50 +12,48 @@ import { SeoService } from 'src/app/@core/services/seo.service';
 export class NewsDateilsComponent implements OnInit {
   slug: any;
   selected: any;
-  Trends: any[]=[];
+  Trends: any[] = [];
   news: any;
-  catId:any;
+  catId: any;
   MoreRead: any;
   loaded = false;
-  
-  url:any;
-  carrenturl:any;
+
+  url: any;
+  carrenturl: any;
   constructor(
     private httpService: HttpService,
     public activatedRoute: ActivatedRoute,
     private router: Router,
-    private seoService:SeoService
+    private seoService: SeoService
   ) {
-  
 
-    this.url=this.router.url;
-   this.carrenturl=`https://lhzanews.com${this.url}`
-    console.log(this.carrenturl)
-  }
 
-  ngOnInit(): void {
+    this.url = this.router.url;
+    this.carrenturl = `https://lhzanews.com${this.url}`;
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.slug = String(params.get('slug'));
       this.getSelected();
     });
+  }
+
+  ngOnInit(): void {
+
     this.getTrands();
   }
   getSelected() {
-    this.loaded=false
+    this.loaded = false
     this.httpService.getNewsContent(this.slug).subscribe(
       (data: any) => {
         this.selected = data.data;
         if (data.success) {
-          console.log(data);
-          
           this.loaded = true;
-          this.seoUpdate(data.data)
         }
-        
-        this.catId=this.selected.id;  
+        this.seoUpdate(data.data);
+
+        this.catId = this.selected.id;
         this.getRelated()
       },
-      (err: any) => {}
+      (err: any) => { }
     );
   }
   getRelated() {
@@ -63,34 +61,37 @@ export class NewsDateilsComponent implements OnInit {
       (data: any) => {
         this.news = data.data;
       },
-      (err: any) => {}
+      (err: any) => { }
     );
   }
-  
+
   getTrands() {
     this.httpService.getTrandsSide().subscribe(
       (data: any) => {
         this.Trends = data.data.last_trends;
-        this.MoreRead=data.data.more_articles_Read;
+        this.MoreRead = data.data.more_articles_Read;
       },
-      (err: any) => {}
+      (err: any) => { }
     );
   }
-   
-  metaTitle!:string;
-  metaDescription!:string;
-  metaImage!:string;
-  seoUpdate(test:any) {
+
+  metaTitle!: string;
+  metaDescription!: string;
+  metaImage!: string;
+  seoUpdate(test: any) {
     this.metaTitle = test.title;
     this.metaDescription = test.content;
     this.metaImage = test.image;
     // this.seoService.updateUrl();
-    console.log(this.metaDescription,this.metaImage,this.metaTitle);
+    console.log(this.metaDescription, this.metaImage, this.metaTitle);
     if (test.tags.length > 0) {
       this.seoService.updateKeywords(test.tags);
-    // for (let index = 0; index < test.tags.length; index++) {
+      // for (let index = 0; index < test.tags.length; index++) {
       // this.seoService.updateArticle(''); 
-    // }
+      // }
+    }
+    if (this.carrenturl != null) {
+      this.seoService.updateUrl(this.carrenturl);
     }
     if (this.metaTitle != null) {
       this.seoService.updateTitle(this.metaTitle);
