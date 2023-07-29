@@ -33,9 +33,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { AdsenseModule } from 'ng2-adsense';
+import { Error404Component } from './@core/errors/error404/error404.component';
 
 @NgModule({
-  declarations: [AppComponent, AdsComponent],
+  declarations: [AppComponent, AdsComponent , Error404Component],
   imports: [
     ShareButtonsModule,
     ShareIconsModule,

@@ -27,6 +27,8 @@ export class SeoService {
   }
   updateKeywords(listOfKeywords:string[]=[]){
     this.meta.updateTag({name: 'keywords', content: `${listOfKeywords.toString()}`});
+    this.meta.updateTag({property: 'article:tag', content: 'xxxxxxxxxxxxxx'});
+
   }
   // updateUrl(url = this.doc.location.href): any {
   //   this.meta.updateTag({property: 'og:url', content: url});
@@ -34,7 +36,9 @@ export class SeoService {
   //   this.meta.updateTag({name: 'canonical_tag', content: url});
   //   this.updateCanonicalURL(url);
   // }
-
+  updateArticle(tag:string){
+      this.meta.updateTag({property: 'article:tag', content: 'xxxxxxxxxxxxxx'});
+  }
   updateImage(image :any): any  {
     this.meta.updateTag({property: 'og:image', content: image});
     this.meta.updateTag({name: 'twitter:image', content: image});

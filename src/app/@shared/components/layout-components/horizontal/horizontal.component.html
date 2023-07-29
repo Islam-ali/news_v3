@@ -4,9 +4,9 @@
             <div class="col-md-8 order-md-last">
                 <div class="row">
                     <div class="col-md-6 text-center">
-                        <a class="navbar-brand" routerLink="/"><img
+                        <a class="navbar-brand" href="https://lhzanews.com/"><img
                                 style="max-width:240px!important;min-width: 80px!important;"
-                                src="assets/icons/SVG/logoo.png" alt="logo lhza" title="lhza news" loading="lazy"></a>
+                                src="assets/icons/SVG/logoo.png" alt="لحظة بلحظة" title="لحظة بلحظة" loading="lazy"></a>
                     </div>
                     <!-- <div class="col-md-6 d-md-flex justify-content-end align-items-center mb-md-0 mb-3">
                         <form action="#" class="searchform order-lg-last">
@@ -56,20 +56,20 @@
             <ul class="navbar-nav m-auto">
                 <li class="d-flex align-items-center" *ngIf="sticky">
                     <a href="javascript:void(0)" routerLink="/"><img style="max-width:130px!important;min-width: 130px!important;"
-                            src="../../../../../assets/icons/Llogo.svg" alt="logo lhza" title="lhza" loading="lazy"></a>
+                            src="../../../../../assets/icons/Llogo.svg" alt="لحظة بلحظة" title="لحظة بلحظة" loading="lazy"></a>
                 </li>
                 <ng-container *ngFor="let cat of allCategories; let i = index">
 
                     <li class="nav-item active" *ngIf="i < 7"><a [routerLink]="['/category/', cat.slug]"
                             routerLinkActive="active-link" [routerLinkActiveOptions]="{exact : true}"
                             class="nav-link">{{cat.name}}</a></li>
-                    <li class="nav-item me-3 me-lg-0 dropdown listitem2" *ngIf="showMore && i == 7">
+                    <li class="nav-item me-3 me-lg-0 dropdown listitem2" *ngIf="showMore && i == 7" (mouseleave)="shDrop()" (mouseenter)="shDrop()">
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown" data-mdb-toggle="dropdown"
-                            aria-expanded="false" (mouseenter)="shDrop()">
+                            aria-expanded="false" >
                             المزيد
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown"
-                            (mouseleave)="shDrop()">
+                            >
                             <a href="javascript:void(0)" class="d-flex dropdown-item innernav-item" [routerLink]="['/articles']">مقالات</a>
 
                             <!-- <li >

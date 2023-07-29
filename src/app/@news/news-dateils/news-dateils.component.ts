@@ -12,10 +12,9 @@ import { SeoService } from 'src/app/@core/services/seo.service';
 export class NewsDateilsComponent implements OnInit {
   slug: any;
   selected: any;
-  Trands: any;
+  Trends: any[]=[];
   news: any;
   catId:any;
-  Trends: any;
   MoreRead: any;
   loaded = false;
   
@@ -87,7 +86,12 @@ export class NewsDateilsComponent implements OnInit {
     this.metaImage = test.image;
     // this.seoService.updateUrl();
     console.log(this.metaDescription,this.metaImage,this.metaTitle);
-    
+    if (test.tags.length > 0) {
+      this.seoService.updateKeywords(test.tags);
+    // for (let index = 0; index < test.tags.length; index++) {
+      // this.seoService.updateArticle(''); 
+    // }
+    }
     if (this.metaTitle != null) {
       this.seoService.updateTitle(this.metaTitle);
     }
