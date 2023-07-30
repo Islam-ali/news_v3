@@ -10,8 +10,9 @@ import { ArticleDetailsComponent } from './components/article-details/article-de
 import { TourismComponent } from './components/tourism/tourism.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { TourismDescriptionComponent } from './components/tourism-description/tourism-description.component';
+import { HomeModule } from '../@home/home.module';
 @NgModule({
   declarations: [CategoryContentComponent, ArticlesComponent, ArticleDetailsComponent, TourismComponent, TourismDescriptionComponent],
-  imports: [CommonModule, CategoryRoutingModule, SharedModule, TrandsModule,NgbPaginationModule],
+  imports: [CommonModule, CategoryRoutingModule, SharedModule, TrandsModule,NgbPaginationModule,HomeModule],
 })
 export class CategoryModule {}

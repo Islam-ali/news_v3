@@ -55,30 +55,54 @@
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav m-auto">
                 <li class="d-flex align-items-center" *ngIf="sticky">
-                    <a href="javascript:void(0)" routerLink="/"><img style="max-width:130px!important;min-width: 130px!important;"
-                            src="../../../../../assets/icons/Llogo.svg" alt="لحظة بلحظة" title="لحظة بلحظة" loading="lazy"></a>
+                    <a href="javascript:void(0)" routerLink="/"><img
+                            style="max-width:130px!important;min-width: 130px!important;"
+                            src="../../../../../assets/icons/Llogo.svg" alt="لحظة بلحظة" title="لحظة بلحظة"
+                            loading="lazy"></a>
                 </li>
                 <ng-container *ngFor="let cat of allCategories; let i = index">
 
                     <li class="nav-item active" *ngIf="i < 7"><a [routerLink]="['/category/', cat.slug]"
                             routerLinkActive="active-link" [routerLinkActiveOptions]="{exact : true}"
                             class="nav-link">{{cat.name}}</a></li>
-                    <li class="nav-item me-3 me-lg-0 dropdown listitem2" *ngIf="showMore && i == 7" (mouseleave)="shDrop()" (mouseenter)="shDrop()">
-                        <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown" data-mdb-toggle="dropdown"
-                            aria-expanded="false" >
+                    <li class="nav-item me-3 me-lg-0 dropdown listitem2" *ngIf="showMore && i == 7"
+                        (mouseleave)="shDrop()" (mouseenter)="shDrop()">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
                             المزيد
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown"
-                            >
-                            <a href="javascript:void(0)" class="d-flex dropdown-item innernav-item" [routerLink]="['/articles']">مقالات</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown">
+                            <a href="javascript:void(0)" class="d-flex dropdown-item innernav-item"
+                                [routerLink]="['/articles']">مقالات</a>
 
                             <!-- <li >
                             <a class="d-flex dropdown-item" [routerLink]="['/tourism']">سياحة وترفيه</a>
                           </li> -->
                             <div *ngFor="let cat of allCategories; let i = index">
-                                <a href="javascript:void(0)" class="d-flex dropdown-item innernav-item" href="javascript:void(0)" *ngIf="i >= 7"
-                                    [routerLink]="['/category/', cat.slug]">{{ cat.name }}</a>
+                                <a href="javascript:void(0)" class="d-flex dropdown-item innernav-item"
+                                    href="javascript:void(0)" *ngIf="i >= 7" [routerLink]="['/category/', cat.slug]">{{
+                                    cat.name }}</a>
                             </div>
+                        </div>
+                    </li>
+                    <li class="nav-item me-3 me-lg-0 follow dropdown listitem2" *ngIf="showMore && i == 7"
+                        (mouseleave)="shDrop2()" (mouseenter)="shDrop2()">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            تابعنا +
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="isShown2">
+
+                            <!-- <li >
+                            <a class="d-flex dropdown-item" [routerLink]="['/tourism']">سياحة وترفيه</a>
+                          </li> -->
+                            <ng-container *ngFor="let item of socialMedia">
+                                <a [href]="item.link" target="_blank" [style.background]="item.color" class="d-flex dropdown-item innernav-item justify-content-center">
+                                    <i class="fab" style="color: #fff;" [ngClass]="item.icon"></i>
+                                </a>
+                            </ng-container>
+                            <!-- <a href="javascript:void(0)" class="d-flex dropdown-item innernav-item" href="javascript:void(0)" *ngIf="i >= 7"
+                                    [routerLink]="['/category/', cat.slug]">{{ cat.name }}</a> -->
                         </div>
                     </li>
                 </ng-container>

@@ -35,6 +35,9 @@ export class HttpService {
   getNewsContent(slug: any): Observable<IResponse> {
     return this.http.get<IResponse>(environment.baseUrl.concat(`news/${slug}`));
   }
+  sliderNews(slug: any): Observable<IResponse> {
+    return this.http.get<IResponse>(environment.baseUrl.concat(`slider-news/${slug}`));
+  }
   getTrandsSide(): Observable<IResponse> {
     return this.http.get<IResponse>(environment.baseUrl.concat(`last-trends-more-articles-read`));
   }

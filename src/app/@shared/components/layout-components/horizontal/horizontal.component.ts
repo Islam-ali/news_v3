@@ -16,28 +16,34 @@ export class HorizontalComponent implements OnInit {
   elementPosition: any;
   showMore: boolean = false;
   isShown: boolean = false;
+  isShown2: boolean = false;
   navigation: boolean = false;
   toggleSearch: boolean = false;
   socialMedia:any[]=[
     {
-      "link":"https://www.facebook.com/profile.php?id=100092450328221&mibextid=ZbWKwL",
-      "icon":"fa-facebook-f"
+      link:"https://www.facebook.com/profile.php?id=100092450328221&mibextid=ZbWKwL",
+      icon:"fa-facebook-f",
+      color:"#1877F2"
     },
     {
-      "link":"https://youtube.com/@lhzabelhzatv2",
-      "icon":"fa-youtube"
+      link:"https://youtube.com/@lhzabelhzatv2",
+      icon:"fa-youtube",
+      color:"#CD201F"
     },
     {
-      "link":"https://twitter.com/lhza_news",
-      "icon":"fa-twitter"
+      link:"https://twitter.com/lhza_news",
+      icon:"fa-twitter",
+      color:"#1DA1F2"
     },
     {
-      "link":"https://www.instagram.com/lhzanews/",
-      "icon":"fa-instagram"
+      link:"https://www.instagram.com/lhzanews/",
+      icon:"fa-instagram",
+      color:"#E4405F"
     },
     {
-      "link":"https://www.tiktok.com/@lhzanews?is_from_webapp=1&sender_device=pc",
-      "icon":"fa-tiktok"
+      link:"https://www.tiktok.com/@lhzanews?is_from_webapp=1&sender_device=pc",
+      icon:"fa-tiktok",
+      color:"#EE1D51"
     },
   ]
   constructor(
@@ -68,6 +74,9 @@ export class HorizontalComponent implements OnInit {
   }
   shDrop() {
     this.isShown = !this.isShown;
+  }
+  shDrop2() {
+    this.isShown2 = !this.isShown2;
   }
   toggleNav(){
     this.navigation = !this.navigation;

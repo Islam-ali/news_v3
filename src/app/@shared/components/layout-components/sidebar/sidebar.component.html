@@ -1,15 +1,15 @@
 <div class="col-12 order-md-last">
     <div class="row">
         <div class="col-md-6 text-center">
-            <a class="navbar-brand" routerLink="/"><img
-                    style="max-width:240px!important;min-width: 80px!important;"
-                    src="assets/icons/SVG/logoo.png" alt="lhza news" title="lhza news" loading="lazy" ></a>
+            <a class="navbar-brand" routerLink="/"><img style="max-width:240px!important;min-width: 80px!important;"
+                    src="assets/icons/SVG/logoo.png" alt="lhza news" title="lhza news" loading="lazy"></a>
         </div>
     </div>
 </div>
 <div #stickyMenu [style.position]="sticky ? 'fixed' : ''" class="hamburger-menu d-flex">
     <!-- <div class="w-100"> -->
-    <input id="menu__toggle" type="checkbox" size="z-index:9999999" (click)="toggleSidebar()" [class.active_sidebar]="_LayoutService.isSidebar.value" />
+    <input id="menu__toggle" type="checkbox" size="z-index:9999999" (click)="toggleSidebar()"
+        [class.active_sidebar]="_LayoutService.isSidebar.value" />
     <label class="menu__btn" for="menu__toggle" size="z-index:9999999">
         <span></span>
     </label>
@@ -18,8 +18,7 @@
         <div class="social-media">
             <p class="mb-0 d-flex">
                 <ng-container *ngFor="let item of socialMedia">
-                    <a [href]="item.link" target="_blank"
-                        class="d-flex align-items-center justify-content-center">
+                    <a [href]="item.link" target="_blank" class="d-flex align-items-center justify-content-center">
                         <i class="fab" [ngClass]="item.icon"></i>
                     </a>
                 </ng-container>
@@ -32,7 +31,9 @@
     </div>
     <ul class="menu__box">
         <div class="text-center mx-auto">
-            <a class="navbar-brand" (click)="navigation = false;_LayoutService.toggleNav(navigation)" routerLink="/" ><img style="max-width:200px!important;min-width: 200px!important;" src="assets/icons/SVG/logoo.png" alt="logo show tv" title="logo show tv" loading="lazy" ></a>
+            <a class="navbar-brand" (click)="navigation = false;_LayoutService.toggleNav(navigation)"
+                routerLink="/"><img style="max-width:200px!important;min-width: 200px!important;"
+                    src="assets/icons/SVG/logoo.png" alt="logo show tv" title="logo show tv" loading="lazy"></a>
         </div>
         <nav #stickyMenu class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
             id="ftco-navbar">
@@ -53,10 +54,19 @@
                 </div>
                 <ul class="navbar-nav m-auto p-0 text-center">
                     <ng-container *ngFor="let cat of allCategories; let i = index">
-                        <li class="nav-item active"><a [routerLink]="['/category/', cat.slug]" (click)="navigation = false;_LayoutService.toggleNav(navigation)"
+                        <li class="nav-item active"><a [routerLink]="['/category/', cat.slug]"
+                                (click)="navigation = false;_LayoutService.toggleNav(navigation)"
                                 routerLinkActive="active-link" [routerLinkActiveOptions]="{exact : true}"
                                 class="nav-link">{{cat.name}}</a></li>
                     </ng-container>
+                    <li class="nav-item active">
+                        <a href="javascript:void(0)"
+                        (click)="navigation = false;_LayoutService.toggleNav(navigation)"
+                        routerLinkActive="active-link"
+                        [routerLinkActiveOptions]="{exact : true}"
+                        class="nav-link"
+                            [routerLink]="['/articles']">مقالات</a>
+                    </li>
                 </ul>
             </div>
         </nav>

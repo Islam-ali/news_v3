@@ -28,6 +28,9 @@ import { GridListComponent } from './components/grid-list/grid-list.component';
     NgbCollapseModule,
     AdsenseModule,
     MatGridListModule
+  ],
+  exports:[
+    GridListComponent
   ]
 })
 export class HomeModule { }

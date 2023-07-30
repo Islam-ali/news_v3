@@ -17,7 +17,7 @@ export class CategoryContentComponent implements OnInit {
   arr1: any[] = [];
   arr2: any[] = [];
   catName: any;
-
+  DataSliderNews:any[] = [];
   page: number = 1;
   number_of_pages = 1;
   number_of_items_per_page = 10;
@@ -38,6 +38,7 @@ export class CategoryContentComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.slug = String(params.get('slug'));
       this.getNews();
+      this.sliderNews();
       this.getTrands();
       this.getTaskbar();
     });
@@ -76,7 +77,13 @@ export class CategoryContentComponent implements OnInit {
       (err: any) => { }
     );
   }
-
+  sliderNews(){
+    this.httpService.sliderNews(this.slug).subscribe({
+      next:(res:any)=>{
+        this.DataSliderNews = res.data
+      }
+    })
+  }
   getTrands() {
     this.httpService.getTrandsSide().subscribe(
       (data: any) => {
