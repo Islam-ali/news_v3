@@ -131,4 +131,4 @@ Disallow: /
 Disallow: /admin/*
 Disallow: /api/*
 
-Sitemap: https://api.lhzanews.com/sitemap.xml
+Sitemap: https://lhzanews.com/sitemap.xml
