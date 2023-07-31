@@ -2,32 +2,33 @@
   <div ></div>
 </div> -->
 <div *ngIf="!loaded">
-<app-loader></app-loader>
+  <app-loader></app-loader>
 </div>
 <article style="margin-top: 0px" class="pw1" *ngIf="loaded">
-  <div  style="background-color: white">
+  <div style="background-color: white">
     <div class="row">
       <div class="col-md-9 col-12">
         <div class="bg-light p-3 row">
-           
-                <!-- <img loading="lazy" src="{{selected?.user.image}}" class="img-thumbnail article-img img-fluid" /> -->
-                <div class="col-md-3 text-center my-2">
-                  <img loading="lazy" [src]="selected?.user?.image" [title]="selected?.user?.name" [alt]="selected?.user?.name" class="userImage img-fluid article-img">
-                  
-                </div>
-                
-                <div class="col-md-9 d-flex text-center article-details">
-                  <div class="my-auto">
+
+          <!-- <img loading="lazy" src="{{selected?.user.image}}" class="img-thumbnail article-img img-fluid" /> -->
+          <div class="col-md-3 text-center my-2">
+            <img loading="lazy" [src]="selected?.user?.image" [title]="selected?.user?.name"
+              [alt]="selected?.user?.name" class="userImage img-fluid article-img">
+
+          </div>
+
+          <div class="col-md-9 d-flex text-center article-details">
+            <div class="my-auto">
               <div class="text-muted">{{selected?.user?.name}}</div>
 
-              <p class="h5" style="color: red">
+              <h1 class="h5" style="color: red">
                 {{selected?.title}}
-              </p>
+              </h1>
               <small class=""> {{selected?.created_at}}</small>
             </div>
-            
-        </div>
-        
+
+          </div>
+
 
         </div>
         <!-- <div class="bg-light py-3 mt-2 text-center" >
@@ -48,10 +49,11 @@
             <div class="titel mt-2 p-2" style="background-color: red; color: aliceblue">
               الموضوعات المتعلقة
             </div>
-            <div class="card mb-3 mt-3"  *ngFor="let item of news" [routerLink]="['/Articles/',item.slug]">
+            <div class="card mb-3 mt-3" *ngFor="let item of news" [routerLink]="['/Articles/',item.slug]">
               <div class="row g-0">
                 <div class="col-md-2 me-3 text-center">
-                  <img loading="lazy" [src]="item?.user?.image" [title]="item?.user?.name" [alt]="item?.user?.name" class="img-fluid m-2 article-img w-75" />
+                  <img loading="lazy" [src]="item?.user?.image" [title]="item?.user?.name" [alt]="item?.user?.name"
+                    class="img-fluid m-2 article-img w-75" />
                   <div class="text-muted">{{item?.user?.name}}</div>
 
                 </div>
@@ -76,18 +78,20 @@
         </div>
       </div>
       <div class="col-lg-3 col-md-2 col-sm-12 col-12">
-        <div class="titel border-radius-6 mt-2 p-2" style="background-color:#96225c; color: aliceblue;" *ngIf="Trends?.length>0">Trending لحظة بلحظة </div>
-        <div  *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
+        <div class="titel border-radius-6 mt-2 p-2" style="background-color:#96225c; color: aliceblue;"
+          *ngIf="Trends?.length>0">Trending لحظة بلحظة </div>
+        <div *ngFor="let item of Trends" routerLink="/Trends/{{item.slug}}/{{item.id}}">
           <h3 class="p-2 mt-2 border-radius-6" style="background-color: #ddd;color: black;cursor: pointer;">
-            {{item.title|maxLenght:55}} 
+            {{item.title|maxLenght:55}}
           </h3>
         </div>
 
-        <div class="titel border-radius-6 mt-2 p-2" style="background-color: #96225c; color: aliceblue;" *ngIf="MoreRead?.length>0">الاكثر قراءة</div>
+        <div class="titel border-radius-6 mt-2 p-2" style="background-color: #96225c; color: aliceblue;"
+          *ngIf="MoreRead?.length>0">الاكثر قراءة</div>
 
         <div *ngFor="let item of MoreRead" [routerLink]="['/Articles/',item.slug]">
           <h3 class="p-2 mt-2 border-radius-6" style="background-color: #ddd;color:black;cursor: pointer;">
-            {{item.title|maxLenght:55}} 
+            {{item.title|maxLenght:55}}
           </h3>
         </div>
 

@@ -117,9 +117,9 @@ export class HomeComponent implements OnInit {
   }
 
   getTaskbar() {
-    this.httpService.getTopTaskbar().subscribe(
+    this.httpService.lastNews().subscribe(
       (data: any) => {
-        this.taskBarItems = data.data;
+        this.taskBarItems = data.data.last_news;
       },
       (err: any) => {}
     );
