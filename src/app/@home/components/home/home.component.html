@@ -2,7 +2,7 @@
   <app-loader></app-loader>
 </div>
 <div *ngIf="loaded">
-<h1 class="visually-hidden">لحظة بلحظة</h1>
+  <h1 class="visually-hidden">لحظة بلحظة</h1>
   <!-- <div class="searchDiv">
     <div class="container-fluid">
       <div class="row justify-content-between d-flex">
@@ -45,7 +45,7 @@
           <app-grid-list [data]="slides" [slider]="true"></app-grid-list>
         </div>
         <div class="col-lg-3 col-md-3">
-        <app-infinite-scrolling [taskBarItems]="taskBarItems"></app-infinite-scrolling>
+          <app-infinite-scrolling [taskBarItems]="taskBarItems"></app-infinite-scrolling>
         </div>
       </div>
       <!-- <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="false" [pauseOnFocus]="false" (slide)="onSlide($event)">
@@ -76,105 +76,112 @@
   [width]="320"
   [height]="108"
 ></ng-adsense> -->
-  <div class="m-auto pt-4 pb-4" *ngFor="let item of allCategories;let i=index">
-    <section>
-      <div class="row" *ngIf="item.news?.length>0">
-        <div [class]="i == 0 ? 'col-md-9':''">
-          <app-grid-list [data]="[item]" [index]="i" [slider]="false"></app-grid-list>
-        </div>
-
-        <div class="col-md-3 col-12 mt-5 pt-4" *ngIf="i == 0">
-          <div class="b-radius-10 ">
-            <!-- <ng-adsense></ng-adsense> -->
-            <div class="" *ngIf="trends.length>0">
-              <div class=" d-flex justify-content-between" style="background-color:#cbcbb3;">
-                <h5 class="titel pt-1 m-1" style="padding-right:10px;font-weight:bold;cursor:pointer"
-                  [routerLink]="['/trends/']">تريندات</h5>
-              </div>
-              <section class="bg-light">
-                <div class="row">
-                  <div class="col-md-6 col-12 border-bottom mt-2" *ngFor="let trend of trends">
-                    <div class="row">
-                      <div class="col-12 text-center">
-                        <div class="m-auto" style="height: 120px;">
-                          <img [src]="trend?.images[0]?.image" [title]="trend.title" [alt]="trend.title" loading="lazy" class="userImage img-fluid">
-                        </div>
-                      </div>
-                      <div class="col-12" style="font-size: 10px !important;">
-                        <div class=" text-center" routerLink="/Trend/{{trend.slug}}"
-                          style="cursor: pointer;font-size: 10px !important">
-                          <!-- <p class="text-danger" style="font-size: 10px !important">{{trend.title}}</p> -->
-                          <p class="" style="font-size: 11px !important">{{trend.title}}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="">
-                  <div class="p-2 d-flex justify-content-end" [routerLink]="['/trends/']" style="cursor: pointer;">
-                    <p class="text-decoration-underline">المزيد</p>
-                    <i class="fa-sharp fa-solid fa-plus text-danger me-3"></i>
-                  </div>
-                </div>
-              </section>
+    <div class="row">
+      <div class="col-md-9 pt-4 pb-4" >
+        <section *ngFor="let item of allCategories;let i=index">
+          <div class="row" *ngIf="item.news?.length>0">
+            <!-- [class]="i == 0 ? 'col-md-9':''" -->
+            <div > 
+              <app-grid-list [data]="[item]" [index]="i" [slider]="false"></app-grid-list>
             </div>
-            <!-- <img src="./assets/temp-imgs/advertise.jfif" height="430" width="290" class="home-img my-2"> -->
-            <!-- <div class="container">
-              <div class="row">
-                <div class="col">
-                  <ngb-carousel>
-                    <ng-template ngbSlide *ngFor="let slide of slides">
-                      <div class="slide">
-                        <h3>{{ slide.title }}</h3>
-                      </div>
-                    </ng-template>
-                  </ngb-carousel>
-                </div>
-              </div>
-            </div> -->
-            <!-- <app-slide-vertical></app-slide-vertical> -->
-            <div class="" *ngIf="articles.length>0">
-
-              <div class=" d-flex justify-content-between" style="background-color:#96225c;">
-                <h4 class="titel pt-1 m-1" style="color:#fff;padding-right:10px;font-weight:bold;cursor:pointer"
-                  [routerLink]="['/articles/']">
-                  كتاب و أراء</h4>
-
-              </div>
-              <section class="bg-light ">
-                <div class="row">
-                  <div class="col-12 border-bottom mt-2 pb-2" *ngFor="let item of articles | slice:0:3">
-                    <div class="row">
-                      <div class="col-4 text-center">
-                        <div class="m-auto">
-                          <img [src]="item.user.image" [title]="item.user.name" [alt]="item.user.name" loading="lazy" class="userImage img-fluid mb-2">
-                          <small>{{item.user.name}}</small>
-                        </div>
-                      </div>
-                      <div class="col-8 p-2">
-                        <div class=" me-1" routerLink="/Articles/{{item.slug}}" style="cursor: pointer;">
-                          <p style="color: #96225c;" class=" text-decoration-underline mb-0">{{item.title}}</p>
-                          <small class="text-inner" [innerHTML]="item.content|maxLenght:80"></small>
-                          <small class="text-muted">{{item.created_at}}</small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="">
-                  <div class="p-2 d-flex justify-content-end" [routerLink]="['/articles/']" style="cursor: pointer;">
-                    <p class="text-decoration-underline">المزيد</p>
-                    <i class="fa-sharp fa-solid fa-plus text-danger me-3"></i>
-                  </div>
-                </div>
-              </section>
-            </div>
-            <!-- <img src="./assets/temp-imgs/advertise.jfif" height="430" width="290" class="home-img my-2"> -->
           </div>
-        </div>
+        </section>
       </div>
-    </section>
-  </div>
+      <div class="col-md-3 mt-5 pt-4">
+        <div class="b-radius-10 ">
+          <!-- <ng-adsense></ng-adsense> -->
+          <div class="" *ngIf="trends.length>0">
+            <div class=" d-flex justify-content-between" style="background-color:#cbcbb3;">
+              <h5 class="titel pt-1 m-1" style="padding-right:10px;font-weight:bold;cursor:pointer"
+                [routerLink]="['/trends/']">تريندات</h5>
+            </div>
+            <section class="bg-light">
+              <div class="row">
+                <div class="col-md-6 col-12 border-bottom mt-2" *ngFor="let trend of trends">
+                  <div class="row">
+                    <div class="col-12 text-center">
+                      <div class="m-auto" style="height: 120px;">
+                        <img [src]="trend?.images[0]?.image" [title]="trend.title" [alt]="trend.title" loading="lazy"
+                          class="userImage img-fluid">
+                      </div>
+                    </div>
+                    <div class="col-12" style="font-size: 10px !important;">
+                      <div class=" text-center" routerLink="/Trend/{{trend.slug}}"
+                        style="cursor: pointer;font-size: 10px !important">
+                        <!-- <p class="text-danger" style="font-size: 10px !important">{{trend.title}}</p> -->
+                        <p class="" style="font-size: 11px !important">{{trend.title}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <div class="p-2 d-flex justify-content-end" [routerLink]="['/trends/']" style="cursor: pointer;">
+                  <p class="text-decoration-underline">المزيد</p>
+                  <i class="fa-sharp fa-solid fa-plus text-danger me-3"></i>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- <img src="./assets/temp-imgs/advertise.jfif" height="430" width="290" class="home-img my-2"> -->
+          <!-- <div class="container">
+            <div class="row">
+              <div class="col">
+                <ngb-carousel>
+                  <ng-template ngbSlide *ngFor="let slide of slides">
+                    <div class="slide">
+                      <h3>{{ slide.title }}</h3>
+                    </div>
+                  </ng-template>
+                </ngb-carousel>
+              </div>
+            </div>
+          </div> -->
+          <!-- <app-slide-vertical></app-slide-vertical> -->
+          <!-- <ng-adsense [adClient]="'ca-pub-7640562161899788'" [adSlot]="7259870550" [display]="'inline-block'"
+            [width]="320" [height]="108"></ng-adsense> -->
+          <div class="" *ngIf="articles.length>0">
+    
+            <div class=" d-flex justify-content-between" style="background-color:#96225c;">
+              <h4 class="titel pt-1 m-1" style="color:#fff;padding-right:10px;font-weight:bold;cursor:pointer"
+                [routerLink]="['/articles/']">
+                كتاب و أراء</h4>
+    
+            </div>
+            <section class="bg-light ">
+              <div class="row">
+                <div class="col-12 border-bottom mt-2 pb-2" *ngFor="let item of articles | slice:0:3">
+                  <div class="row">
+                    <div class="col-4 text-center">
+                      <div class="m-auto">
+                        <img [src]="item.user.image" [title]="item.user.name" [alt]="item.user.name" loading="lazy"
+                          class="userImage img-fluid mb-2">
+                        <small>{{item.user.name}}</small>
+                      </div>
+                    </div>
+                    <div class="col-8 p-2">
+                      <div class=" me-1" routerLink="/Articles/{{item.slug}}" style="cursor: pointer;">
+                        <p style="color: #96225c;" class=" text-decoration-underline mb-0">{{item.title}}</p>
+                        <small class="text-inner" [innerHTML]="item.content|maxLenght:80"></small>
+                        <small class="text-muted">{{item.created_at}}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <div class="p-2 d-flex justify-content-end" [routerLink]="['/articles/']" style="cursor: pointer;">
+                  <p class="text-decoration-underline">المزيد</p>
+                  <i class="fa-sharp fa-solid fa-plus text-danger me-3"></i>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- <img src="./assets/temp-imgs/advertise.jfif" height="430" width="290" class="home-img my-2"> -->
+        </div>
+        <ng-adsense></ng-adsense>
+      </div>
+    </div>
 </div>
 <!-- ///////////////////////////////////////// -->
