@@ -55,7 +55,7 @@ import { Error404Component } from './@core/errors/error404/error404.component';
       progressBar: true,
     }),
     AdsenseModule.forRoot({
-      adClient: 'ca-pub-9927217944576560',
+      adClient: 'ca-pub-2375911386676049',
       adSlot: 9059883514,
       height: 100,
       width: 300,
