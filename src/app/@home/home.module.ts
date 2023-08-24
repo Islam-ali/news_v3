@@ -15,7 +15,7 @@ import { GridListComponent } from './components/grid-list/grid-list.component';
   declarations: [
     HomeComponent,
     SearchComponent,
-    GridListComponent
+    GridListComponent,
   ],
   imports: [
     CommonModule,

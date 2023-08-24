@@ -33,8 +33,8 @@ import { SeoService } from './@core/services/seo.service';
     </div>
 
     <!-- <app-loader></app-loader> -->
-    <div
-      style="position: fixed; bottom:0px; left:8px;" class="parent" *ngIf="this.httpService.tvvideo==true">
+    <!-- <div
+      style="position: fixed; bottom:0px; left:8px;" class="parent" >
       <a href="https://www.youtube.com/">
         <iframe
           [src]="safeURL"
@@ -46,7 +46,7 @@ import { SeoService } from './@core/services/seo.service';
           class="parent2"
         ></iframe>
       </a>
-    </div>
+    </div> -->
   `, styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnChanges, AfterViewInit {
@@ -101,7 +101,7 @@ export class AppComponent implements OnInit, OnChanges, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.getTv();
+    // this.getTv();
     this.checkwindow(window.innerWidth)
   }
   @HostListener('window:resize', ['$event.target'])

@@ -13,17 +13,18 @@
           <div class="bg-light py-3">
             <h1 class="h2 mt-2 p-2" style="color: #96225c;">
               {{selected?.title}}</h1>
-            <small class="my-3"> {{selected?.created_at}}</small>
+            <small class="my-3 p-2"> {{selected?.created_at}}</small>
           </div>
           <div class="bg-light py-3 mt-2 text-center">
             <img src="{{selected?.image}}" [alt]="selected?.title" [title]="selected?.title" loading="lazy" class="img-thumbnail mainImg" height="600px" width="800px" />
-            <p class="pt-2">{{selected.image_describe}}</p>
+            <div>
+              <p class="pt-2">{{selected.image_describe}}</p>
+              <p class="mb-2" style="color:#96225c">({{selected?.editor_name}})</p>
+            </div>
+            
           </div>
           <div class="bg-light p-3 mt-2">
 
-            <div class="h4 mb-2" style="color:#96225c">
-              {{selected?.editor_name}}
-            </div>
             <div [innerHTML]="selected?.content" class="content">
 
             </div>

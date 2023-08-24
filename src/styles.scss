@@ -63,7 +63,18 @@ marquee{
 .three{
     position: relative;
 }
-.three h2 {
+.three h2{
+  color: #96225c;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding-bottom: 15px;
+  &:hover{
+      color: #96225c;
+  }
+}
+.three h2 > a{
     color: #96225c;
     font-size: 28px;
     font-weight: 500;
@@ -100,3 +111,16 @@ marquee{
     color: #fff;
     font-weight: 800 !important;
   }
+
+
+
+
+  @media screen and (max-width: 767px) {
+    .box-video{
+       display: none;
+    }
+    /* .parent2{
+     height: 50%;
+     width: 100%;
+    } */
+   }
