@@ -43,7 +43,7 @@ export class HorizontalComponent implements OnInit {
     {
       link:"https://www.tiktok.com/@lhzanews?is_from_webapp=1&sender_device=pc",
       icon:"fa-tiktok",
-      color:"#EE1D51"
+      color:"#000"
     },
   ]
   constructor(

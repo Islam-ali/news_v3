@@ -65,7 +65,7 @@ import { InfiniteScrollingComponent } from './components/other/infinite-scrollin
     SidebarComponent,
     SlideVerticalComponent,
     InfiniteScrollingComponent,
-
+    VerticalSliderComponent
   ]
 })
 export class SharedModule { }
