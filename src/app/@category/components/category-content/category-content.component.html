@@ -35,9 +35,7 @@
     <h2 class="m-0 px-0" style="width: max-content;cursor: pointer;">
       {{news[0].category.name}}</h2>
   </div>
-  <div class="col-l2 mb-4">
-    <app-grid-list [data]="DataSliderNews" [slider]="true"></app-grid-list>
-  </div>
+
   <div>
     <div>
       <!-- <div class="titel mt-3 p-2 " style="background-color: #4d4d4c; color:red;padding-right:30px;font-weight:bold;">
@@ -45,7 +43,9 @@
 
       <div class="row m-0">
         <div class="col-lg-9 col-md-12 col-sm-12 col-12">
-
+          <div class="col-l2 mb-4">
+            <app-grid-list [data]="DataSliderNews" [slider]="true"></app-grid-list>
+          </div>
           <!-- <div class="col-lg-6 col-md-5 col-sm-12 col-12">
   
               <div class="card mb-3 mt-3" *ngFor="let item of arr1 ; let i=index" style="height: 300px; ">

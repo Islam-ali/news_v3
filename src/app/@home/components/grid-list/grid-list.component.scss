@@ -104,7 +104,12 @@
 .retro-layout .gradient {
     position: relative;
 }
-
+.filter-slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
 .retro-layout .gradient:before {
     z-index: 1;
     content: '';

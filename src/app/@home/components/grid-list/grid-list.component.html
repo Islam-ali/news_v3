@@ -1,13 +1,13 @@
 	<!-- Start retroy layout blog posts -->
 	<section class="section" *ngIf="slider">
-        <div >
+        <div class="radius-6">
             <!-- <div class="row justify-content-between align-items-center three mb-4 mx-1" >
                 <h3 [routerLink]="['/category/',data[0]?.slug]" class="m-0 px-0" style="width: max-content;cursor: pointer;">{{data[0]?.name}}</h3>
                 <div  [routerLink]="['/category/',data[0]?.slug]" style="width: max-content;cursor: pointer;" id="pot" >
                     <i class="fas fa-arrow-left"></i>
                 </div>
             </div> -->
-			<div class="row align-items-stretch retro-layout">
+			<!-- <div class="row align-items-stretch retro-layout">
 				<div class="col-md-4">
 					<a href="javascript:void(0)" [routerLink]="['/News',data[2]?.slug]" class="h-entry img-5 h-100 gradient">
 						<span class="badge badge-pill badge-danger">{{data[2]?.category.name}}</span>
@@ -63,7 +63,22 @@
 						</div>
 					</a>
 				</div>
-			</div>
+			</div> -->
+			<ngb-carousel #carousel [interval]="5000" [pauseOnHover]="false" [pauseOnFocus]="false">
+				<ng-template ngbSlide *ngFor="let slide of data; index as i">
+				  <a routerLink="/News/{{slide.slug}}">
+					<div class="carousel-caption">
+					  <h2 style="background-color: whitesmoke; color:red;border-radius:5px;padding-top:5px;padding-bottom:5px;">
+						{{slide.title}}
+					</h2>
+					</div>
+					<div class="picsum-img-wrapper d-flex justify-content-center bg-dark position-relative">
+						<div class="filter-slider"></div>
+					  <img [src]="slide.image" height="540" class="sliderimg" />
+					</div>
+				  </a>
+				</ng-template>
+			  </ngb-carousel>
 		</div>
 	</section>
 	<!-- End retroy layout blog posts -->
